@@ -19,8 +19,8 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn
-      - name: Test code with coverage
-        run: yarn test:coverage
+      - name: Test code
+        run: yarn test
       - name: Build
         run: yarn build
 
