@@ -3,4 +3,4 @@ to: src/components/index.ts
 inject: true
 append: true
 ---
-export * from './<%= h.changeCase.pascalCase(name) %>'
+export * from './<%= h.changeCase.pascalCase(name) %>/<%= h.changeCase.pascalCase(name) %>'
