@@ -8,8 +8,10 @@ export interface QuaantumUIProps {
   bg?: string;
   bgColor?: string;
   width?: string | number;
-  hieght?: string | number;
+  height?: string | number;
   _focus?: Omit<QuaantumUIProps, '_focus'>;
   _hover?: Omit<QuaantumUIProps, '_hover'>;
   _active?: Omit<QuaantumUIProps, '_active'>;
 }
+
+import {} from '.';
