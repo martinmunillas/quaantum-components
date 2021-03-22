@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, defaultColor } from '../../../defaults';
+import { colors } from '../../../defaults';
 import { QuaantumUIProps } from '../../../types';
 
 export interface ButtonProps extends QuaantumUIProps {
@@ -8,12 +8,12 @@ export interface ButtonProps extends QuaantumUIProps {
 
 const solidVariant = (props: ButtonProps) => `
   color: ${colors['white']};
-  background: ${colors[props.color || defaultColor]};
+  background: ${colors[props.color || 'defaultColor']};
 `;
 
 const outlineVariant = (props: ButtonProps) => `
-  color: ${colors[props.color || defaultColor]};
-  border: 2px solid ${colors[props.color || defaultColor]};
+  color: ${colors[props.color || 'defaultColor']};
+  border: 2px solid ${colors[props.color || 'defaultColor']};
   background-color: transparent;
 `;
 
