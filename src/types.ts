@@ -8,8 +8,10 @@ export interface BuitUIProps {
   bg?: string;
   bgColor?: string;
   width?: string | number;
-  hieght?: string | number;
+  height?: string | number;
   _focus?: Omit<BuitUIProps, '_focus'>;
   _hover?: Omit<BuitUIProps, '_hover'>;
   _active?: Omit<BuitUIProps, '_active'>;
 }
+
+import {} from '.';
