@@ -1,40 +1,58 @@
 import styled from 'styled-components';
-import { colors } from '../../../defaults';
 import { BuitUIProps } from '../../../types';
+import { genCss } from '../../../utils/genCss';
 
 export interface ButtonProps extends BuitUIProps {
   variant?: 'solid' | 'outline';
 }
 
-const solidVariant = (props: ButtonProps) => `
-  color: ${colors['white']};
-  background: ${colors[props.color || 'defaultColor']};
-`;
+const solidVariant: BuitUIProps = {
+  color: 'white',
+  bgColor: 'primary',
+};
+const ghostVariant: BuitUIProps = {
+  bgColor: 'transparent',
+  color: 'primary',
+};
 
-const outlineVariant = (props: ButtonProps) => `
-  color: ${colors[props.color || 'defaultColor']};
-  border: 2px solid ${colors[props.color || 'defaultColor']};
-  background-color: transparent;
-`;
+const outlineVariant: BuitUIProps = {
+  ...ghostVariant,
+  border: '1px solid currentColor',
+};
+
+const variants = {
+  solid: solidVariant,
+  ghost: ghostVariant,
+  outline: outlineVariant,
+};
+
+const base: BuitUIProps = {
+  border: 'none',
+  round: '50px',
+  padding: '10px 20px',
+  fontWeight: 600,
+  minW: '100px',
+  fontSize: '18px',
+  cursor: 'pointer',
+  _focus: {
+    boxShadow: '1px 1px 1px 1px blue',
+  },
+  outline: 'none',
+};
+
+const defaultProps = {
+  variant: 'solid',
+};
+
+const button = {
+  variants,
+  base,
+  default: defaultProps,
+};
 
 const Button = styled.button<ButtonProps>`
-  border: none;
-  border-radius: ${({ round }) => (typeof round === 'number' ? `${round}px` : round) || '50px'};
-  padding: 10px 20px;
-  font-weight: 600;
-  min-width: 100px;
-  max-width: 300px;
-  font-size: 18px;
-  cursor: pointer;
-  outline: none;
-  ${(props) => (props.variant === 'solid' ? solidVariant(props) : outlineVariant(props))}
-
-  &:focus ${({ _focus }) =>
-    _focus
-      ? _focus
-      : `{
-    box-shadow: 1px 1px 1px 1px blue;
-  }`}
+  ${(props) =>
+    genCss({ ...button.base, ...button.variants[props.variant || button.default.variant] })}
 `;
 
 export default Button;
