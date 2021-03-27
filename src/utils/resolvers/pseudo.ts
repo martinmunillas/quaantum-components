@@ -1,6 +1,6 @@
 import { QuaantumUIProps } from '../../types';
-import { genCss } from '../genCss';
+import { Config, genCss } from '../genCss';
 
-export const pseudoResolver = (props: QuaantumUIProps) => {
-  return `{${genCss(props)}}`;
+export const pseudoResolver = (props: QuaantumUIProps, config: Config) => {
+  return `{${genCss(props, config)}}`;
 };
