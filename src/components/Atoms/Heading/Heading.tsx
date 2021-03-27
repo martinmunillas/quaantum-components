@@ -7,23 +7,27 @@ export interface HeadingProps extends BuitUIProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
+const defaultHeadingProps = {
+  color: 'primary',
+};
+
 const H1 = styled.h1<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 const H2 = styled.h2<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 const H3 = styled.h3<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 const H4 = styled.h4<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 const H5 = styled.h5<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 const H6 = styled.h6<Omit<HeadingProps, 'as'>>`
-  ${(props) => genCss(props)}
+  ${(props) => genCss({ ...defaultHeadingProps, ...props })}
 `;
 
 const Heading = ({ as = 'h1', ...props }: HeadingProps) => {
