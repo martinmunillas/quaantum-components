@@ -1,6 +1,6 @@
 import { BuitUIProps } from '../../types';
-import { genCss } from '../genCss';
+import { Config, genCss } from '../genCss';
 
-export const pseudoResolver = (props: BuitUIProps) => {
-  return `{${genCss(props)}}`;
+export const pseudoResolver = (props: BuitUIProps, config: Config) => {
+  return `{${genCss(props, config)}}`;
 };
