@@ -1,10 +1,9 @@
-import { colors } from './defaults';
-
-type ColorType = keyof typeof colors;
+import { ComponentCtx } from './defaults/theme';
+import { GenCss } from './utils/hooks/useGenCss';
 
 export interface BuitUIPropsRequired {
   round: string | number;
-  color: ColorType | string;
+  color: string;
   border: string;
   bg: string;
   bgColor: string;
@@ -28,4 +27,7 @@ export interface BuitUIPropsRequired {
 
 export type BuitUIProps = Partial<BuitUIPropsRequired>;
 
-import {} from '.';
+export interface Internal {
+  componentCtx: ComponentCtx;
+  genCss: GenCss;
+}
