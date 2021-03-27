@@ -12,11 +12,9 @@ const Template: Story<ButtonProps> = (args) => <Button {...args}>Button</Button>
 export const Solid = Template.bind({});
 Solid.args = {
   variant: 'solid',
-  color: 'primary',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   variant: 'outline',
-  color: 'primary',
 };
