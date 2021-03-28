@@ -23,4 +23,7 @@ export const dictionary = {
   _hover: '&:hover',
   _active: '&:active',
   _focus: '&:focus',
+  display: 'display',
+  justifyContent: 'justify-content',
+  alignItems: 'align-items',
 };

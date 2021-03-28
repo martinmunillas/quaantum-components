@@ -19,10 +19,14 @@ export interface BuitUIPropsRequired {
   minH: string | number;
   maxH: string | number;
   cursor: string;
+  display: string;
+  justifyContent: string;
+  alignItems: string;
   outline: string;
   _focus: Omit<BuitUIProps, '_focus'>;
   _hover: Omit<BuitUIProps, '_hover'>;
   _active: Omit<BuitUIProps, '_active'>;
+  variant: string;
 }
 
 export type BuitUIProps = Partial<BuitUIPropsRequired>;

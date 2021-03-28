@@ -1,26 +1,23 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Flex from './Flex';
+import Box from './Box';
 import BuitProvider from '../../Providers/BuitProvider/BuitProvider';
 import { theme } from '../../../defaults/theme';
 import { ButtonProps } from '../..';
 
 export default {
-  title: 'Atoms/Flex',
-  component: Flex,
+  title: 'Atoms/Box',
+  component: Box,
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => (
   <BuitProvider theme={theme}>
-    <Flex {...args} width='100%'>
-      <Flex width='100px' height='100px' bgColor='blue' />
-      <Flex width='100px' height='100px' bgColor='blue' />
-    </Flex>
+    <Box {...args} width='100%'>
+      <Box width='100px' height='100px' bgColor='blue' />
+      <Box width='100px' height='100px' bgColor='red' />
+    </Box>
   </BuitProvider>
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  variant: 'solid',
-  justifyContent: 'space-between',
-};
+Default.args = {};

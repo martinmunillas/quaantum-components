@@ -18,7 +18,6 @@ const ButtonWithoutContext = styled.button<ButtonProps & Internal>`
 `;
 
 const Button: React.FC<ButtonProps> = (props) => {
-  console.log('Button');
   const { components } = useContext(ctx);
   const genCss = useGenCss();
   return <ButtonWithoutContext componentCtx={components?.button} {...props} genCss={genCss} />;

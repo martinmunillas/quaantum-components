@@ -1,17 +1,19 @@
 import { BuitUIProps } from '../types';
 import { button } from './components/button';
+import { flex } from './components/flex';
+import { input } from './components/input';
 
 export interface ColorsCtx {
   [color: string]: string | ColorsCtx;
 }
 
-interface Variants {
+export interface VariantsCtx {
   [variant: string]: BuitUIProps;
 }
 
 export interface ComponentCtx {
-  base?: BuitUIProps;
-  variants?: Variants;
+  base: BuitUIProps;
+  variants: VariantsCtx;
   defaultVariant: string;
 }
 
@@ -36,5 +38,7 @@ export const theme: Theme = {
   },
   components: {
     button,
+    flex,
+    input,
   },
 };
