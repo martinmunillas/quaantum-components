@@ -1,5 +1,5 @@
-import { BuitUIProps } from '../../types';
-import { ComponentCtx, VariantsCtx } from '../theme';
+import { BuitUIProps } from '../../../types';
+import { ComponentCtx, VariantsCtx } from '../../../defaults/theme';
 
 const base: BuitUIProps = {
   border: '1px solid gray',
@@ -12,7 +12,7 @@ const base: BuitUIProps = {
 };
 const variants: VariantsCtx = {};
 
-export const input: ComponentCtx = {
+export const Input: ComponentCtx = {
   base,
   variants,
   defaultVariant: '',

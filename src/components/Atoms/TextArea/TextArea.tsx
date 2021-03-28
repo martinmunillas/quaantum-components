@@ -1,12 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { TextareaHTMLAttributes } from 'react';
+import { BuitUIProps } from '../../../types';
+import { useBuitInternalProps } from '../../../utils/hooks/useBuitInternalProps';
+import { RawTextarea } from '../../HTML/HTML';
 
-export interface TextAreaProps {}
-
-const TextAreaWithoutContext = styled.textarea``;
+export interface TextAreaProps extends BuitUIProps, TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
-  return <TextAreaWithoutContext {...props} />;
+  const internalProps = useBuitInternalProps('TextArea');
+
+  return <RawTextarea {...internalProps} {...props} />;
 };
 
 export default TextArea;

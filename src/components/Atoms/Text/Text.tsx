@@ -1,12 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-
-export interface TextProps {}
-
-const TextWithoutContext = styled.p``;
+import { BuitUIProps } from '../../../types';
+import { useBuitInternalProps } from '../../../utils/hooks/useBuitInternalProps';
+import { RawP } from '../../HTML/HTML';
+export interface TextProps extends BuitUIProps {}
 
 const Text: React.FC<TextProps> = (props) => {
-  return <TextWithoutContext {...props} />;
+  const internalProps = useBuitInternalProps('Text');
+
+  return <RawP {...internalProps} {...props} />;
 };
 
 export default Text;

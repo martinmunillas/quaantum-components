@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { ctx } from '../../components';
 import { BuitUIProps } from '../../types';
 import { genCss } from '../genCss';
+import { ctx } from '../providerContext';
 
 export const useGenCss = () => {
   const { colors } = useContext(ctx);

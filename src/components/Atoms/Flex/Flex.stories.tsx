@@ -1,9 +1,9 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import Flex from './Flex';
 import BuitProvider from '../../Providers/BuitProvider/BuitProvider';
 import { theme } from '../../../defaults/theme';
-import { ButtonProps } from '../..';
+import { Box, ButtonProps } from '../..';
 
 export default {
   title: 'Atoms/Flex',
@@ -13,8 +13,8 @@ export default {
 const Template: Story<ButtonProps> = (args) => (
   <BuitProvider theme={theme}>
     <Flex {...args} width='100%'>
-      <Flex width='100px' height='100px' bgColor='blue' />
-      <Flex width='100px' height='100px' bgColor='blue' />
+      <Box width='100px' height='100px' bgColor='blue' />
+      <Box width='100px' height='100px' bgColor='blue' />
     </Flex>
   </BuitProvider>
 );

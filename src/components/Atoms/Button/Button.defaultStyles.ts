@@ -1,4 +1,4 @@
-import { BuitUIProps } from '../../types';
+import { BuitUIProps } from '../../../types';
 
 const solidVariant: BuitUIProps = {
   color: 'white',
@@ -36,7 +36,7 @@ const base: BuitUIProps = {
 
 const defaultVariant = 'solid';
 
-export const button = {
+export const Button = {
   variants,
   base,
   defaultVariant,
