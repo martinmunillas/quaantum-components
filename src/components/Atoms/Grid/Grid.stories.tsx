@@ -1,26 +1,25 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react';
-import Flex from './Flex';
+import { Meta, Story } from '@storybook/react';
+import Grid, { GridProps } from './Grid';
 import QuaantumProvider from '../../Providers/QuaantumProvider/QuaantumProvider';
 import { theme } from '../../../defaults/theme';
-import { Box, ButtonProps } from '../..';
+import Box from '../Box/Box';
+import Heading from '../Heading/Heading';
 
 export default {
-  title: 'Atoms/Flex',
-  component: Flex,
+  title: 'Atoms/Grid',
+  component: Grid,
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => (
+const Template: Story<GridProps> = (args) => (
   <QuaantumProvider theme={theme}>
-    <Flex {...args} width='100%'>
+    <Heading>This component haven't been developed yet</Heading>
+    <Grid {...args} width='100%'>
       <Box width='100px' height='100px' bgColor='blue' />
       <Box width='100px' height='100px' bgColor='blue' />
-    </Flex>
+    </Grid>
   </QuaantumProvider>
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  variant: 'solid',
-  justifyContent: 'space-between',
-};
+Default.args = {};

@@ -1,10 +1,6 @@
-export const defaultMeasurament = { width: 'px' };
-
-export const defaultValues = { color: 'black', bg: 'none', round: '10px' };
-
 export const dictionary = {
-  bg: 'background',
   color: 'color',
+  bg: 'background',
   bgColor: 'background-color',
   round: 'border-radius',
   width: 'width',
@@ -20,7 +16,19 @@ export const dictionary = {
   maxH: 'min-height',
   cursor: 'cursor',
   outline: 'outline',
+  display: 'display',
+  justifyContent: 'justify-content',
+  alignItems: 'align-items',
+  resize: 'resize',
+  overflow: 'overflow',
+  overflowX: 'overflow-x',
+  overflowY: 'overflow-y',
+  fontFamily: 'font-family',
+  textDecoration: 'text-decoration',
   _hover: '&:hover',
   _active: '&:active',
   _focus: '&:focus',
+  _placeholder: '&::placeholder',
+  _before: '&::before',
+  _after: '&::after',
 };

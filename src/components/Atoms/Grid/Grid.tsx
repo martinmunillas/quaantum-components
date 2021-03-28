@@ -2,12 +2,11 @@ import React from 'react';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
 import Box, { BoxProps } from '../Box/Box';
 
-export interface FlexProps extends BoxProps {}
+export interface GridProps extends BoxProps {}
 
-const Flex: React.FC<FlexProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Flex');
-
+const Grid: React.FC<GridProps> = (props) => {
+  const internalProps = useQuaantumInternalProps('Grid');
   return <Box {...internalProps} {...props} />;
 };
 
-export default Flex;
+export default Grid;

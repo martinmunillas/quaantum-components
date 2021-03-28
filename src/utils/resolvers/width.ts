@@ -1,4 +1,3 @@
-import { defaultMeasurament } from '../../defaults';
 import { QuaantumUIProps } from '../../types';
 
 export const widthResolver = (value: QuaantumUIProps['width']) => {
@@ -6,7 +5,7 @@ export const widthResolver = (value: QuaantumUIProps['width']) => {
     return '';
   }
   if (typeof value === 'number') {
-    return `${value}${defaultMeasurament.width}`;
+    return `${value}px`;
   }
   return value;
 };

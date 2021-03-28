@@ -1,15 +1,15 @@
-import { QuaantumUIProps } from '../../types';
+import { BuitUIProps } from '../../../types';
 
-const solidVariant: QuaantumUIProps = {
+const solidVariant: BuitUIProps = {
   color: 'white',
   bgColor: 'primary',
 };
-const ghostVariant: QuaantumUIProps = {
+const ghostVariant: BuitUIProps = {
   bgColor: 'transparent',
   color: 'primary',
 };
 
-const outlineVariant: QuaantumUIProps = {
+const outlineVariant: BuitUIProps = {
   ...ghostVariant,
   border: '1px solid currentColor',
 };
@@ -20,7 +20,7 @@ const variants = {
   outline: outlineVariant,
 };
 
-const base: QuaantumUIProps = {
+const base: BuitUIProps = {
   border: 'none',
   round: '50px',
   padding: '10px 20px',
@@ -36,7 +36,7 @@ const base: QuaantumUIProps = {
 
 const defaultVariant = 'solid';
 
-export const button = {
+export const Button = {
   variants,
   base,
   defaultVariant,

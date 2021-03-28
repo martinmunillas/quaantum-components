@@ -1,53 +1,27 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { QuaantumUIProps, Internal } from '../../../types';
-import { useGenCss } from '../../../utils/hooks/useGenCss';
-import { ctx } from '../../Providers/QuaantumProvider/QuaantumProvider';
+import React from 'react';
+import { QuaantumUIProps } from '../../../types';
+import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
+import { RawH1, RawH2, RawH3, RawH4, RawH5, RawH6 } from '../../HTML/HTML';
 
 export interface HeadingProps extends QuaantumUIProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-const defaultHeadingProps = {
-  color: 'primary',
+const headings = {
+  h1: RawH1,
+  h2: RawH2,
+  h3: RawH3,
+  h4: RawH4,
+  h5: RawH5,
+  h6: RawH6,
 };
 
-const H1 = styled.h1<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-const H2 = styled.h2<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-const H3 = styled.h3<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-const H4 = styled.h4<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-const H5 = styled.h5<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-const H6 = styled.h6<Omit<HeadingProps, 'as'> & Internal>`
-  ${(props) => props.genCss({ ...defaultHeadingProps, ...props })}
-`;
-
 const Heading = ({ as = 'h1', ...props }: HeadingProps) => {
-  const { components } = useContext(ctx);
-  const genCss = useGenCss();
-  switch (as) {
-    case 'h1':
-      return <H1 genCss={genCss} componentCtx={components.heading} {...props} />;
-    case 'h2':
-      return <H2 genCss={genCss} componentCtx={components.heading} {...props} />;
-    case 'h3':
-      return <H3 genCss={genCss} componentCtx={components.heading} {...props} />;
-    case 'h4':
-      return <H4 genCss={genCss} componentCtx={components.heading} {...props} />;
-    case 'h5':
-      return <H5 genCss={genCss} componentCtx={components.heading} {...props} />;
-    case 'h6':
-      return <H6 genCss={genCss} componentCtx={components.heading} {...props} />;
-  }
+  const internalProps = useQuaantumInternalProps('Heading');
+
+  const H = as in headings ? headings[as] : headings.h1;
+
+  return <H {...internalProps} {...props} />;
 };
 
 export default Heading;

@@ -1,27 +1,14 @@
 import React from 'react';
-import { useContext } from 'react';
-import styled from 'styled-components';
-import { QuaantumUIProps, Internal } from '../../../types';
-import { useGenCss } from '../../../utils/hooks/useGenCss';
-import { ctx } from '../../Providers/QuaantumProvider/QuaantumProvider';
+import { QuaantumUIProps } from '../../../types';
+import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
+import { RawButton } from '../../HTML/HTML';
 
-export interface ButtonProps extends QuaantumUIProps {
-  variant?: 'solid' | 'outline';
-}
-
-const ButtonWithoutContext = styled.button<ButtonProps & Internal>`
-  ${(props) =>
-    props.genCss({
-      ...props.componentCtx.base,
-      ...props.componentCtx.variants?.[props.variant || props.componentCtx.defaultVariant],
-    })}
-`;
+export interface ButtonProps extends QuaantumUIProps {}
 
 const Button: React.FC<ButtonProps> = (props) => {
-  console.log('Button');
-  const { components } = useContext(ctx);
-  const genCss = useGenCss();
-  return <ButtonWithoutContext componentCtx={components?.button} {...props} genCss={genCss} />;
+  const internalProps = useQuaantumInternalProps('Button');
+
+  return <RawButton {...internalProps} {...props} />;
 };
 
 export default Button;
