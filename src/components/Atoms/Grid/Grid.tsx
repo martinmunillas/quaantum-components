@@ -2,12 +2,11 @@ import React from 'react';
 import { useBuitInternalProps } from '../../../utils/hooks/useBuitInternalProps';
 import Box, { BoxProps } from '../Box/Box';
 
-export interface FlexProps extends BoxProps {}
+export interface GridProps extends BoxProps {}
 
-const Flex: React.FC<FlexProps> = (props) => {
-  const internalProps = useBuitInternalProps('Flex');
-
+const Grid: React.FC<GridProps> = (props) => {
+  const internalProps = useBuitInternalProps('Grid');
   return <Box {...internalProps} {...props} />;
 };
 
-export default Flex;
+export default Grid;

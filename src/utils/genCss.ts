@@ -1,4 +1,4 @@
-import { dictionary } from '../defaults';
+import { dictionary } from '../dictionary';
 import { ColorsCtx } from '../defaults/theme';
 import { BuitUIProps } from '../types';
 import resolvers from './resolvers';
