@@ -30,6 +30,7 @@ export interface BuitUIPropsRequired {
   overflowY: string;
   fontFamily: string;
   textDecoration: string;
+  position: string;
   _focus: Omit<BuitUIProps, '_focus'>;
   _hover: Omit<BuitUIProps, '_hover'>;
   _active: Omit<BuitUIProps, '_active'>;
