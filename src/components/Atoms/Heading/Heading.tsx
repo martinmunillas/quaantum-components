@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { QuaantumUIProps } from '../../../types';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
 import { RawH1, RawH2, RawH3, RawH4, RawH5, RawH6 } from '../../HTML/HTML';
 
-export interface HeadingProps extends QuaantumUIProps {
+export interface HeadingProps extends QuaantumUIProps, HTMLAttributes<HTMLHeadingElement> {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
@@ -16,7 +16,7 @@ const headings = {
   h6: RawH6,
 };
 
-const Heading = ({ as = 'h1', ...props }: HeadingProps) => {
+const Heading: React.FC<HeadingProps> = ({ as = 'h1', ...props }) => {
   const internalProps = useQuaantumInternalProps('Heading');
 
   const H = as in headings ? headings[as] : headings.h1;

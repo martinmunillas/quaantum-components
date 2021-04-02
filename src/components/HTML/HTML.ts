@@ -17,6 +17,7 @@ export const RawMain = styled.main<HTMLProps>(arr, gen);
 export const RawArticle = styled.article<HTMLProps>(arr, gen);
 export const RawSection = styled.section<HTMLProps>(arr, gen);
 export const RawAside = styled.aside<HTMLProps>(arr, gen);
+export const RawForm = styled.form<HTMLProps>(arr, gen);
 export const RawH1 = styled.h1<HTMLProps>(arr, gen);
 export const RawH2 = styled.h2<HTMLProps>(arr, gen);
 export const RawH3 = styled.h3<HTMLProps>(arr, gen);

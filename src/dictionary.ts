@@ -19,6 +19,8 @@ export const dictionary = {
   display: 'display',
   justifyContent: 'justify-content',
   alignItems: 'align-items',
+  flexDirection: 'flex-direction',
+  flexWrap: 'flex-wrap',
   resize: 'resize',
   overflow: 'overflow',
   overflowX: 'overflow-x',

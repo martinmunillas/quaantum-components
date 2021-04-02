@@ -22,6 +22,7 @@ export interface QuaantumUIPropsRequired {
   display: 'flex' | 'grid' | 'inline-flex' | 'inline-grid' | 'block' | 'inline' | 'none';
   justifyContent: string;
   alignItems: string;
+  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse';
   outline: string;
   resize: 'none' | 'both' | 'horizontal' | 'vertical' | 'inherit' | 'initial' | 'unset;';
   overflow: string;
