@@ -30,6 +30,7 @@ export interface QuaantumUIPropsRequired {
   overflowY: string;
   fontFamily: string;
   textDecoration: string;
+  position: string;
   _focus: Omit<QuaantumUIProps, '_focus'>;
   _hover: Omit<QuaantumUIProps, '_hover'>;
   _active: Omit<QuaantumUIProps, '_active'>;
