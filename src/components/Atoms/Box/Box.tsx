@@ -1,7 +1,17 @@
 import React, { HTMLAttributes } from 'react';
 import { QuaantumUIProps } from '../../../types';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { RawDiv, RawMain, RawArticle, RawSection, RawAside, RawForm } from '../../HTML/HTML';
+import {
+  RawFooter,
+  RawDiv,
+  RawMain,
+  RawArticle,
+  RawSection,
+  RawAside,
+  RawForm,
+  RawNav,
+  RawHeader,
+} from '../../HTML/HTML';
 
 const elements = {
   div: RawDiv,
@@ -10,10 +20,13 @@ const elements = {
   section: RawSection,
   aside: RawAside,
   form: RawForm,
+  nav: RawNav,
+  header: RawHeader,
+  footer: RawFooter,
 };
 
 export interface BoxProps extends QuaantumUIProps, HTMLAttributes<Element> {
-  as?: 'div' | 'main' | 'article' | 'section' | 'aside' | 'form';
+  as?: keyof typeof elements;
 }
 
 const Box: React.FC<BoxProps> = ({ as = 'div', ...props }) => {
