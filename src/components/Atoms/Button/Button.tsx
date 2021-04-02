@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { BuitUIProps } from '../../../types';
 import { useBuitInternalProps } from '../../../utils/hooks/useBuitInternalProps';
 import { RawButton } from '../../HTML/HTML';
 
-export interface ButtonProps extends BuitUIProps, HTMLAttributes<HTMLButtonElement> {}
+export interface ButtonProps extends BuitUIProps, ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button: React.FC<ButtonProps> = (props) => {
   const internalProps = useBuitInternalProps('Button');
