@@ -27,6 +27,7 @@ export const dictionary = {
   overflowY: 'overflow-y',
   fontFamily: 'font-family',
   textDecoration: 'text-decoration',
+  position: 'position',
   _hover: '&:hover',
   _active: '&:active',
   _focus: '&:focus',
