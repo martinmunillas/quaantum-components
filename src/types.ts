@@ -31,9 +31,19 @@ export interface QuaantumUIPropsRequired {
   fontFamily: string;
   textDecoration: string;
   position: string;
+  top: string;
+  left: string;
+  right: string;
+  bottom: string;
+  objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
+  objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
+  flexWrap: 'wrap' | 'no-wrap' | 'wrap-reverse';
   _focus: Omit<QuaantumUIProps, '_focus'>;
   _hover: Omit<QuaantumUIProps, '_hover'>;
   _active: Omit<QuaantumUIProps, '_active'>;
+  _placeholder: Omit<QuaantumUIProps, '_placeholder'>;
+  _after: Omit<QuaantumUIProps, '_after'>;
+  _before: Omit<QuaantumUIProps, '_before'>;
   variant: string;
 }
 

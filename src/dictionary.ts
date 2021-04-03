@@ -1,4 +1,6 @@
-export const dictionary = {
+import { QuaantumUIProps } from './types';
+
+export const dictionary: Record<keyof Omit<Required<QuaantumUIProps>, 'variant'>, string> = {
   color: 'color',
   bg: 'background',
   bgColor: 'background-color',
@@ -26,8 +28,15 @@ export const dictionary = {
   overflowX: 'overflow-x',
   overflowY: 'overflow-y',
   fontFamily: 'font-family',
+  fontSize: 'font-size',
   textDecoration: 'text-decoration',
   position: 'position',
+  top: 'top',
+  left: 'left',
+  right: 'right',
+  bottom: 'bottom',
+  objectFit: 'object-fit',
+  objectPosition: 'object-position',
   _hover: '&:hover',
   _active: '&:active',
   _focus: '&:focus',
