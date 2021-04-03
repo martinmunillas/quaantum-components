@@ -8,6 +8,8 @@ import { Text } from '../components/Atoms/Text/Text.defaultStyles';
 import { Grid } from '../components/Atoms/Grid/Grid.defaultStyles';
 import { Box } from '../components/Atoms/Box/Box.defaultStyles';
 import { Heading } from '../components/Atoms/Heading/Heading.defaultStyles';
+import { Image } from '../components/Atoms/Image/Image.defaultStyles';
+import { Link } from '../components/Atoms/Link/Link.defaultStyles';
 
 export interface ColorsCtx {
   [color: string]: string | ColorsCtx;
@@ -56,5 +58,7 @@ export const theme: Theme = {
     Grid,
     Box,
     Heading,
+    Image,
+    Link,
   },
 };

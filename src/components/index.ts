@@ -26,3 +26,8 @@ export { default as Input } from './Atoms/Input/Input';
 
 export * from './Atoms/TextArea/TextArea';
 export { default as TextArea } from './Atoms/TextArea/TextArea';
+export * from './Atoms/Image/Image';
+export { default as Image } from './Atoms/Image/Image';
+
+export * from './Atoms/Link/Link';
+export { default as Link } from './Atoms/Link/Link';
