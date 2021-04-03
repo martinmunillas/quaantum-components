@@ -31,9 +31,19 @@ export interface BuitUIPropsRequired {
   fontFamily: string;
   textDecoration: string;
   position: string;
+  top: string;
+  left: string;
+  right: string;
+  bottom: string;
+  objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
+  objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
+  flexWrap: 'wrap' | 'no-wrap' | 'wrap-reverse';
   _focus: Omit<BuitUIProps, '_focus'>;
   _hover: Omit<BuitUIProps, '_hover'>;
   _active: Omit<BuitUIProps, '_active'>;
+  _placeholder: Omit<BuitUIProps, '_placeholder'>;
+  _after: Omit<BuitUIProps, '_after'>;
+  _before: Omit<BuitUIProps, '_before'>;
   variant: string;
 }
 

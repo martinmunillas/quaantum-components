@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BuitUIProps, Internal } from '../../types';
+import { Link } from 'react-router-dom';
 
 export type HTMLProps = Internal & BuitUIProps;
 
@@ -31,3 +32,6 @@ export const RawInput = styled.input<HTMLProps>(arr, gen);
 export const RawTextarea = styled.textarea<HTMLProps>(arr, gen);
 export const RawButton = styled.button<HTMLProps>(arr, gen);
 export const RawP = styled.p<HTMLProps>(arr, gen);
+export const RawImage = styled.img<HTMLProps>(arr, gen);
+export const RawAnchor = styled.a<HTMLProps>(arr, gen);
+export const RawLink = styled(Link)<HTMLProps>(arr, gen);
