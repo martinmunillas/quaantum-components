@@ -10,6 +10,9 @@ import { Box } from '../components/Atoms/Box/Box.defaultStyles';
 import { Heading } from '../components/Atoms/Heading/Heading.defaultStyles';
 import { Image } from '../components/Atoms/Image/Image.defaultStyles';
 import { Link } from '../components/Atoms/Link/Link.defaultStyles';
+import { ListItem } from '../components/Atoms/ListItem/ListItem.defaultStyles';
+import { UnorderedList } from '../components/Atoms/UnorderedList/UnorderedList.defaultStyles';
+import { OrderedList } from '../components/Atoms/OrderedList/OrderedList.defaultStyles';
 
 export interface ColorsCtx {
   [color: string]: string | ColorsCtx;
@@ -25,7 +28,7 @@ export interface ComponentCtx {
   defaultVariant: string;
 }
 
-interface Components {
+export interface Components {
   [component: string]: ComponentCtx;
 }
 
@@ -60,5 +63,8 @@ export const theme: Theme = {
     Heading,
     Image,
     Link,
+    ListItem,
+    UnorderedList,
+    OrderedList,
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Theme, theme as quaantumTheme } from '../../../defaults/theme';
-import { ctx } from '../../../utils/providerContext';
+import { ctx } from '../../../utils/ctx/providerContext';
 import GlobalCssProvider from '../GlobalStyleProvider/GlobalStyleProvider';
 
 export interface QuaantumProviderProps {

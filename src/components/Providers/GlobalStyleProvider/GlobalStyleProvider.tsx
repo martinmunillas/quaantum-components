@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { QuaantumUIProps, Internal } from '../../../types';
 import { useGenCss } from '../../../utils/hooks/useGenCss';
-import { ctx } from '../../../utils/providerContext';
+import { ctx } from '../../../utils/ctx/providerContext';
 
 export interface GlobalCssProviderProps {}
 
