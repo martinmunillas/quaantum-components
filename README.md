@@ -6,31 +6,29 @@ BuitUI is a react library that provides multiple UI components ultra-customizabl
 
 1.- Wrap your app in the BuitProvider with your custom theme:
 ```tsx
-import { BuitProvider, extendTheme, theme } from 'buit-ui;
+import { BuitProvider, extendTheme, theme } from 'buit-ui';
 
 const yourTheme = extendTheme(theme, {
   colors: {
-    primary: '#123456'
+    primary: '#123456',
   },
   font: 'Arial',
   components: {
     Input: {
       base: {
-        bgColor: 'white', 
-      }
-    }
-  }
-})
+        bgColor: 'white',
+      },
+    },
+  },
+});
 
 interface YourAppProps {}
 
 const YourApp: React.FC<YourAppProps> = (props) => {
-  return  (
+  return (
     <BuitProvider theme={yourTheme}>
       <YourComponent />
     </BuitProvider>
-  
-  )
+  );
 };
-
 ```
