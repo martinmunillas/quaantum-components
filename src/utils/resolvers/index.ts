@@ -10,6 +10,9 @@ const resolvers = {
   _hover: pseudoResolver,
   _active: pseudoResolver,
   _focus: pseudoResolver,
+  _placeholder: pseudoResolver,
+  _before: pseudoResolver,
+  _after: pseudoResolver,
 };
 
 export default resolvers;

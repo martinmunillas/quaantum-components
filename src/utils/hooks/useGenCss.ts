@@ -1,10 +1,29 @@
-import { useContext } from 'react';
 import { BuitUIProps } from '../../types';
-import { genCss } from '../genCss';
-import { ctx } from '../providerContext';
+import { dictionary } from '../../dictionary';
+import { ColorsCtx } from '../../defaults/theme';
+import resolvers from '../resolvers';
+import { useTheme } from './useTheme';
+
+export interface Config {
+  colors: ColorsCtx;
+}
+
+export const genCss = (props: BuitUIProps, config: Config): string => {
+  return (
+    Object.keys(dictionary)
+      .filter((key) => props[key])
+      .reduce(
+        (prev, curr) => `${prev}${dictionary[curr]}${!curr.startsWith('_') ? ':' : ''} ${
+          curr in resolvers ? resolvers[curr](props[curr], config) : props[curr]
+        };
+      `,
+        ''
+      ) + (props.customCss || '')
+  );
+};
 
 export const useGenCss = () => {
-  const { colors } = useContext(ctx);
+  const { colors } = useTheme();
 
   const generate = (props: BuitUIProps) => {
     return genCss(props, { colors });

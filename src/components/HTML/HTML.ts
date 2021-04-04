@@ -35,3 +35,6 @@ export const RawP = styled.p<HTMLProps>(arr, gen);
 export const RawImage = styled.img<HTMLProps>(arr, gen);
 export const RawAnchor = styled.a<HTMLProps>(arr, gen);
 export const RawLink = styled(Link)<HTMLProps>(arr, gen);
+export const RawLi = styled.li<HTMLProps>(arr, gen);
+export const RawUl = styled.ul<HTMLProps>(arr, gen);
+export const RawOl = styled.ol<HTMLProps>(arr, gen);
