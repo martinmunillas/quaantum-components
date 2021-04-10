@@ -1,13 +1,25 @@
 import React from 'react';
 import Link from './Link';
-import { render, screen } from '@testing-library/react';
-
-
-const setup = (props) => render(<Link {...props} />);
+import { render, screen, cleanup } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Link', () => {
-  it('renders', () => {
-    setup({children: 'foo'});
+  it("renders as a react-router-dom's Link", () => {
+    render(
+      <BrowserRouter>
+        <Link href='/'>foo</Link>
+      </BrowserRouter>
+    );
+    expect(screen.getByText('foo'));
+    cleanup();
+  });
+
+  it('renders as an anchor when external prop is passed', () => {
+    render(
+      <Link href='/' external>
+        foo
+      </Link>
+    );
     expect(screen.getByText('foo'));
   });
 });
