@@ -10,8 +10,8 @@ export interface Config {
 
 export const genCss = (props: BuitUIProps, config: Config): string => {
   return (
-    Object.keys(dictionary)
-      .filter((key) => props[key])
+    Object.keys(props)
+      .filter((prop) => prop in dictionary)
       .reduce(
         (prev, curr) => `${prev}${dictionary[curr]}${!curr.startsWith('_') ? ':' : ''} ${
           curr in resolvers ? resolvers[curr](props[curr], config) : props[curr]

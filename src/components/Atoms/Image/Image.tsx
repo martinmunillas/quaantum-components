@@ -3,7 +3,10 @@ import { BuitUIProps } from '../../../types';
 import { useBuitInternalProps } from '../../../utils/hooks/useBuitInternalProps';
 import { RawImage } from '../../HTML/HTML';
 
-export interface ImageProps extends BuitUIProps, ImgHTMLAttributes<HTMLImageElement> {}
+export interface ImageProps extends BuitUIProps, ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt: string;
+}
 
 const Image: React.FC<ImageProps> = (props) => {
   const internalProps = useBuitInternalProps('Image');
