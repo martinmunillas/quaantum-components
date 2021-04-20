@@ -1,13 +1,12 @@
-# QuaantumUI
+# Quaantum Components
 
-QuaantumUI is a react library that provides multiple UI components ultra-customizables.
+Quaantum Components is a react library that provides multiple UI components ultra-customizables.
 
 ## Getting Started
 
 1.- Wrap your app in the QuaantumProvider with your custom theme:
 ```tsx
-import { QuaantumProvider, extendTheme, theme } from 'quaantum-ui';
-
+import { QuaantumProvider, extendTheme, theme } from 'quaantum-components'
 const yourTheme = extendTheme(theme, {
   colors: {
     primary: '#123456',
