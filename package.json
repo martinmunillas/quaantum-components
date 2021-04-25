@@ -1,10 +1,10 @@
 {
   "name": "quaantum-ui",
   "license": "MIT",
-  "version": "0.2.6",
+  "version": "0.0.1",
   "private": false,
   "description": "UI Components for React",
-  "author": "Quaantum",
+  "author": "Martin Munilla",
   "scripts": {
     "build": "yarn clean; rollup -c",
     "clean": "rimraf dist",
