@@ -1,7 +1,7 @@
 import { ComponentCtx } from './defaults/theme';
 import { GenCss } from './utils/hooks/useGenCss';
 
-export interface QuaantumUIPropsRequired {
+export interface QuaantumPropsRequired {
   round: string | number;
   color: string;
   border: string;
@@ -75,21 +75,21 @@ export interface QuaantumUIPropsRequired {
   transform: string;
   transformOrigin: string;
   textAlign: 'center' | 'left' | 'right';
-  _focus: Omit<QuaantumUIProps, '_focus'>;
-  _hover: Omit<QuaantumUIProps, '_hover'>;
-  _active: Omit<QuaantumUIProps, '_active'>;
-  _placeholder: Omit<QuaantumUIProps, '_placeholder'>;
-  _after: Omit<QuaantumUIProps, '_after'>;
-  _before: Omit<QuaantumUIProps, '_before'>;
+  _focus: Omit<QuaantumProps, '_focus'>;
+  _hover: Omit<QuaantumProps, '_hover'>;
+  _active: Omit<QuaantumProps, '_active'>;
+  _placeholder: Omit<QuaantumProps, '_placeholder'>;
+  _after: Omit<QuaantumProps, '_after'>;
+  _before: Omit<QuaantumProps, '_before'>;
   variant: string;
   customCss: string;
 }
 
-export type QuaantumUIProps = Partial<QuaantumUIPropsRequired>;
+export type QuaantumProps = Partial<QuaantumPropsRequired>;
 
 export interface Internal {
   componentCtx: ComponentCtx;
   genCss: GenCss;
 }
 
-export type InternalProps<T extends QuaantumUIProps> = T & Internal;
+export type InternalProps<T extends QuaantumProps> = T & Internal;

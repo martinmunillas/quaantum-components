@@ -1,9 +1,9 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
 import { RawAnchor, RawLink } from '../../HTML/HTML';
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 
-export interface LinkProps extends QuaantumUIProps, AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps extends QuaantumProps, AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
   href: string;
 }

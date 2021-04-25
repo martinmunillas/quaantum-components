@@ -1,7 +1,7 @@
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 import { ComponentCtx, VariantsCtx } from '../../../defaults/theme';
 
-const base: QuaantumUIProps = {
+const base: QuaantumProps = {
   border: '1px solid gray',
   padding: '10px 15px',
   round: '5px',

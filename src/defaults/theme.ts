@@ -1,4 +1,4 @@
-import { QuaantumUIProps } from '../types';
+import { QuaantumProps } from '../types';
 import { global } from './global';
 import { Button } from '../components/Atoms/Button/Button.defaultStyles';
 import { Flex } from '../components/Atoms/Flex/Flex.defaultStyles';
@@ -19,11 +19,11 @@ export interface ColorsCtx {
 }
 
 export interface VariantsCtx {
-  [variant: string]: QuaantumUIProps;
+  [variant: string]: QuaantumProps;
 }
 
 export interface ComponentCtx {
-  base: QuaantumUIProps;
+  base: QuaantumProps;
   variants: VariantsCtx;
   defaultVariant: string;
 }
@@ -33,7 +33,7 @@ export interface Components {
 }
 
 export interface Global {
-  [selector: string]: QuaantumUIProps;
+  [selector: string]: QuaantumProps;
 }
 
 export interface Theme {

@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
 import {
   RawFooter,
@@ -25,7 +25,7 @@ const elements = {
   footer: RawFooter,
 };
 
-export interface BoxProps extends QuaantumUIProps, HTMLAttributes<Element> {
+export interface BoxProps extends QuaantumProps, HTMLAttributes<Element> {
   as?: keyof typeof elements;
 }
 

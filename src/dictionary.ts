@@ -1,7 +1,7 @@
-import { QuaantumUIProps } from './types';
+import { QuaantumProps } from './types';
 
 export const dictionary: Record<
-  keyof Omit<Required<QuaantumUIProps>, 'variant' | 'customCss'>,
+  keyof Omit<Required<QuaantumProps>, 'variant' | 'customCss'>,
   string
 > = {
   color: 'color',

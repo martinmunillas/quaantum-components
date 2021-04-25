@@ -1,12 +1,12 @@
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 
-const normal: QuaantumUIProps = {};
+const normal: QuaantumProps = {};
 
 const variants = {
   normal,
 };
 
-const base: QuaantumUIProps = {};
+const base: QuaantumProps = {};
 
 const defaultVariant = 'normal';
 

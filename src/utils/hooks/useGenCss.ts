@@ -1,4 +1,4 @@
-import { QuaantumUIProps } from '../../types';
+import { QuaantumProps } from '../../types';
 import { dictionary } from '../../dictionary';
 import { ColorsCtx } from '../../defaults/theme';
 import resolvers from '../resolvers';
@@ -8,7 +8,7 @@ export interface Config {
   colors: ColorsCtx;
 }
 
-export const genCss = (props: QuaantumUIProps, config: Config): string => {
+export const genCss = (props: QuaantumProps, config: Config): string => {
   return (
     Object.keys(props)
       .filter((prop) => prop in dictionary)
@@ -25,7 +25,7 @@ export const genCss = (props: QuaantumUIProps, config: Config): string => {
 export const useGenCss = () => {
   const { colors } = useTheme();
 
-  const generate = (props: QuaantumUIProps) => {
+  const generate = (props: QuaantumProps) => {
     return genCss(props, { colors });
   };
   return generate;

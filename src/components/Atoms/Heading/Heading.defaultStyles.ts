@@ -1,7 +1,7 @@
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 
-const normal: QuaantumUIProps = {};
-const underline: QuaantumUIProps = {
+const normal: QuaantumProps = {};
+const underline: QuaantumProps = {
   textDecoration: 'underline',
 };
 
@@ -10,7 +10,7 @@ const variants = {
   underline,
 };
 
-const base: QuaantumUIProps = {
+const base: QuaantumProps = {
   color: 'primary',
 };
 

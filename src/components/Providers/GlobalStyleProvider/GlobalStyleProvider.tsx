@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { QuaantumUIProps, Internal } from '../../../types';
+import { QuaantumProps, Internal } from '../../../types';
 import { useGenCss } from '../../../utils/hooks/useGenCss';
 import { ctx } from '../../../utils/ctx/providerContext';
 
@@ -8,7 +8,7 @@ export interface GlobalCssProviderProps {}
 
 const GlobalCss = createGlobalStyle(
   ([] as unknown) as TemplateStringsArray,
-  ({ genCss, componentCtx, ...props }: QuaantumUIProps & Internal) =>
+  ({ genCss, componentCtx, ...props }: QuaantumProps & Internal) =>
     Object.entries(props)
       .map(([selector, css]) => (css ? `${selector} {${genCss(css)}}` : ''))
       .reduce((prev, curr) => prev + curr, '')

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { QuaantumUIProps, Internal } from '../../types';
+import { QuaantumProps, Internal } from '../../types';
 import { Link } from 'react-router-dom';
 
-export type HTMLProps = Internal & QuaantumUIProps;
+export type HTMLProps = Internal & QuaantumProps;
 
 const gen = <T extends HTMLProps>(props: T) =>
   props.genCss({

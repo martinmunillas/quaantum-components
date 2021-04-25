@@ -1,7 +1,7 @@
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 import { ComponentCtx, VariantsCtx } from '../../../defaults/theme';
 
-const base: QuaantumUIProps = {};
+const base: QuaantumProps = {};
 const variants: VariantsCtx = {};
 
 export const Text: ComponentCtx = {

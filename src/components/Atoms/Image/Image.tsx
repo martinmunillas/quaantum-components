@@ -1,9 +1,9 @@
 import React, { ImgHTMLAttributes } from 'react';
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
 import { RawImage } from '../../HTML/HTML';
 
-export interface ImageProps extends QuaantumUIProps, ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps extends QuaantumProps, ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
 }

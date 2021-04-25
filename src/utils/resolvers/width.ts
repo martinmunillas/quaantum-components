@@ -1,6 +1,6 @@
-import { QuaantumUIProps } from '../../types';
+import { QuaantumProps } from '../../types';
 
-export const widthResolver = (value: QuaantumUIProps['width']) => {
+export const widthResolver = (value: QuaantumProps['width']) => {
   if (!value) {
     return '';
   }

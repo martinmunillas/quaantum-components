@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "0.2.6",
   "private": false,
-  "description": "Quaantum Components for Ecommerce Templates",
+  "description": "UI Components for React",
   "author": "Quaantum",
   "scripts": {
     "build": "yarn clean; rollup -c",

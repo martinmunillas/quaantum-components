@@ -1,7 +1,7 @@
-import { QuaantumUIProps } from '../../../types';
+import { QuaantumProps } from '../../../types';
 import { ComponentCtx } from '../../../defaults/theme';
 
-const base: QuaantumUIProps = {
+const base: QuaantumProps = {
   display: 'flex',
 };
 
