@@ -48,7 +48,15 @@ export interface QuaantumPropsRequired {
   minH: string | number;
   maxH: string | number;
   cursor: string;
-  display: 'flex' | 'grid' | 'inline-flex' | 'inline-grid' | 'block' | 'inline' | 'none';
+  display:
+    | 'flex'
+    | 'grid'
+    | 'inline-flex'
+    | 'inline-grid'
+    | 'block'
+    | 'inline'
+    | 'inline-block'
+    | 'none';
   justifyContent: string;
   alignItems: string;
   flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse';
