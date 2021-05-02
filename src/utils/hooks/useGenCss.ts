@@ -3,6 +3,7 @@ import { dictionary } from '../../dictionary';
 import { ColorsCtx } from '../../defaults/theme';
 import resolvers from '../resolvers';
 import { useTheme } from './useTheme';
+import { useCallback } from 'react';
 
 export interface Config {
   colors: ColorsCtx;
@@ -25,9 +26,12 @@ export const genCss = (props: QuaantumProps, config: Config): string => {
 export const useGenCss = () => {
   const { colors } = useTheme();
 
-  const generate = (props: QuaantumProps) => {
-    return genCss(props, { colors });
-  };
+  const generate = useCallback(
+    (props: QuaantumProps) => {
+      return genCss(props, { colors });
+    },
+    [colors]
+  );
   return generate;
 };
 
