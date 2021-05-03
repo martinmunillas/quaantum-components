@@ -52,6 +52,7 @@ export const theme: Theme = {
     secondary: '#787123',
     tertiary: '#555978',
   },
+  font: 'sans-serif',
   components: {
     Button,
     Flex,

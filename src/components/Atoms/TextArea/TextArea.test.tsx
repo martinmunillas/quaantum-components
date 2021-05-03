@@ -1,12 +1,13 @@
 import React from 'react';
 import TextArea from './TextArea';
 import { render, screen } from '@testing-library/react';
+import { Props } from '../../../types';
 
-const setup = (props) => render(<TextArea {...props} />);
+const setup = (props: Props<typeof TextArea>) => render(<TextArea {...props} data-testid='test' />);
 
 describe('TextArea', () => {
   it('renders', () => {
-    setup({ 'data-testid': 'test' });
+    setup({});
     expect(screen.getByTestId('test'));
   });
 });

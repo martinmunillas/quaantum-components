@@ -1,13 +1,13 @@
 import React from 'react';
 import Box from './Box';
 import { render, screen } from '@testing-library/react';
+import { Props } from '../../../types';
 
-
-const setup = (props) => render(<Box {...props} />);
+const setup = (props: Props<typeof Box>) => render(<Box {...props} />);
 
 describe('Box', () => {
   it('renders', () => {
-    setup({children: 'foo'});
+    setup({ children: 'foo' });
     expect(screen.getByText('foo'));
   });
 });

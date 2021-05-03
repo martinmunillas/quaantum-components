@@ -31,7 +31,6 @@ export interface BoxProps extends QuaantumProps, HTMLAttributes<Element> {
 
 const Box: React.FC<BoxProps> = ({ as = 'div', ...props }) => {
   const internalProps = useQuaantumInternalProps('Box');
-
   const Component = (as in elements ? elements[as] : elements.div) as typeof elements[Exclude<
     keyof typeof elements,
     'form'

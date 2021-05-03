@@ -1,8 +1,9 @@
 import React from 'react';
 import Input from './Input';
 import { render, screen } from '@testing-library/react';
+import { Props } from '../../../types';
 
-const setup = (props) => render(<Input {...props} />);
+const setup = (props: Props<typeof Input>) => render(<Input {...props} />);
 
 describe('Input', () => {
   it('renders', () => {
