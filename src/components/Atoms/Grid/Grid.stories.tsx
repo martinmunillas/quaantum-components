@@ -25,4 +25,6 @@ const Template: Story<GridProps> = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  gridTemplateColumns: 'repeat(4, 1fr)',
+};

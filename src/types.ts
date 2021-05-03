@@ -312,9 +312,9 @@ export interface Css
 }
 
 export type QuaantumProps = { [P in keyof Css]?: Css[P] | 'inherit' | 'initial' | 'unset' };
-interface Internal {
+type Internal = {
   componentCtx: ComponentCtx;
   genCss: GenCss;
-}
+};
 
 export type InternalProps<T extends QuaantumProps> = T & Internal;

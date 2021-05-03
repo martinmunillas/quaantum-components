@@ -206,3 +206,5 @@ export const dictionary: UseKeys<Omit<Required<QuaantumProps>, 'variant' | 'cust
   zIndex: 'z-index',
   listStyle: 'list-style',
 };
+
+export const internalProps = [...Object.keys(dictionary), 'componentCtx', 'variant', 'genCss'];
