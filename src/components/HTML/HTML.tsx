@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { InternalProps, QuaantumProps } from '../../types';
+import { InternalProps, Props, QuaantumProps } from '../../types';
 import { Link } from 'react-router-dom';
 import { internalProps } from '../../dictionary';
 
@@ -17,19 +17,21 @@ interface RawProps {
   styles: string;
 }
 
-const props = [([] as unknown) as TemplateStringsArray, (props) => props.styles] as const;
+const props = [([] as unknown) as TemplateStringsArray, (props: RawProps) => props.styles] as const;
 
-const hoc = (Component: React.FC<RawProps>): React.FC<HTMLProps> => (props) => {
+const hoc = <T extends RawProps>(
+  Component: React.FC<T>
+): React.FC<HTMLProps & Omit<T, 'styles'>> => (props) => {
   const styles = gen(props);
-  const finalProps = {};
+  const finalProps: Record<string, any> = { styles };
 
-  for (const prop of Object.entries(props)) {
+  for (const prop of Object.entries(props) as [string, any][]) {
     if (!internalProps.includes(prop[0])) {
       finalProps[prop[0]] = prop[1];
     }
   }
 
-  return <Component styles={styles} {...finalProps} />;
+  return <Component {...(finalProps as T)} />;
 };
 
 export const RawDiv = hoc(styled.div<RawProps>(...props));
@@ -53,7 +55,9 @@ export const RawButton = hoc(styled.button<RawProps>(...props));
 export const RawP = hoc(styled.p<RawProps>(...props));
 export const RawImage = hoc(styled.img<RawProps>(...props));
 export const RawAnchor = hoc(styled.a<RawProps>(...props));
-export const RawLink = hoc(styled(Link)<RawProps>(...props));
+export const RawLink: React.FC<HTMLProps & Props<typeof Link>> = hoc(
+  styled(Link)<RawProps>(...props)
+);
 export const RawLi = hoc(styled.li<RawProps>(...props));
 export const RawUl = hoc(styled.ul<RawProps>(...props));
 export const RawOl = hoc(styled.ol<RawProps>(...props));

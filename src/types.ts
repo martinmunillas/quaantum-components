@@ -318,3 +318,5 @@ type Internal = {
 };
 
 export type InternalProps<T extends QuaantumProps> = T & Internal;
+
+export type Props<T> = T extends (props: infer S) => any ? S : T;

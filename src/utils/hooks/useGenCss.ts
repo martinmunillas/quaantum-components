@@ -14,8 +14,15 @@ export const genCss = (props: QuaantumProps, config: Config): string => {
     Object.keys(props)
       .filter((prop) => prop in dictionary)
       .reduce(
-        (prev, curr) => `${prev}${dictionary[curr]}${!curr.startsWith('_') ? ':' : ''} ${
-          curr in resolvers ? resolvers[curr](props[curr], config) : props[curr]
+        (prev, curr) => `${prev}${dictionary[curr as keyof typeof dictionary]}${
+          !curr.startsWith('_') ? ':' : ''
+        } ${
+          curr in resolvers
+            ? resolvers[curr as keyof typeof resolvers](
+                props[curr as keyof QuaantumProps] as any,
+                config
+              )
+            : props[curr as keyof QuaantumProps]
         };
       `,
         ''

@@ -1,8 +1,8 @@
-import { Internal } from '../../types';
+import { InternalProps } from '../../types';
 import { useGenCss } from './useGenCss';
 import { useTheme } from './useTheme';
 
-export const useQuaantumInternalProps = (name: string): Internal => {
+export const useQuaantumInternalProps = (name: string): InternalProps<{}> => {
   const { components } = useTheme();
   const genCss = useGenCss();
 
