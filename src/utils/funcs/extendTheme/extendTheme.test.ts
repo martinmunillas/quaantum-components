@@ -20,6 +20,12 @@ describe('extendTheme()', () => {
       variants: {},
     },
   };
+
+  const units = {
+    measurement: 'px',
+    speed: 's',
+  };
+
   it('should return the default theme', () => {
     expect(extendTheme(theme, {})).toEqual(theme);
   });
@@ -44,11 +50,12 @@ describe('extendTheme()', () => {
   });
 
   it('should overwrite all', () => {
-    expect(extendTheme(theme, { colors, components, global, font })).toEqual({
+    expect(extendTheme(theme, { colors, components, global, font, units })).toEqual({
       colors,
       components: { ...theme.components, ...components },
       global,
       font,
+      units,
     });
   });
 });

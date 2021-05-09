@@ -6,7 +6,7 @@ import { RawTextarea } from '../../HTML/HTML';
 export interface TextAreaProps extends QuaantumProps, TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('TextArea');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'TextArea');
 
   return <RawTextarea {...internalProps} {...props} />;
 };

@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "dev": "yarn storybook",
     "storybook": "start-storybook -p 9001",
-    "test": "jest --maxWorkers=2",
+    "test": "jest --maxWorkers=2 --verbose",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "hygen": "hygen",

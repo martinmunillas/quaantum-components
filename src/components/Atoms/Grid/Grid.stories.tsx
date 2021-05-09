@@ -11,7 +11,6 @@ export default {
 } as Meta;
 
 const Template: Story<GridProps> = (args) => {
-  console.log(args);
   return (
     <QuaantumProvider theme={theme}>
       <Grid {...args} width='100%'>

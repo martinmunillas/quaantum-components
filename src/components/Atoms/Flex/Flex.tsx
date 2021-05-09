@@ -7,7 +7,7 @@ export interface FlexProps extends BoxProps {
 }
 
 const Flex: React.FC<FlexProps> = ({ direction, ...props }) => {
-  const internalProps = useQuaantumInternalProps('Flex');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Flex');
 
   return (
     <Box

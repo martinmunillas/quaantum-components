@@ -6,7 +6,7 @@ import { RawInput } from '../../HTML/HTML';
 export interface InputProps extends QuaantumProps, InputHTMLAttributes<HTMLInputElement> {}
 
 const Input: React.FC<InputProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Input');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Input');
 
   return <RawInput {...internalProps} {...props} />;
 };

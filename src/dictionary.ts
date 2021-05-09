@@ -14,8 +14,10 @@ import {
   PseudoClasses,
   PseudoElements,
   AnimationProperties,
+  QuaantumProperties,
 } from './types';
-import { Config, Resolver } from './utils/resolvers/ResolveCss';
+import { Config } from './utils/resolvers/resolve';
+import { Resolver } from './utils/resolvers/Resolver';
 
 type KeysToResolvers<T extends Record<any, any>> = Record<
   keyof T,
@@ -23,8 +25,8 @@ type KeysToResolvers<T extends Record<any, any>> = Record<
 >;
 
 const colorProps: KeysToResolvers<ColorProperties> = {
-  color: Resolver.color('color'),
-  c: Resolver.color('color'),
+  color: Resolver.color(),
+  c: Resolver.color(),
 };
 
 const backgroundProps: KeysToResolvers<BackgroundProperties> = {
@@ -187,7 +189,9 @@ const animationProps: KeysToResolvers<AnimationProperties> = {
   transitionProperty: Resolver.general('transition-property'),
 };
 
-export const dictionary: KeysToResolvers<Omit<Required<QuaantumProps>, 'variant' | 'customCss'>> = {
+export const dictionary: KeysToResolvers<
+  Omit<Required<QuaantumProps>, keyof QuaantumProperties>
+> = {
   ...colorProps,
   ...backgroundProps,
   ...borderProps,
@@ -214,8 +218,8 @@ export const dictionary: KeysToResolvers<Omit<Required<QuaantumProps>, 'variant'
 
 export const internalProps = [
   ...Object.keys(dictionary),
-  'componentCtx',
   'variant',
-  'genCss',
+  'styleAs',
   'customCss',
+  'componentName',
 ];

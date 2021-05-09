@@ -3,15 +3,10 @@ import styled from 'styled-components';
 import { InternalProps, Props, QuaantumProps } from '../../types';
 import { Link } from 'react-router-dom';
 import { internalProps } from '../../dictionary';
+import { useGenCss } from '../../utils/hooks/useGenCss';
+import { useTheme } from '../../utils/hooks/useTheme';
 
 export type HTMLProps = InternalProps<QuaantumProps>;
-
-const gen = <T extends HTMLProps>(props: T) =>
-  props.genCss({
-    ...props.componentCtx.base,
-    ...props.componentCtx.variants?.[props.variant || props.componentCtx.defaultVariant],
-    ...props,
-  });
 
 interface RawProps {
   styles: string;
@@ -22,7 +17,18 @@ const props = [([] as unknown) as TemplateStringsArray, (props: RawProps) => pro
 const hoc = <T extends RawProps>(
   Component: React.FC<T>
 ): React.FC<HTMLProps & Omit<T, 'styles'>> => (props) => {
-  const styles = gen(props);
+  const gen = useGenCss();
+  const theme = useTheme();
+
+  const builtHieriarchy = {
+    ...theme.components[props.componentName]?.base,
+    ...theme.components[props.componentName]?.variants?.[
+      props.variant || theme.components[props.componentName].defaultVariant
+    ],
+    ...props,
+  };
+
+  const styles = gen(builtHieriarchy);
   const finalProps: Record<string, any> = { styles };
 
   for (const prop of Object.entries(props) as [string, any][]) {

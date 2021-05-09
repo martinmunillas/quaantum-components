@@ -5,7 +5,7 @@ import Box, { BoxProps } from '../Box/Box';
 export interface GridProps extends BoxProps {}
 
 const Grid: React.FC<GridProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Grid');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Grid');
   return <Box {...internalProps} {...props} />;
 };
 

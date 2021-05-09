@@ -17,7 +17,7 @@ const headings = {
 };
 
 const Heading: React.FC<HeadingProps> = ({ as = 'h1', ...props }) => {
-  const internalProps = useQuaantumInternalProps('Heading');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Heading');
 
   const H = as in headings ? headings[as] : headings.h1;
 

@@ -1,6 +1,3 @@
-import { ComponentCtx } from './defaults/theme';
-import { GenCss } from './utils/hooks/useGenCss';
-
 export interface BorderProperties {
   borderRadius: string | number;
   /**
@@ -241,6 +238,7 @@ export interface PseudoClasses {
 export interface QuaantumProperties {
   variant: string;
   customCss: string;
+  styleAs: string;
 }
 
 export interface AnimationProperties {
@@ -314,10 +312,9 @@ export interface Css
 }
 
 export type QuaantumProps = { [P in keyof Css]?: Css[P] | 'inherit' | 'initial' | 'unset' };
-type Internal = {
-  componentCtx: ComponentCtx;
-  genCss: GenCss;
-};
+interface Internal {
+  componentName: string;
+}
 
 export type InternalProps<T extends QuaantumProps> = T & Internal;
 
