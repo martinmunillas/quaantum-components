@@ -116,6 +116,8 @@ export interface SizeProperties {
   minHeight: string | number;
   maxHeight: string | number;
 
+  boxSizing: 'content-box' | 'border-box';
+
   /**
    * shortcut for width
    */

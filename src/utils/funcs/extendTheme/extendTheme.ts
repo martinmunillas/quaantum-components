@@ -6,5 +6,6 @@ export const extendTheme = (theme: Theme, customTheme: Partial<Theme>): Theme =>
     components: { ...theme.components, ...customTheme.components },
     global: customTheme.global || theme.global,
     font: customTheme.font || theme.font,
+    units: customTheme.units || theme.units,
   };
 };

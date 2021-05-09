@@ -36,11 +36,16 @@ export interface Global {
   [selector: string]: QuaantumProps;
 }
 
+export interface Units {
+  measurement: string;
+  speed: string;
+}
 export interface Theme {
   colors: ColorsCtx;
   font?: string;
   components: Components;
   global?: Global;
+  units: Units;
 }
 
 export const theme: Theme = {
@@ -51,6 +56,10 @@ export const theme: Theme = {
     primary: '#345674',
     secondary: '#787123',
     tertiary: '#555978',
+  },
+  units: {
+    measurement: 'em',
+    speed: 's',
   },
   font: 'sans-serif',
   components: {

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { InternalProps, QuaantumProps } from '../../../types';
 import { useGenCss } from '../../../utils/hooks/useGenCss';
-import { ctx } from '../../../utils/ctx/providerContext';
+import { useTheme } from '../../../utils/hooks/useTheme';
 
 export interface GlobalCssProviderProps {}
 
@@ -15,7 +15,8 @@ const GlobalCss = createGlobalStyle(
 );
 
 const GlobalCssProvider: React.FC<GlobalCssProviderProps> = () => {
-  const context = useContext(ctx);
+  const context = useTheme();
+  console.log('AAA', useGenCss);
   const genCss = useGenCss();
 
   return <GlobalCss {...(context.global || {})} genCss={genCss} componentCtx={{} as any} />;
