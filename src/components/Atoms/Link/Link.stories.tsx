@@ -10,7 +10,7 @@ export default {
   component: LinkComponent,
 } as Meta;
 
-export const Default: Story<LinkProps> = (args) => (
+const Template: Story<LinkProps> = (args) => (
   <QuaantumProvider theme={theme}>
     <BrowserRouter>
       <LinkComponent {...args}>Link</LinkComponent>
@@ -18,6 +18,19 @@ export const Default: Story<LinkProps> = (args) => (
   </QuaantumProvider>
 );
 
-Default.args = {
-  href: 'www.google.com',
+export const Link = Template.bind({});
+Link.args = {
+  href: '/hello-world',
+};
+
+export const Anchor = Template.bind({});
+Anchor.args = {
+  href: 'https://www.google.com',
+  external: true,
+};
+
+export const AsButton = Template.bind({});
+AsButton.args = {
+  href: '/should-look-like-a-button',
+  styleAs: 'Button',
 };

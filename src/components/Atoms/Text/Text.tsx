@@ -6,7 +6,7 @@ import { RawP } from '../../HTML/HTML';
 export interface TextProps extends QuaantumProps, HTMLAttributes<HTMLParagraphElement> {}
 
 const Text: React.FC<TextProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Text');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Text');
 
   return <RawP {...internalProps} {...props} />;
 };

@@ -1,24 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { InternalProps, QuaantumProps } from '../../../types';
 import { useGenCss } from '../../../utils/hooks/useGenCss';
-import { ctx } from '../../../utils/ctx/providerContext';
+import { useTheme } from '../../../utils/hooks/useTheme';
 
 export interface GlobalCssProviderProps {}
 
-const GlobalCss = createGlobalStyle(
+const GlobalCss = createGlobalStyle<{ globalStyles: string }>(
   ([] as unknown) as TemplateStringsArray,
-  ({ genCss, componentCtx, ...props }: InternalProps<QuaantumProps>) =>
-    Object.entries(props)
-      .map(([selector, css]) => (css ? `${selector} {${genCss(css)}}` : ''))
-      .reduce((prev, curr) => prev + curr, '')
+  ({ globalStyles }: { globalStyles: string }) => globalStyles
 );
 
 const GlobalCssProvider: React.FC<GlobalCssProviderProps> = () => {
-  const context = useContext(ctx);
+  const context = useTheme();
   const genCss = useGenCss();
 
-  return <GlobalCss {...(context.global || {})} genCss={genCss} componentCtx={{} as any} />;
+  const globalStyles = Object.entries(context.global || {})
+    .map(([selector, css]) => (css ? `${selector} {${genCss(css)}}` : ''))
+    .reduce((prev, curr) => prev + curr, '');
+
+  return <GlobalCss {...(context.global || {})} globalStyles={globalStyles} />;
 };
 
 export default GlobalCssProvider;

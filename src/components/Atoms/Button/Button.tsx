@@ -6,7 +6,7 @@ import { RawButton } from '../../HTML/HTML';
 export interface ButtonProps extends QuaantumProps, ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Button');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Button');
   return <RawButton {...internalProps} {...props} />;
 };
 

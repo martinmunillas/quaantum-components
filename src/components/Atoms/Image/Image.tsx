@@ -9,7 +9,7 @@ export interface ImageProps extends QuaantumProps, ImgHTMLAttributes<HTMLImageEl
 }
 
 const Image: React.FC<ImageProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('Image');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'Image');
 
   return <RawImage {...internalProps} {...props} />;
 };

@@ -6,7 +6,7 @@ import { RawUl } from '../../HTML/HTML';
 export interface UnorderedListProps extends QuaantumProps {}
 
 const UnorderedList: React.FC<UnorderedListProps> = (props) => {
-  const internalProps = useQuaantumInternalProps('UnorderedList');
+  const internalProps = useQuaantumInternalProps(props.styleAs || 'UnorderedList');
   return <RawUl {...internalProps} {...props} />;
 };
 
