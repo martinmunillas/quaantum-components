@@ -14,9 +14,9 @@ import { ListItem } from '../components/Atoms/ListItem/ListItem.defaultStyles';
 import { UnorderedList } from '../components/Atoms/UnorderedList/UnorderedList.defaultStyles';
 import { OrderedList } from '../components/Atoms/OrderedList/OrderedList.defaultStyles';
 
-export interface ColorsCtx {
-  [color: string]: string | ColorsCtx;
-}
+export type ColorsCtx = {
+  [key in string | number]: string | ColorsCtx;
+};
 
 export interface VariantsCtx {
   [variant: string]: QuaantumProps;

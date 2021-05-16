@@ -9,11 +9,7 @@ export class Resolver {
     `${key} {${resolve(props, config)}}`;
 
   static color = (key = 'color') => (prop: string, config: Config) => {
-    const general = Resolver.general(key);
-
-    if (prop in config.colors) return general(getColor(prop, config.colors), config);
-
-    return general(prop, config);
+    return Resolver.general(key)(getColor(prop, config.colors), config);
   };
 
   static measurement = (key: string, type: keyof Config['units']) => (
