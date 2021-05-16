@@ -68,7 +68,7 @@ const sizeProps: KeysToResolvers<SizeProperties> = {
   w: Resolver.measurement('width', 'measurement'),
   maxH: Resolver.measurement('max-height', 'measurement'),
   h: Resolver.measurement('height', 'measurement'),
-  boxSizing: Resolver.general('border-box'),
+  boxSizing: Resolver.general('box-sizing'),
 };
 
 const marginProps: KeysToResolvers<MarginProperties> = {
