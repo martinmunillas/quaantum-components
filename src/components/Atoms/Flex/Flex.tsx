@@ -4,6 +4,9 @@ import Box, { BoxProps } from '../Box/Box';
 
 export interface FlexProps extends BoxProps {
   direction?: BoxProps['flexDirection'];
+  wrap?: BoxProps['flexWrap'];
+  shrink?: BoxProps['flexShrink'];
+  grow?: BoxProps['flexGrow'];
 }
 
 const Flex: React.FC<FlexProps> = ({ direction, ...props }) => {

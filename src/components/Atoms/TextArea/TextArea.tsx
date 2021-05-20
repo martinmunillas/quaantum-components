@@ -1,14 +1,14 @@
 import React, { TextareaHTMLAttributes } from 'react';
 import { QuaantumProps } from '../../../types';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { RawTextarea } from '../../HTML/HTML';
+import { QuaantumBase } from '../../HTML/HTML';
 
 export interface TextAreaProps extends QuaantumProps, TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
   const internalProps = useQuaantumInternalProps(props.styleAs || 'TextArea');
 
-  return <RawTextarea {...internalProps} {...props} />;
+  return <QuaantumBase as='textarea' {...internalProps} {...props} />;
 };
 
 export default TextArea;
