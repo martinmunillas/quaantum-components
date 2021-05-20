@@ -1,6 +1,6 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { RawAnchor, RawLink } from '../../HTML/HTML';
+import { QuaantumBase } from '../../HTML/HTML';
 import { QuaantumProps } from '../../../types';
 
 export interface LinkProps extends QuaantumProps, AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -14,11 +14,8 @@ export interface LinkProps extends QuaantumProps, AnchorHTMLAttributes<HTMLAncho
 const Link: React.FC<LinkProps> = ({ href, external, ...props }: LinkProps) => {
   const internalProps = useQuaantumInternalProps(props.styleAs || 'Link');
 
-  return external ? (
-    <RawAnchor {...internalProps} {...props} href={href} />
-  ) : (
-    <RawLink {...internalProps} {...props} to={href} />
-  );
+  return <QuaantumBase as='a' {...internalProps} {...props} href={href} />;
+  // <RawLink {...internalProps} {...props} to={href} />
 };
 
 export default Link;

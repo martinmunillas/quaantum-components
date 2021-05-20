@@ -1,14 +1,18 @@
+import { ComponentType } from 'react';
+import { DomElement } from './components/HTML/HTML';
+
+type AllCss = 'inherit' | 'initial' | 'unset';
 export interface BorderProperties {
-  borderRadius: string | number;
+  borderRadius: string | number | AllCss;
   /**
    * shorcut for borderRadius
    */
-  border: string | number;
+  border: string | number | AllCss;
   borderTop: BorderProperties['border'];
   borderRight: BorderProperties['border'];
   borderBottom: BorderProperties['border'];
   borderLeft: BorderProperties['border'];
-  outline: string;
+  outline: string | AllCss;
 
   round: BorderProperties['borderRadius'];
   /**
@@ -38,7 +42,7 @@ export interface BorderProperties {
 }
 
 export interface ColorProperties {
-  color: string;
+  color: string | AllCss;
   /**
    * shortcut for color
    */
@@ -46,9 +50,9 @@ export interface ColorProperties {
 }
 
 export interface BackgroundProperties {
-  background: string;
-  backgroundColor: string;
-  backgroundImage: string;
+  background: string | AllCss;
+  backgroundColor: string | AllCss;
+  backgroundImage: string | AllCss;
 
   /**
    * shortcut for background
@@ -67,7 +71,7 @@ export interface BackgroundProperties {
 }
 
 export interface PaddingProperties {
-  padding: string | number;
+  padding: string | number | AllCss;
   paddingX: PaddingProperties['padding'];
   paddingY: PaddingProperties['padding'];
   paddingTop: PaddingProperties['padding'];
@@ -105,15 +109,15 @@ export interface PaddingProperties {
 }
 
 export interface SizeProperties {
-  width: string | number;
-  height: string | number;
+  width: string | number | AllCss;
+  height: string | number | AllCss;
 
-  minWidth: string | number;
-  maxWidth: string | number;
-  minHeight: string | number;
-  maxHeight: string | number;
+  minWidth: string | number | AllCss;
+  maxWidth: string | number | AllCss;
+  minHeight: string | number | AllCss;
+  maxHeight: string | number | AllCss;
 
-  boxSizing: 'content-box' | 'border-box';
+  boxSizing: 'content-box' | 'border-box' | AllCss;
 
   /**
    * shortcut for width
@@ -144,7 +148,7 @@ export interface SizeProperties {
 }
 
 export interface MarginProperties {
-  margin: string | number;
+  margin: string | number | AllCss;
   marginX: MarginProperties['margin'];
   marginY: MarginProperties['margin'];
   marginTop: MarginProperties['margin'];
@@ -199,27 +203,27 @@ export interface DisplayProperties {
 }
 
 export interface OverflowProperties {
-  overflow: 'hidden' | 'scroll' | string;
-  overflowX: 'hidden' | 'scroll' | string;
-  overflowY: 'hidden' | 'scroll' | string;
+  overflow: 'hidden' | 'scroll' | 'visible' | 'auto' | string | AllCss;
+  overflowX: OverflowProperties['overflow'];
+  overflowY: OverflowProperties['overflow'];
 }
 
 export interface FontProperties {
-  fontWeight: number;
-  fontSize: string | number;
-  fontFamily: string;
-  textDecoration: string;
-  textTransform: 'uppercase' | 'capitalize' | 'lowecase';
-  textOrientation: string;
-  textAlign: 'center' | 'left' | 'right';
+  fontWeight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | number | AllCss;
+  fontSize: string | number | AllCss;
+  fontFamily: string | AllCss;
+  textDecoration: string | AllCss;
+  textTransform: 'uppercase' | 'capitalize' | 'lowercase';
+  textOrientation: string | AllCss;
+  textAlign: 'center' | 'left' | 'right' | AllCss;
 }
 
 export interface PositionProperties {
-  position: string;
-  top: string;
-  left: string;
-  right: string;
-  bottom: string;
+  position: string | AllCss;
+  top: string | AllCss;
+  left: string | AllCss;
+  right: string | AllCss;
+  bottom: string | AllCss;
 }
 
 export interface PseudoElements {
@@ -239,49 +243,100 @@ export interface QuaantumProperties {
   variant: string;
   customCss: string;
   styleAs: string;
+  as: DomElement;
 }
 
 export interface AnimationProperties {
-  transform: string;
-  transformOrigin: string;
-  transitionDuration: string | number;
-  transitionProperty: string | number;
+  transform: string | AllCss;
+  transformOrigin: string | AllCss;
+  transitionDuration: string | number | AllCss;
+  transitionProperty: string | number | AllCss;
 }
 
+type FlexGridValues =
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'center'
+  | 'end'
+  | 'start'
+  | 'stretch';
+
 export interface FlexGridProperties {
-  justifyContent: string;
-  justifyItems: string;
-  justifySelf: string;
-  alignItems: string;
-  alignContent: string;
-  alignSelf: string;
-  placeItems: string;
-  placeContent: string;
-  placeSelf: string;
-  flex: string;
-  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse';
-  flexWrap: 'wrap' | 'no-wrap' | 'wrap-reverse';
-  flexGrow: string;
-  flexShrink: string;
-  grid: string;
-  gridTemplateColumns: string;
-  gridAutoColumns: string;
-  gridAutoRows: string;
-  gridAutoFlow: string;
-  gridTemplateRows: string;
-  gridTemplateAreas: string | string[];
-  gridTemplate: string;
-  gridColumnStart: string;
-  gridColumnEnd: string;
-  gridRowStart: string;
-  gridRowEnd: string;
-  gridColumn: string;
-  gridRow: string;
-  gridArea: string;
-  columnGap: string;
-  rowGap: string;
-  gap: string;
+  justifyContent: FlexGridValues | string | AllCss;
+  justifyItems: FlexGridValues | string | AllCss;
+  justifySelf: FlexGridValues | string | AllCss;
+  alignItems: FlexGridValues | string | AllCss;
+  alignContent: FlexGridValues | string | AllCss;
+  alignSelf: FlexGridValues | string | AllCss;
+  placeItems: FlexGridValues | string | AllCss;
+  placeContent: FlexGridValues | string | AllCss;
+  placeSelf: FlexGridValues | string | AllCss;
+  flex: string | AllCss;
+  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse' | AllCss;
+  flexWrap: 'wrap' | 'no-wrap' | 'wrap-reverse' | AllCss;
+  flexGrow: string | AllCss;
+  flexShrink: string | AllCss;
+  grid: string | AllCss;
+  gridTemplateColumns: string | AllCss;
+  gridAutoColumns: string | AllCss;
+  gridAutoRows: string | AllCss;
+  gridAutoFlow: string | AllCss;
+  gridTemplateRows: string | AllCss;
+  gridTemplateAreas: string | AllCss;
+  gridTemplate: string | AllCss;
+  gridColumnStart: string | AllCss;
+  gridColumnEnd: string | AllCss;
+  gridRowStart: string | AllCss;
+  gridRowEnd: string | AllCss;
+  gridColumn: string | AllCss;
+  gridRow: string | AllCss;
+  gridArea: string | AllCss;
+  columnGap: string | AllCss;
+  rowGap: string | AllCss;
+  gap: string | AllCss;
 }
+
+type Cursor =
+  | 'url'
+  | 'auto'
+  | 'default'
+  | 'none'
+  | 'context-menu'
+  | 'help'
+  | 'pointer'
+  | 'progress'
+  | 'wait'
+  | 'cell'
+  | 'crosshair'
+  | 'text'
+  | 'vertical-text'
+  | 'alias'
+  | 'copy'
+  | 'move'
+  | 'no-drop'
+  | 'not-allowed'
+  | 'e-resize'
+  | 'n-resize'
+  | 'ne-resize'
+  | 'nw-resize'
+  | 's-resize'
+  | 'se-resize'
+  | 'sw-resize'
+  | 'w-resize'
+  | 'ew-resize'
+  | 'ns-resize'
+  | 'nesw-resize'
+  | 'nwse-resize'
+  | 'col-resize'
+  | 'row-resize'
+  | 'all-scroll'
+  | 'zoom-in'
+  | 'zoom-out'
+  | 'grab'
+  | 'grabbing';
 
 export interface Css
   extends BorderProperties,
@@ -299,23 +354,24 @@ export interface Css
     QuaantumProperties,
     AnimationProperties,
     FlexGridProperties {
-  boxShadow: string;
+  boxShadow: string | AllCss;
 
-  cursor: string;
+  cursor: Cursor | string | AllCss;
 
-  resize: 'none' | 'both' | 'horizontal' | 'vertical';
+  resize: 'none' | 'both' | 'horizontal' | 'vertical' | AllCss;
 
-  objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
-  objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down';
-  zIndex: number;
-  listStyle: string;
+  objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
+  objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
+  zIndex: number | AllCss;
+  listStyle: string | AllCss;
 }
 
-export type QuaantumProps = { [P in keyof Css]?: Css[P] | 'inherit' | 'initial' | 'unset' };
+export type QuaantumProps = { [P in keyof Css]?: Css[P] };
+
 type Internal = {
-  componentName: string;
+  componentName?: string;
 };
 
 export type InternalProps<T extends QuaantumProps> = T & Internal;
 
-export type Props<T> = T extends (props: infer S) => any ? S : T;
+export type Props<T> = T extends ComponentType<infer S> ? S : T;
