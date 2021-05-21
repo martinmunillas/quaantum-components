@@ -1,4 +1,4 @@
-import { QuaantumProps } from '../../types';
+import { QuaantumProps } from '../types';
 import { getColor } from './getColor';
 import { Config, resolve } from './resolve';
 
@@ -23,7 +23,7 @@ export class Resolver {
     } else if (typeof prop === 'number') {
       res = `${prop}${config.units[type]}`;
     } else {
-      res = prop;
+      res = prop as string;
     }
 
     return Resolver.general(key)(res, config);

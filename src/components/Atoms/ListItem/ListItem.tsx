@@ -1,13 +1,11 @@
 import React from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
 export interface ListItemProps extends QuaantumProps {}
 
 const ListItem: React.FC<ListItemProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'ListItem');
-  return <QuaantumBase as='li' {...internalProps} {...props} />;
+  return <QuaantumBase as='li' styleAs='ListItem' {...props} />;
 };
 
 export default ListItem;

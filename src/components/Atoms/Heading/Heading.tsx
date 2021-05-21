@@ -1,14 +1,13 @@
 import React, { HTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface HeadingProps extends QuaantumProps, HTMLAttributes<HTMLHeadingElement> {}
+export interface HeadingProps
+  extends QuaantumProps,
+    Omit<HTMLAttributes<HTMLHeadingElement>, 'color'> {}
 
-const Heading: React.FC<HeadingProps> = ({ as = 'h1', ...props }) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Heading');
-
-  return <QuaantumBase as='h2' {...internalProps} {...props} />;
+const Heading: React.FC<HeadingProps> = (props) => {
+  return <QuaantumBase as='h2' styleAs='Heading' {...props} />;
 };
 
 export default Heading;

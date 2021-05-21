@@ -1,13 +1,11 @@
 import React from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
 export interface OrderedListProps extends QuaantumProps {}
 
 const OrderedList: React.FC<OrderedListProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'OrderedList');
-  return <QuaantumBase as='ol' {...internalProps} {...props} />;
+  return <QuaantumBase as='ol' styleAs='OrderedList' {...props} />;
 };
 
 export default OrderedList;

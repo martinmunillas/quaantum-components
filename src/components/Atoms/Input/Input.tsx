@@ -1,14 +1,13 @@
 import React, { InputHTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface InputProps extends QuaantumProps, InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps
+  extends QuaantumProps,
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'color' | 'height' | 'width'> {}
 
 const Input: React.FC<InputProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Input');
-
-  return <QuaantumBase as='input' {...internalProps} {...props} />;
+  return <QuaantumBase as='input' styleAs='Input' {...props} />;
 };
 
 export default Input;

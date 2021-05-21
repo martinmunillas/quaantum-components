@@ -16,8 +16,8 @@ import {
   AnimationProperties,
   QuaantumProperties,
 } from './types';
-import { Config } from './utils/resolvers/resolve';
-import { Resolver } from './utils/resolvers/Resolver';
+import { Config } from './/resolvers/resolve';
+import { Resolver } from './/resolvers/Resolver';
 
 type KeysToResolvers<T extends Record<any, any>> = Record<
   keyof T,

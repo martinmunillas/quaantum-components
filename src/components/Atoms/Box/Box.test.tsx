@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from './Box';
 import { render, screen } from '@testing-library/react';
-import { Props } from '../../../types';
+import { Props } from '../../../css/types';
 
 const setup = (props: Props<typeof Box>) => render(<Box {...props} />);
 

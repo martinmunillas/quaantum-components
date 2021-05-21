@@ -1,6 +1,6 @@
 import { ColorsCtx, Units } from '../../defaults/theme';
-import { dictionary } from '../../dictionary';
-import { QuaantumProps } from '../../types';
+import { dictionary } from '../dictionary';
+import { QuaantumProps } from '../types';
 
 export interface Config {
   colors: ColorsCtx;

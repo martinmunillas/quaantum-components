@@ -1,14 +1,11 @@
 import React, { HTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface BoxProps extends QuaantumProps, HTMLAttributes<Element> {}
+export interface BoxProps extends QuaantumProps, Omit<HTMLAttributes<Element>, 'color'> {}
 
 const Box: React.FC<BoxProps> = ({ ...props }) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Box');
-
-  return <QuaantumBase as='div' {...internalProps} {...props} />;
+  return <QuaantumBase as='div' styleAs='Box' {...props} />;
 };
 
 export default Box;

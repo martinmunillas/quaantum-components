@@ -1,18 +1,18 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Quaantum } from './HTML';
+import { HTML } from './HTML';
 import QuaantumProvider from '../Providers/QuaantumProvider/QuaantumProvider';
 import { theme } from '../../defaults/theme';
-import { QuaantumProps } from '../../types';
+import { QuaantumProps } from '../../css/types';
 
 export default {
   title: 'HTML/All',
-  component: Quaantum.div,
+  component: HTML.div,
 } as Meta;
 
 export const div: Story<QuaantumProps> = (args) => (
   <QuaantumProvider theme={theme}>
-    <Quaantum.div {...args} width='100%' />
+    <HTML.div {...args} width='100%' />
   </QuaantumProvider>
 );
 
@@ -24,9 +24,9 @@ div.args = {
 
 export const p: Story<QuaantumProps> = (args) => (
   <QuaantumProvider theme={theme}>
-    <Quaantum.p {...args} width='100%'>
+    <HTML.p {...args} width='100%'>
       Hello World
-    </Quaantum.p>
+    </HTML.p>
   </QuaantumProvider>
 );
 p.args = {
@@ -37,9 +37,9 @@ p.args = {
 
 export const h1: Story<QuaantumProps> = (args) => (
   <QuaantumProvider theme={theme}>
-    <Quaantum.h1 {...args} width='100%'>
+    <HTML.h1 {...args} width='100%'>
       Hello World
-    </Quaantum.h1>
+    </HTML.h1>
   </QuaantumProvider>
 );
 h1.args = {

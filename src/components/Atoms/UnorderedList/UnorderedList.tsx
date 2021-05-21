@@ -1,14 +1,11 @@
 import React from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
 export interface UnorderedListProps extends QuaantumProps {}
 
 const UnorderedList: React.FC<UnorderedListProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'UnorderedList');
-
-  return <QuaantumBase as='ul' {...internalProps} {...props} />;
+  return <QuaantumBase as='ul' styleAs='UnorderedList' {...props} />;
 };
 
 export default UnorderedList;

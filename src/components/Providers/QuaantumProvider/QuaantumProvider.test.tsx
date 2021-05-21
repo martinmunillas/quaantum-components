@@ -1,7 +1,7 @@
 import React from 'react';
 import QuaantumProvider from './QuaantumProvider';
 import { render, screen } from '@testing-library/react';
-import { Props } from '../../../types';
+import { Props } from '../../../css/types';
 import { extendTheme } from '../../../utils/funcs/extendTheme/extendTheme';
 import { theme } from '../../../defaults/theme';
 

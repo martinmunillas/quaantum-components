@@ -16,9 +16,11 @@ describe('Link', () => {
 
   it('renders as an anchor when external prop is passed', () => {
     render(
-      <Link href='/' external>
-        foo
-      </Link>
+      <BrowserRouter>
+        <Link href='/' as='reactRouterLink'>
+          foo
+        </Link>
+      </BrowserRouter>
     );
     expect(screen.getByText('foo'));
   });

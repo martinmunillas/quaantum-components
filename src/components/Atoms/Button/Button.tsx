@@ -1,13 +1,13 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface ButtonProps extends QuaantumProps, ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface ButtonProps
+  extends QuaantumProps,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Button');
-  return <QuaantumBase as='button' {...internalProps} {...props} />;
+  return <QuaantumBase as='button' styleAs='Button' {...props} />;
 };
 
 export default Button;

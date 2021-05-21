@@ -1,4 +1,4 @@
-import { QuaantumProps } from '../types';
+import { QuaantumProps } from '../css/types';
 import { global } from './global';
 import { Button } from '../components/Atoms/Button/Button.defaultStyles';
 import { Flex } from '../components/Atoms/Flex/Flex.defaultStyles';
