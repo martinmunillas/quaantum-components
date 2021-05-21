@@ -1,0 +1,56 @@
+import { useEffect, useMemo } from 'react';
+import { internalProps } from '../../css/dictionary';
+import { QuaantumProps } from '../../css/types';
+import { useGenCss } from './useGenCss';
+import { useTheme } from './useTheme';
+
+type WithoutQuaantumPropKeys<T> = Omit<T, keyof QuaantumProps>;
+
+/**
+ * Takes the props of the component an returns cleaned ones without the QuaantumProps and with the css as "styles"
+ */
+export const useQuaantum = <T extends QuaantumProps>(props: T) => {
+  const gen = useGenCss();
+  const theme = useTheme();
+
+  useEffect(() => {
+    if (props.styleAs) {
+      if (!(props.styleAs in theme.components)) {
+        throw new Error(
+          `'${props.styleAs}' component is not defined in the QuaantumUI theme, 
+                  either define the component in your theme or extend the quaantum one`
+        );
+      }
+    }
+  });
+
+  const builtHieriarchy = useMemo(
+    () =>
+      props.styleAs
+        ? {
+            ...theme.components[props.styleAs]?.base,
+            ...theme.components[props.styleAs]?.variants?.[
+              props.variant || theme.components[props.styleAs].defaultVariant
+            ],
+            ...props,
+          }
+        : props,
+    [props, theme]
+  );
+
+  const styles = useMemo(() => gen(builtHieriarchy), [builtHieriarchy, gen]);
+
+  type FinalProps = WithoutQuaantumPropKeys<T> & { styles: string };
+
+  const finalProps = useMemo(() => {
+    let cleaned: Record<string, any> = { styles };
+    for (const [key, value] of Object.entries(props) as [string, any][]) {
+      if (!internalProps.includes(key)) {
+        cleaned[key] = value;
+      }
+    }
+    return cleaned;
+  }, [props, styles, internalProps]);
+
+  return finalProps as FinalProps;
+};

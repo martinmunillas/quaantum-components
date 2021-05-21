@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import { render, screen } from '@testing-library/react';
-import { Props } from '../../../types';
+import { Props } from '../../../css/types';
 
 const setup = (props: Props<typeof Button>) => render(<Button color='red' {...props} />);
 

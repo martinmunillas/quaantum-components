@@ -1,14 +1,13 @@
 import React, { HTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface TextProps extends QuaantumProps, HTMLAttributes<HTMLParagraphElement> {}
+export interface TextProps
+  extends QuaantumProps,
+    Omit<HTMLAttributes<HTMLParagraphElement>, 'color'> {}
 
 const Text: React.FC<TextProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Text');
-
-  return <QuaantumBase as='p' {...internalProps} {...props} />;
+  return <QuaantumBase as='p' styleAs='Text' {...props} />;
 };
 
 export default Text;

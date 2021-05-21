@@ -1,4 +1,4 @@
-import { QuaantumProps } from '../../../types';
+import { QuaantumProps } from '../../../css/types';
 
 const normal: QuaantumProps = {};
 const underline: QuaantumProps = {

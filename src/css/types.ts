@@ -1,18 +1,19 @@
 import { ComponentType } from 'react';
-import { DomElement } from './components/HTML/HTML';
+import { DomElement } from '../utils/domElements';
+import { LiteralUnion } from '../utils/types';
 
 type AllCss = 'inherit' | 'initial' | 'unset';
 export interface BorderProperties {
-  borderRadius: string | number | AllCss;
+  borderRadius: LiteralUnion<AllCss, number | string>;
   /**
    * shorcut for borderRadius
    */
-  border: string | number | AllCss;
+  border: LiteralUnion<AllCss, number | string>;
   borderTop: BorderProperties['border'];
   borderRight: BorderProperties['border'];
   borderBottom: BorderProperties['border'];
   borderLeft: BorderProperties['border'];
-  outline: string | AllCss;
+  outline: LiteralUnion<AllCss>;
 
   round: BorderProperties['borderRadius'];
   /**
@@ -42,7 +43,7 @@ export interface BorderProperties {
 }
 
 export interface ColorProperties {
-  color: string | AllCss;
+  color: LiteralUnion<AllCss>;
   /**
    * shortcut for color
    */
@@ -50,9 +51,9 @@ export interface ColorProperties {
 }
 
 export interface BackgroundProperties {
-  background: string | AllCss;
-  backgroundColor: string | AllCss;
-  backgroundImage: string | AllCss;
+  background: LiteralUnion<AllCss>;
+  backgroundColor: LiteralUnion<AllCss>;
+  backgroundImage: LiteralUnion<AllCss>;
 
   /**
    * shortcut for background
@@ -71,7 +72,7 @@ export interface BackgroundProperties {
 }
 
 export interface PaddingProperties {
-  padding: string | number | AllCss;
+  padding: LiteralUnion<AllCss, number | string>;
   paddingX: PaddingProperties['padding'];
   paddingY: PaddingProperties['padding'];
   paddingTop: PaddingProperties['padding'];
@@ -109,13 +110,13 @@ export interface PaddingProperties {
 }
 
 export interface SizeProperties {
-  width: string | number | AllCss;
-  height: string | number | AllCss;
+  width: LiteralUnion<AllCss, number | string>;
+  height: LiteralUnion<AllCss, number | string>;
 
-  minWidth: string | number | AllCss;
-  maxWidth: string | number | AllCss;
-  minHeight: string | number | AllCss;
-  maxHeight: string | number | AllCss;
+  minWidth: LiteralUnion<AllCss, number | string>;
+  maxWidth: LiteralUnion<AllCss, number | string>;
+  minHeight: LiteralUnion<AllCss, number | string>;
+  maxHeight: LiteralUnion<AllCss, number | string>;
 
   boxSizing: 'content-box' | 'border-box' | AllCss;
 
@@ -148,7 +149,7 @@ export interface SizeProperties {
 }
 
 export interface MarginProperties {
-  margin: string | number | AllCss;
+  margin: LiteralUnion<AllCss, string | number>;
   marginX: MarginProperties['margin'];
   marginY: MarginProperties['margin'];
   marginTop: MarginProperties['margin'];
@@ -203,27 +204,30 @@ export interface DisplayProperties {
 }
 
 export interface OverflowProperties {
-  overflow: 'hidden' | 'scroll' | 'visible' | 'auto' | string | AllCss;
+  overflow: LiteralUnion<'hidden' | 'scroll' | 'visible' | 'auto' | AllCss>;
   overflowX: OverflowProperties['overflow'];
   overflowY: OverflowProperties['overflow'];
 }
 
 export interface FontProperties {
-  fontWeight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | number | AllCss;
-  fontSize: string | number | AllCss;
-  fontFamily: string | AllCss;
-  textDecoration: string | AllCss;
-  textTransform: 'uppercase' | 'capitalize' | 'lowercase';
-  textOrientation: string | AllCss;
+  fontWeight: LiteralUnion<
+    100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | AllCss,
+    number | string
+  >;
+  fontSize: LiteralUnion<AllCss, number | string>;
+  fontFamily: LiteralUnion<AllCss>;
+  textDecoration: LiteralUnion<AllCss>;
+  textTransform: LiteralUnion<'uppercase' | 'capitalize' | 'lowercase'>;
+  textOrientation: LiteralUnion<AllCss>;
   textAlign: 'center' | 'left' | 'right' | AllCss;
 }
 
 export interface PositionProperties {
-  position: string | AllCss;
-  top: string | AllCss;
-  left: string | AllCss;
-  right: string | AllCss;
-  bottom: string | AllCss;
+  position: LiteralUnion<AllCss>;
+  top: LiteralUnion<AllCss>;
+  left: LiteralUnion<AllCss>;
+  right: LiteralUnion<AllCss>;
+  bottom: LiteralUnion<AllCss>;
 }
 
 export interface PseudoElements {
@@ -239,18 +243,11 @@ export interface PseudoClasses {
   _placeholder: Omit<QuaantumProps, '_placeholder'>;
 }
 
-export interface QuaantumProperties {
-  variant: string;
-  customCss: string;
-  styleAs: string;
-  as: DomElement;
-}
-
 export interface AnimationProperties {
-  transform: string | AllCss;
-  transformOrigin: string | AllCss;
-  transitionDuration: string | number | AllCss;
-  transitionProperty: string | number | AllCss;
+  transform: LiteralUnion<AllCss>;
+  transformOrigin: LiteralUnion<AllCss>;
+  transitionDuration: LiteralUnion<AllCss, string | number>;
+  transitionProperty: LiteralUnion<AllCss, string | number>;
 }
 
 type FlexGridValues =
@@ -265,38 +262,44 @@ type FlexGridValues =
   | 'stretch';
 
 export interface FlexGridProperties {
-  justifyContent: FlexGridValues | string | AllCss;
-  justifyItems: FlexGridValues | string | AllCss;
-  justifySelf: FlexGridValues | string | AllCss;
-  alignItems: FlexGridValues | string | AllCss;
-  alignContent: FlexGridValues | string | AllCss;
-  alignSelf: FlexGridValues | string | AllCss;
-  placeItems: FlexGridValues | string | AllCss;
-  placeContent: FlexGridValues | string | AllCss;
-  placeSelf: FlexGridValues | string | AllCss;
-  flex: string | AllCss;
-  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse' | AllCss;
-  flexWrap: 'wrap' | 'no-wrap' | 'wrap-reverse' | AllCss;
-  flexGrow: string | AllCss;
-  flexShrink: string | AllCss;
-  grid: string | AllCss;
-  gridTemplateColumns: string | AllCss;
-  gridAutoColumns: string | AllCss;
-  gridAutoRows: string | AllCss;
-  gridAutoFlow: string | AllCss;
-  gridTemplateRows: string | AllCss;
-  gridTemplateAreas: string | AllCss;
-  gridTemplate: string | AllCss;
-  gridColumnStart: string | AllCss;
-  gridColumnEnd: string | AllCss;
-  gridRowStart: string | AllCss;
-  gridRowEnd: string | AllCss;
-  gridColumn: string | AllCss;
-  gridRow: string | AllCss;
-  gridArea: string | AllCss;
-  columnGap: string | AllCss;
-  rowGap: string | AllCss;
-  gap: string | AllCss;
+  justifyContent: LiteralUnion<FlexGridValues | AllCss>;
+  justifyItems: LiteralUnion<FlexGridValues | AllCss>;
+  justifySelf: LiteralUnion<FlexGridValues | AllCss>;
+  alignItems: LiteralUnion<FlexGridValues | AllCss>;
+  alignContent: LiteralUnion<FlexGridValues | AllCss>;
+  alignSelf: LiteralUnion<FlexGridValues | AllCss>;
+  placeItems: LiteralUnion<FlexGridValues | AllCss>;
+  placeContent: LiteralUnion<FlexGridValues | AllCss>;
+  placeSelf: LiteralUnion<FlexGridValues | AllCss>;
+  flex: LiteralUnion<AllCss>;
+  flexDirection: LiteralUnion<AllCss | 'column' | 'column-reverse' | 'row' | 'row-reverse'>;
+  flexWrap: LiteralUnion<AllCss | 'wrap' | 'no-wrap' | 'wrap-reverse'>;
+  flexGrow: LiteralUnion<AllCss>;
+  flexShrink: LiteralUnion<AllCss>;
+  grid: LiteralUnion<AllCss>;
+  gridTemplateColumns: LiteralUnion<AllCss>;
+  gridAutoColumns: LiteralUnion<AllCss>;
+  gridAutoRows: LiteralUnion<AllCss>;
+  gridAutoFlow: LiteralUnion<AllCss>;
+  gridTemplateRows: LiteralUnion<AllCss>;
+  gridTemplateAreas: LiteralUnion<AllCss>;
+  gridTemplate: LiteralUnion<AllCss>;
+  gridColumnStart: LiteralUnion<AllCss>;
+  gridColumnEnd: LiteralUnion<AllCss>;
+  gridRowStart: LiteralUnion<AllCss>;
+  gridRowEnd: LiteralUnion<AllCss>;
+  gridColumn: LiteralUnion<AllCss>;
+  gridRow: LiteralUnion<AllCss>;
+  gridArea: LiteralUnion<AllCss>;
+  columnGap: LiteralUnion<AllCss>;
+  rowGap: LiteralUnion<AllCss>;
+  gap: LiteralUnion<AllCss>;
+}
+export interface QuaantumProperties {
+  variant: string;
+  customCss: string;
+  styleAs: string;
+  as: LiteralUnion<DomElement>;
 }
 
 type Cursor =
@@ -351,27 +354,21 @@ export interface Css
     PositionProperties,
     PseudoElements,
     PseudoClasses,
-    QuaantumProperties,
     AnimationProperties,
-    FlexGridProperties {
-  boxShadow: string | AllCss;
+    FlexGridProperties,
+    QuaantumProperties {
+  boxShadow: LiteralUnion<AllCss>;
 
-  cursor: Cursor | string | AllCss;
+  cursor: LiteralUnion<Cursor | AllCss>;
 
   resize: 'none' | 'both' | 'horizontal' | 'vertical' | AllCss;
 
   objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
   objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
-  zIndex: number | AllCss;
-  listStyle: string | AllCss;
+  zIndex: LiteralUnion<AllCss, number>;
+  listStyle: LiteralUnion<AllCss>;
 }
 
 export type QuaantumProps = { [P in keyof Css]?: Css[P] };
-
-type Internal = {
-  componentName?: string;
-};
-
-export type InternalProps<T extends QuaantumProps> = T & Internal;
 
 export type Props<T> = T extends ComponentType<infer S> ? S : T;

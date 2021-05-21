@@ -1,7 +1,7 @@
-import { QuaantumProps } from '../../types';
+import { QuaantumProps } from '../../css/types';
 import { useTheme } from './useTheme';
 import { useCallback } from 'react';
-import { resolve } from '../resolvers/resolve';
+import { resolve } from '../../css/resolvers/resolve';
 
 export const useGenCss = () => {
   const { colors, units } = useTheme();

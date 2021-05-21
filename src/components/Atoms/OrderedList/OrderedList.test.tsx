@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderedList from './OrderedList';
 import { render, screen } from '@testing-library/react';
-import { Props } from '../../../types';
+import { Props } from '../../../css/types';
 
 const setup = (props: Props<typeof OrderedList>) =>
   render(<OrderedList {...props}>foo</OrderedList>);

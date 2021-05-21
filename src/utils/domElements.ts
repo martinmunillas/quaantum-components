@@ -1,3 +1,5 @@
+import { HTMLAttributes } from 'react';
+
 export const domElements = [
   'a',
   'abbr',
@@ -134,3 +136,12 @@ export const domElements = [
   'text',
   'tspan',
 ] as const;
+
+/**
+ * Any valid HTML element
+ */
+export type DomElement = typeof domElements[number];
+
+export type DomAttributes = {
+  a: HTMLAttributes<HTMLAnchorElement>;
+};

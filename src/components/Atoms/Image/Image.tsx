@@ -1,17 +1,16 @@
 import React, { ImgHTMLAttributes } from 'react';
-import { QuaantumProps } from '../../../types';
-import { useQuaantumInternalProps } from '../../../utils/hooks/useQuaantumInternalProps';
-import { QuaantumBase } from '../../HTML/HTML';
+import { QuaantumProps } from '../../../css/types';
+import { QuaantumBase } from '../../Base/QuaantumBase';
 
-export interface ImageProps extends QuaantumProps, ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps
+  extends QuaantumProps,
+    Omit<ImgHTMLAttributes<HTMLImageElement>, 'color' | 'height' | 'width'> {
   src: string;
   alt: string;
 }
 
 const Image: React.FC<ImageProps> = (props) => {
-  const internalProps = useQuaantumInternalProps(props.styleAs || 'Image');
-
-  return <QuaantumBase as='img' {...internalProps} {...props} />;
+  return <QuaantumBase as='img' styleAs='Image' {...props} />;
 };
 
 export default Image;
