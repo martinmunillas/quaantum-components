@@ -4,14 +4,9 @@ import { DomElement } from '../../utils/domElements';
 import { useQuaantum } from '../../utils/hooks/useQuaantum';
 import { HTML } from './HTML';
 
-interface QuaantumBaseProps<T extends string> extends QuaantumProps {
-  as?: T;
-}
+interface QuaantumBaseProps extends QuaantumProps {}
 
-export const QuaantumBase = <T extends DomElement | string>({
-  as: As,
-  ...props
-}: QuaantumBaseProps<T> & Record<string, any>) => {
+export const QuaantumBase = ({ as: As, ...props }: QuaantumBaseProps & Record<string, any>) => {
   const finalProps = useQuaantum(props);
 
   let internalAs: string = useMemo(() => As || '', [As]);

@@ -9,7 +9,13 @@ type WithoutQuaantumPropKeys<T> = Omit<T, keyof QuaantumProps>;
 /**
  * Takes the props of the component an returns cleaned ones without the QuaantumProps and with the css as "styles"
  */
-export const useQuaantum = <T extends QuaantumProps>(props: T) => {
+export const useQuaantum = <
+  T extends { styleAs?: string; variant?: string },
+  E extends readonly string[] | string[]
+>(
+  props: T,
+  exclude?: E
+) => {
   const gen = useGenCss();
   const theme = useTheme();
 
@@ -24,6 +30,19 @@ export const useQuaantum = <T extends QuaantumProps>(props: T) => {
     }
   });
 
+  const [usableProps, excludedProps] = useMemo(() => {
+    let usable: Record<string, any> = {};
+    let excluded: Record<string, any> = {};
+    for (const [key, value] of Object.entries(props) as [string, any][]) {
+      if ((exclude || ([] as string[])).includes(key)) {
+        excluded[key] = value;
+      } else {
+        usable[key] = value;
+      }
+    }
+    return [usable, excluded];
+  }, [props]);
+
   const builtHieriarchy = useMemo(
     () =>
       props.styleAs
@@ -32,19 +51,18 @@ export const useQuaantum = <T extends QuaantumProps>(props: T) => {
             ...theme.components[props.styleAs]?.variants?.[
               props.variant || theme.components[props.styleAs].defaultVariant
             ],
-            ...props,
+            ...usableProps,
           }
-        : props,
+        : usableProps,
     [props, theme]
   );
 
   const styles = useMemo(() => gen(builtHieriarchy), [builtHieriarchy, gen]);
-
   type FinalProps = WithoutQuaantumPropKeys<T> & { styles: string };
 
   const finalProps = useMemo(() => {
-    let cleaned: Record<string, any> = { styles };
-    for (const [key, value] of Object.entries(props) as [string, any][]) {
+    let cleaned: Record<string, any> = { ...excludedProps, styles };
+    for (const [key, value] of Object.entries(usableProps) as [string, any][]) {
       if (!internalProps.includes(key)) {
         cleaned[key] = value;
       }
