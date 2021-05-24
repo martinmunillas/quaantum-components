@@ -21,8 +21,9 @@
   "types": "index.d.ts",
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "dependencies": {
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -46,7 +47,6 @@
     "babel-loader": "^8.2.1",
     "husky": "^4.3.0",
     "hygen": "^6.0.4",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.0",
     "react": "^17.0.2",
@@ -59,8 +59,6 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
-    "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "tslib": "^2.2.0",

@@ -33,12 +33,22 @@ const items = [
   { name: 'Jul', value: 500 },
 ];
 
-export const Default: Story<LineChartProps<typeof items[number]>> = (args) => (
+export const Sharp: Story<LineChartProps<typeof items[number]>> = (args) => (
   <QuaantumProvider theme={theme}>
     <LineChart {...args} items={items}></LineChart>
   </QuaantumProvider>
 );
 
-Default.args = {
+Sharp.args = {
+  strokeWidth: 1,
+};
+
+export const Curved: Story<LineChartProps<typeof items[number]>> = (args) => (
+  <QuaantumProvider theme={theme}>
+    <LineChart {...args} items={items} curved></LineChart>
+  </QuaantumProvider>
+);
+
+Curved.args = {
   strokeWidth: 1,
 };
