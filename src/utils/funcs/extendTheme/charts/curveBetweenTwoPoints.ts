@@ -1,35 +1,23 @@
-import { bezierCurve, Coordinate } from './bezierCurve';
-import { getBezierControlPoint } from './getBezierControlPoint';
+import { Coordinate } from './bezierCurve';
+import { getSinusoidalPoint } from './getSinusoidalPoint';
 
 interface CurveBetweenTwoPointsOptions {
-  tension: number;
+  tension?: number;
   start: Coordinate;
   end: Coordinate;
+  resolution: number;
 }
 
 export const curveBetweenTwoPoints = ({
-  tension,
+  tension = 2,
+  resolution,
   start,
   end,
 }: CurveBetweenTwoPointsOptions): Coordinate[] => {
-  const resolution = 20;
-
-  const middle: Coordinate = { x: (start.x + end.x) / 2, y: (start.y + end.y) / 2 };
-
-  const firstControlPoint = getBezierControlPoint({ start, end: middle });
-  const secondControlPoint = getBezierControlPoint({ start: middle, end });
-
-  if (!firstControlPoint || !secondControlPoint) {
-    return [start, end];
+  const coordinates: Coordinate[] = [];
+  for (let i = 0; i < 2; i += 1 / resolution) {
+    coordinates.push(getSinusoidalPoint({ start, end, a: tension, x: start.x + i }));
   }
 
-  const firstHalf = bezierCurve({
-    start,
-    end: middle,
-    resolution,
-    bezier: firstControlPoint,
-  });
-  const secondHalf = bezierCurve({ start: middle, end, resolution, bezier: secondControlPoint });
-
-  return firstHalf.concat(secondHalf);
+  return coordinates;
 };

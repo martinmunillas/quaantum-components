@@ -10,27 +10,8 @@ export default {
 } as Meta;
 
 const items = [
-  { name: 'Jan', value: 450 },
-  { name: 'Feb', value: 400 },
-  { name: 'Mar', value: 400 },
-  { name: 'Apr', value: 200 },
-  { name: 'May', value: 250 },
-  { name: 'Jun', value: 400 },
-  { name: 'Jul', value: 500 },
-  { name: 'Jan', value: 450 },
-  { name: 'Jul', value: 500 },
-  { name: 'Mar', value: 300 },
-  { name: 'Feb', value: 100 },
-  { name: 'Mar', value: 0 },
-  { name: 'May', value: 500 },
-  { name: 'May', value: 250 },
-  { name: 'Jun', value: 400 },
-  { name: 'Apr', value: 200 },
-  { name: 'Jan', value: 450 },
-  { name: 'Feb', value: 400 },
-  { name: 'Apr', value: 200 },
-  { name: 'Jun', value: 400 },
-  { name: 'Jul', value: 500 },
+  { name: 'Jan', value: 400 },
+  { name: 'Feb', value: 450 },
 ];
 
 export const Sharp: Story<LineChartProps<typeof items[number]>> = (args) => (

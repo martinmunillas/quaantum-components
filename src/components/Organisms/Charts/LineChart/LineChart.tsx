@@ -57,11 +57,11 @@ const LineChart = <T extends MinItem>({
 
       <QuaantumBase
         as='svg'
-        viewBox='0 0 100 100'
+        viewBox='0 0 200 200'
         aria-labelledby='title'
         role='img'
-        width='300px'
-        height='200px'
+        width='400px'
+        height='400px'
         {...props}
       >
         <QuaantumBase as='title' id='title'>
