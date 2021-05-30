@@ -4,7 +4,7 @@ import { QuaantumBase } from '../../../Base/QuaantumBase';
 
 export interface ChartProps extends QuaantumProps {}
 
-const defaultChartCtx = { showTitle: true, title: 'Chart', size: { x: 200, y: 200 } };
+const defaultChartCtx = { showTitle: true, title: 'Chart', size: { x: 100, y: 100 } };
 
 type State = typeof defaultChartCtx;
 
