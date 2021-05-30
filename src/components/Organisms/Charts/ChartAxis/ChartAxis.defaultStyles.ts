@@ -10,7 +10,7 @@ const base: QuaantumProps = {};
 
 const defaultVariant = 'normal';
 
-export const BarChart = {
+export const ChartAxis = {
   variants,
   base,
   defaultVariant,

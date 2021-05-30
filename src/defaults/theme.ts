@@ -13,6 +13,11 @@ import { Link } from '../components/Atoms/Link/Link.defaultStyles';
 import { ListItem } from '../components/Atoms/ListItem/ListItem.defaultStyles';
 import { UnorderedList } from '../components/Atoms/UnorderedList/UnorderedList.defaultStyles';
 import { OrderedList } from '../components/Atoms/OrderedList/OrderedList.defaultStyles';
+import { Chart } from '../components/Organisms/Charts/Chart/Chart.defaultStyles';
+import { ChartAxis } from '../components/Organisms/Charts/ChartAxis/ChartAxis.defaultStyles';
+import { ChartAxes } from '../components/Organisms/Charts/ChartAxes/ChartAxes.defaultStyles';
+import { ChartLine } from '../components/Organisms/Charts/ChartLine/ChartLine.defaultStyles';
+import { ChartTitle } from '../components/Organisms/Charts/ChartTitle/ChartTitle.defaultStyles';
 
 export type ColorsCtx = {
   [key in string | number]: string | ColorsCtx;
@@ -76,5 +81,10 @@ export const theme: Theme = {
     ListItem,
     UnorderedList,
     OrderedList,
+    Chart,
+    ChartAxis,
+    ChartAxes,
+    ChartLine,
+    ChartTitle,
   },
 };

@@ -295,6 +295,13 @@ export interface FlexGridProperties {
   rowGap: LiteralUnion<AllCss>;
   gap: LiteralUnion<AllCss>;
 }
+
+export interface SVGProperties {
+  stroke: LiteralUnion<AllCss>;
+  strokeWidth: LiteralUnion<AllCss>;
+  strokeLinecap: LiteralUnion<'butt' | 'round' | 'square' | AllCss>;
+  strokeDasharray: LiteralUnion<'butt' | 'round' | 'square' | AllCss>;
+}
 export interface QuaantumProperties {
   variant: string;
   customCss: string;
@@ -356,6 +363,7 @@ export interface Css
     PseudoClasses,
     AnimationProperties,
     FlexGridProperties,
+    SVGProperties,
     QuaantumProperties {
   boxShadow: LiteralUnion<AllCss>;
 

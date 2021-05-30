@@ -15,6 +15,7 @@ import {
   PseudoElements,
   AnimationProperties,
   QuaantumProperties,
+  SVGProperties,
 } from './types';
 import { Config } from './/resolvers/resolve';
 import { Resolver } from './/resolvers/Resolver';
@@ -189,6 +190,13 @@ const animationProps: KeysToResolvers<AnimationProperties> = {
   transitionProperty: Resolver.general('transition-property'),
 };
 
+const svgProperties: KeysToResolvers<SVGProperties> = {
+  stroke: Resolver.color('stroke'),
+  strokeWidth: Resolver.measurement('stroke-width', 'measurement'),
+  strokeDasharray: Resolver.general('stroke-dasharray'),
+  strokeLinecap: Resolver.general('stroke-linecap'),
+};
+
 export const dictionary: KeysToResolvers<
   Omit<Required<QuaantumProps>, keyof QuaantumProperties>
 > = {
@@ -207,6 +215,7 @@ export const dictionary: KeysToResolvers<
   ...pseudoClasses,
   ...pseudoElements,
   ...animationProps,
+  ...svgProperties,
   boxShadow: Resolver.general('box-shadow'),
   cursor: Resolver.general('cursor'),
   resize: Resolver.general('resize'),

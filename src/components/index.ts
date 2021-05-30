@@ -40,3 +40,18 @@ export { default as OrderedList } from './Atoms/OrderedList/OrderedList';
 
 export * from './Atoms/ListItem/ListItem';
 export { default as ListItem } from './Atoms/ListItem/ListItem';
+
+export * from './Organisms/Charts/ChartTitle/ChartTitle';
+export { default as ChartTitle } from './Organisms/Charts/ChartTitle/ChartTitle';
+
+export * from './Organisms/Charts/Chart/Chart';
+export { default as Chart } from './Organisms/Charts/Chart/Chart';
+
+export * from './Organisms/Charts/ChartLine/ChartLine';
+export { default as ChartLine } from './Organisms/Charts/ChartLine/ChartLine';
+
+export * from './Organisms/Charts/ChartAxis/ChartAxis';
+export { default as ChartAxis } from './Organisms/Charts/ChartAxis/ChartAxis';
+
+export * from './Organisms/Charts/ChartAxes/ChartAxes';
+export { default as ChartAxes } from './Organisms/Charts/ChartAxes/ChartAxes';

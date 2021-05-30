@@ -15,8 +15,8 @@ export const curveBetweenTwoPoints = ({
   end,
 }: CurveBetweenTwoPointsOptions): Coordinate[] => {
   const coordinates: Coordinate[] = [];
-  for (let i = 0; i < 2; i += 1 / resolution) {
-    coordinates.push(getSinusoidalPoint({ start, end, a: tension, x: start.x + i }));
+  for (let i = start.x; i < end.x; i += (end.x - start.x) / resolution) {
+    coordinates.push(getSinusoidalPoint({ start, end, a: 1/tension, x: i }));
   }
 
   return coordinates;
