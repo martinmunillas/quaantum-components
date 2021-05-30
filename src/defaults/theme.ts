@@ -17,7 +17,6 @@ import { Chart } from '../components/Organisms/Charts/Chart/Chart.defaultStyles'
 import { ChartAxis } from '../components/Organisms/Charts/ChartAxis/ChartAxis.defaultStyles';
 import { ChartAxes } from '../components/Organisms/Charts/ChartAxes/ChartAxes.defaultStyles';
 import { ChartLine } from '../components/Organisms/Charts/ChartLine/ChartLine.defaultStyles';
-import { ChartTitle } from '../components/Organisms/Charts/ChartTitle/ChartTitle.defaultStyles';
 
 export type ColorsCtx = {
   [key in string | number]: string | ColorsCtx;
@@ -85,6 +84,5 @@ export const theme: Theme = {
     ChartAxis,
     ChartAxes,
     ChartLine,
-    ChartTitle,
   },
 };
