@@ -50,4 +50,26 @@ describe('getColor()', () => {
       })
     ).toBe('asdflh');
   });
+
+  it('should return null when color is null', () => {
+    expect(
+      // @ts-expect-error
+      getColor(null, {
+        red: {
+          200: 'asdflh',
+        },
+      })
+    ).toBe(null);
+  });
+
+  it('should return undefined when color is undefined', () => {
+    expect(
+      // @ts-expect-error
+      getColor(undefined, {
+        red: {
+          200: 'asdflh',
+        },
+      })
+    ).toBe(undefined);
+  });
 });
