@@ -55,3 +55,6 @@ export { default as ChartAxis } from './Organisms/Charts/ChartAxis/ChartAxis';
 
 export * from './Organisms/Charts/ChartAxes/ChartAxes';
 export { default as ChartAxes } from './Organisms/Charts/ChartAxes/ChartAxes';
+
+export * from './Organisms/Modals/Modal';
+export { default as Modal } from './Organisms/Modals/Modal';
