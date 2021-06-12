@@ -1,59 +1,64 @@
-import React from 'react';
-import Button from '../../Atoms/Button/Button';
+import React, { createContext, useState } from 'react';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 import FocusTrap from 'focus-trap-react';
+import Overlay from './Childs/Overlay';
+import Header from './Childs/Header';
+import CloseButton from './Childs/CloseButton';
+import Body from './Childs/Body';
+import Footer from './Childs/Footer';
+import { QuaantumProps } from '../../../css/types';
 
-export interface ModalProps {
+export const modalCTX = createContext<any>({});
+
+export interface ModalProps extends QuaantumProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenFocus: React.Ref<HTMLElement>;
-  onCloseFocus: React.Ref<HTMLElement>;
+  onOpenFocus?: React.RefObject<HTMLElement>;
+  onCloseFocus: React.RefObject<HTMLElement>;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onOpenFocus, onCloseFocus }) => {
+interface Modal extends React.FC<ModalProps> {
+  Overlay: typeof Overlay;
+  Header: typeof Header;
+  CloseButton: typeof CloseButton;
+  Body: typeof Body;
+  Footer: typeof Footer;
+}
+
+const Modal: Modal = ({ isOpen, onClose, onOpenFocus, onCloseFocus, children, ...props }) => {
   const p = '20px';
   const handleClose = () => {
-    onCloseFocus?.current.focus();
+    console.log(onCloseFocus.current);
+    onCloseFocus.current?.focus();
     onClose();
   };
+  const [ctx, setCtx] = useState({ handleClose, p, Overlay: null });
   return isOpen ? (
-    <>
-      <QuaantumBase
-        bgColor='rgba(0,0,0,.1)'
-        position='fixed'
-        top='0'
-        left='0'
-        width='100vw'
-        height='100vh'
-        display='grid'
-        placeItems='center'
-      >
-        <FocusTrap>
-          <QuaantumBase
-            role='dialog'
-            aria-modal='true'
-            aria-labeledby='dialog1_label'
-            bgColor='white'
-            p={p}
-            r='10px'
-            position='relative'
-          >
-            <QuaantumBase as='header' fontSize='1.7em'>
-              Hello World
-            </QuaantumBase>
-            <QuaantumBase as='button' onClick={handleClose} position='absolute' top={p} right={p}>
-              X
-            </QuaantumBase>
-            <QuaantumBase>Hello world asfjdkasf;jlksfad;ljsfad</QuaantumBase>
-
-            <QuaantumBase as='footer'>
-              <Button>Hello World</Button>
-            </QuaantumBase>
-          </QuaantumBase>
-        </FocusTrap>
-      </QuaantumBase>
-    </>
+    <modalCTX.Provider value={[ctx, setCtx]}>
+      {ctx.Overlay}
+      <FocusTrap>
+        <QuaantumBase
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='dialog1_label'
+          bgColor='white'
+          p={p}
+          r='10px'
+          position='relative'
+          m='auto'
+          {...props}
+        >
+          {children}
+        </QuaantumBase>
+      </FocusTrap>
+    </modalCTX.Provider>
   ) : null;
 };
+
+Modal.Overlay = Overlay;
+Modal.Header = Header;
+Modal.CloseButton = CloseButton;
+Modal.Body = Body;
+Modal.Footer = Footer;
 
 export default Modal;
