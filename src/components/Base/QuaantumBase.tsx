@@ -6,11 +6,13 @@ import { HTML } from './HTML';
 
 interface QuaantumBaseProps extends QuaantumProps {
   exclude?: readonly string[] | string[];
+  ref?: React.Ref<HTMLElement>;
 }
 
 export const QuaantumBase = <T extends true | 'ok' = true>({
   as: As,
   exclude,
+  ref,
   ...props
 }: Record<string, any> & (T extends true ? QuaantumBaseProps : Record<string, any>)) => {
   const finalProps = useQuaantum(props, exclude);
@@ -27,5 +29,5 @@ export const QuaantumBase = <T extends true | 'ok' = true>({
 
   const Selected = useMemo(() => HTML[internalAs as DomElement], [internalAs]);
 
-  return <Selected {...finalProps} />;
+  return <Selected {...finalProps} ref={ref} />;
 };

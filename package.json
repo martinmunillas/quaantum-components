@@ -1,7 +1,7 @@
 {
   "name": "quaantum-components",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "description": "UI Components for React",
   "author": "Martin Munilla",
@@ -24,6 +24,7 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
+    "focus-trap-react": "^8.5.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
