@@ -28,9 +28,6 @@ const base: QuaantumProps = {
   minW: '100px',
   fontSize: '18px',
   cursor: 'pointer',
-  _focus: {
-    boxShadow: '0px 0px 10px 1px rgb(25, 163, 227, 85%);',
-  },
   outline: 'none',
 };
 

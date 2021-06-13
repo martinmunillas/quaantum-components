@@ -6,7 +6,7 @@ export class Resolver {
   static general = (key: string) => (prop: string, _config: Config) => `${key}:${prop};`;
 
   static pseudo = (key: string) => (props: QuaantumProps, config: Config) =>
-    `${key} {${resolve(props, config)}}`;
+    `&${key} {${resolve(props, config)}}`;
 
   static color = (key = 'color') => (prop: string, config: Config) => {
     return Resolver.general(key)(getColor(prop, config.colors), config);

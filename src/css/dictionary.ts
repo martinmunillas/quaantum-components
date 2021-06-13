@@ -145,6 +145,7 @@ const flexGridProps: KeysToResolvers<FlexGridProperties> = {
   flexWrap: Resolver.general('flex-wrap'),
   flexGrow: Resolver.general('flex-grow'),
   flexShrink: Resolver.general('flex-shrink'),
+  flexBasis: Resolver.general('flex-basis'),
   grid: Resolver.general('grid'),
   gridArea: Resolver.general('grid-area'),
   gridTemplate: Resolver.general('grid-template'),
@@ -171,23 +172,32 @@ const positionProps: KeysToResolvers<PositionProperties> = {
 };
 
 const pseudoClasses: KeysToResolvers<PseudoClasses> = {
-  _hover: Resolver.pseudo('&:hover'),
-  _active: Resolver.pseudo('&:active'),
-  _focus: Resolver.pseudo('&:focus'),
-  _placeholder: Resolver.pseudo('&::placeholder'),
+  _hover: Resolver.pseudo(':hover'),
+  _active: Resolver.pseudo(':active'),
+  _focus: Resolver.pseudo(':focus'),
+  _placeholder: Resolver.pseudo('::placeholder'),
 };
 
 const pseudoElements: KeysToResolvers<PseudoElements> = {
-  _before: Resolver.pseudo('&::before'),
-  _after: Resolver.pseudo('&::after'),
+  _before: Resolver.pseudo('::before'),
+  _after: Resolver.pseudo('::after'),
   content: Resolver.general('content'),
 };
 
 const animationProps: KeysToResolvers<AnimationProperties> = {
   transform: Resolver.general('transform'),
   transformOrigin: Resolver.general('transform-origin'),
-  transitionDuration: Resolver.general('transition-duration'),
+  transitionDuration: Resolver.measurement('transition-duration', 'speed'),
   transitionProperty: Resolver.general('transition-property'),
+  animation: Resolver.general('animation'),
+  animationName: Resolver.general('animation-name'),
+  animationDuration: Resolver.measurement('animation-duration', 'speed'),
+  animationTimingFunction: Resolver.general('animation-timing-function'),
+  animationDelay: Resolver.measurement('animation-delay', 'speed'),
+  animationIterationCount: Resolver.general('animation-iteration-count'),
+  animationDirection: Resolver.general('animation-direction'),
+  animationFillMode: Resolver.general('animation-fill-mode'),
+  animationPlayState: Resolver.general('animation-play-state'),
 };
 
 const svgProperties: KeysToResolvers<SVGProperties> = {
