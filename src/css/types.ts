@@ -248,6 +248,15 @@ export interface AnimationProperties {
   transformOrigin: LiteralUnion<AllCss>;
   transitionDuration: LiteralUnion<AllCss, string | number>;
   transitionProperty: LiteralUnion<AllCss, string | number>;
+  animation: LiteralUnion<AllCss>;
+  animationName: LiteralUnion<AllCss>;
+  animationDuration: LiteralUnion<AllCss, number | string>;
+  animationTimingFunction: LiteralUnion<AllCss>;
+  animationDelay: LiteralUnion<AllCss, number | string>;
+  animationIterationCount: LiteralUnion<AllCss, number | string>;
+  animationDirection: LiteralUnion<AllCss>;
+  animationFillMode: LiteralUnion<AllCss>;
+  animationPlayState: LiteralUnion<AllCss>;
 }
 
 type FlexGridValues =
@@ -276,6 +285,7 @@ export interface FlexGridProperties {
   flexWrap: LiteralUnion<AllCss | 'wrap' | 'no-wrap' | 'wrap-reverse'>;
   flexGrow: LiteralUnion<AllCss>;
   flexShrink: LiteralUnion<AllCss>;
+  flexBasis: LiteralUnion<AllCss | 'fill' | 'max-content' | 'min-content' | 'fit-content'>;
   grid: LiteralUnion<AllCss>;
   gridTemplateColumns: LiteralUnion<AllCss>;
   gridAutoColumns: LiteralUnion<AllCss>;
@@ -372,7 +382,7 @@ export interface Css
   resize: 'none' | 'both' | 'horizontal' | 'vertical' | AllCss;
 
   objectFit: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
-  objectPosition: 'cover' | 'contain' | 'none' | 'fill' | 'scale-down' | AllCss;
+  objectPosition: LiteralUnion<AllCss>;
   zIndex: LiteralUnion<AllCss, number>;
   listStyle: LiteralUnion<AllCss>;
 }

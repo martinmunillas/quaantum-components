@@ -20,6 +20,12 @@ export default {
       format: 'cjs',
       sourcemap: true,
     },
+    {
+      name: 'QuaantumComponents',
+      file: `./dist/index.udm.js`,
+      format: 'umd',
+      sourcemap: true,
+    },
   ],
   plugins: [
     resolve(),

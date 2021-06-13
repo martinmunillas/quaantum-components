@@ -41,7 +41,13 @@ export interface Global {
 }
 
 export interface Units {
+  /**
+   * for using just numbers in measurement properties, like width, margin, etc.
+   */
   measurement: string;
+  /**
+   * for using just numbers in speed properties like animationDuration.
+   */
   speed: string;
 }
 export interface Theme {
@@ -50,6 +56,10 @@ export interface Theme {
   components: Components;
   global?: Global;
   units: Units;
+  /**
+   * This will add default focus styles to all tabbable elements
+   */
+  mainFocus: QuaantumProps;
 }
 
 export const theme: Theme = {
@@ -66,6 +76,9 @@ export const theme: Theme = {
     speed: 's',
   },
   font: 'sans-serif',
+  mainFocus: {
+    boxShadow: '0px 0px 10px 1px rgb(25, 163, 227, 85%)',
+  },
   components: {
     Button,
     Flex,
