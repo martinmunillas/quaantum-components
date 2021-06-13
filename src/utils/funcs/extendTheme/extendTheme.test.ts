@@ -26,6 +26,10 @@ describe('extendTheme()', () => {
     speed: 's',
   };
 
+  const mainFocus = {
+    color: 'red',
+  };
+
   it('should return the default theme', () => {
     expect(extendTheme(theme, {})).toEqual(theme);
   });
@@ -50,12 +54,13 @@ describe('extendTheme()', () => {
   });
 
   it('should overwrite all', () => {
-    expect(extendTheme(theme, { colors, components, global, font, units })).toEqual({
+    expect(extendTheme(theme, { colors, components, global, font, units, mainFocus })).toEqual({
       colors,
       components: { ...theme.components, ...components },
       global,
       font,
       units,
+      mainFocus,
     });
   });
 });

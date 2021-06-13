@@ -2,20 +2,20 @@ import React from 'react';
 import Box, { BoxProps } from '../Box/Box';
 
 export interface GridProps extends BoxProps {
-  area: BoxProps['gridArea'];
-  template: BoxProps['gridTemplate'];
-  templateAreas: BoxProps['gridTemplateAreas'];
-  templateColumns: BoxProps['gridTemplateColumns'];
-  templateRows: BoxProps['gridTemplateRows'];
-  autoFlow: BoxProps['gridAutoFlow'];
-  autoColumns: BoxProps['gridAutoColumns'];
-  autoRows: BoxProps['gridAutoRows'];
-  column: BoxProps['gridColumn'];
-  columnEnd: BoxProps['gridColumnEnd'];
-  columnStart: BoxProps['gridColumnStart'];
-  row: BoxProps['gridRow'];
-  rowStart: BoxProps['gridRowStart'];
-  rowEnd: BoxProps['gridRowEnd'];
+  area?: BoxProps['gridArea'];
+  template?: BoxProps['gridTemplate'];
+  templateAreas?: BoxProps['gridTemplateAreas'];
+  templateColumns?: BoxProps['gridTemplateColumns'];
+  templateRows?: BoxProps['gridTemplateRows'];
+  autoFlow?: BoxProps['gridAutoFlow'];
+  autoColumns?: BoxProps['gridAutoColumns'];
+  autoRows?: BoxProps['gridAutoRows'];
+  column?: BoxProps['gridColumn'];
+  columnEnd?: BoxProps['gridColumnEnd'];
+  columnStart?: BoxProps['gridColumnStart'];
+  row?: BoxProps['gridRow'];
+  rowStart?: BoxProps['gridRowStart'];
+  rowEnd?: BoxProps['gridRowEnd'];
 }
 
 /**
