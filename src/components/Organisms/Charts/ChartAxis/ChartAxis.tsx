@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import React, { forwardRef, SVGProps } from 'react';
 import { QuaantumProps } from '../../../../css/types';
 import { QuaantumBase } from '../../../Base/QuaantumBase';
 
@@ -35,9 +35,9 @@ export interface ChartAxisProps
   y2: number;
 }
 
-const ChartAxis: React.FC<ChartAxisProps> = ({ x1, x2, y1, y2, ...props }) => {
+const ChartAxis = forwardRef<HTMLElement, ChartAxisProps>(({ x1, x2, y1, y2, ...props }, ref) => {
   return (
-    <QuaantumBase<'ok'>
+    <QuaantumBase
       as='line'
       styleAs='ChartAxis'
       x1={x1}
@@ -46,8 +46,9 @@ const ChartAxis: React.FC<ChartAxisProps> = ({ x1, x2, y1, y2, ...props }) => {
       y2={y2}
       exclude={ShouldExcludeSVG}
       {...props}
+      ref={ref}
     ></QuaantumBase>
   );
-};
+});
 
 export default ChartAxis;

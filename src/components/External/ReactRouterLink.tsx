@@ -9,9 +9,7 @@ const StyledLink = styled(Link)(...styledProps);
 
 interface ReactRouterLinkProps extends QuaantumProps, Omit<LinkProps, 'color'> {}
 
-const ReactRouterLink: React.FC<ReactRouterLinkProps> = (props) => {
+export const ReactRouterLink: React.FC<ReactRouterLinkProps> = (props) => {
   const finalProps = useQuaantum(props);
   return <StyledLink {...finalProps} />;
 };
-
-export default ReactRouterLink;
