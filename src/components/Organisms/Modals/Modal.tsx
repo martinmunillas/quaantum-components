@@ -17,7 +17,7 @@ export interface ModalProps extends QuaantumProps {
   onCloseFocus: React.RefObject<HTMLElement>;
 }
 
-interface Modal extends React.FC<ModalProps> {
+interface Modal {
   Overlay: typeof Overlay;
   Header: typeof Header;
   CloseButton: typeof CloseButton;
@@ -25,18 +25,24 @@ interface Modal extends React.FC<ModalProps> {
   Footer: typeof Footer;
 }
 
-const Modal: Modal = ({ isOpen, onClose, onOpenFocus, onCloseFocus, children, ...props }) => {
+const Modal: Modal & React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  onOpenFocus,
+  onCloseFocus,
+  children,
+  ...props
+}) => {
   const p = '20px';
   const handleClose = () => {
-    console.log(onCloseFocus.current);
-    onCloseFocus.current?.focus();
     onClose();
+    onCloseFocus.current?.focus();
   };
   const [ctx, setCtx] = useState({ handleClose, p, Overlay: null });
   return isOpen ? (
     <modalCTX.Provider value={[ctx, setCtx]}>
       {ctx.Overlay}
-      <FocusTrap>
+      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true }}>
         <QuaantumBase
           role='dialog'
           aria-modal='true'

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Theme, theme as quaantumTheme } from '../../../defaults/theme';
 import { ctx } from '../../../utils/ctx/providerContext';
+import FocusProvider from '../FocusProvider/FocusProvider';
 import FontProvider from '../FontProvider/FontProvider';
 import GlobalCssProvider from '../GlobalStyleProvider/GlobalStyleProvider';
 
@@ -13,6 +14,7 @@ const QuaantumProvider: React.FC<QuaantumProviderProps> = ({ theme = quaantumThe
     <ctx.Provider value={theme}>
       <GlobalCssProvider />
       <FontProvider />
+      <FocusProvider />
       {children}
     </ctx.Provider>
   );
