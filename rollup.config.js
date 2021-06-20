@@ -77,7 +77,7 @@ const bundle = ({ name, path, isMain = false }) => ({
                 private: true,
                 main: `../${dest({ format: cjs, name })}`,
                 module: `../${dest({ format: esm, name })}`,
-                types: `../lib/${path}`
+                types: `../lib/${path.split('.')[0]}.d.ts`
               }, null, 2)
             }
             const { scripts, devDependencies, husky, release, engines, ...keep } = JSON.parse(
@@ -98,5 +98,5 @@ const bundle = ({ name, path, isMain = false }) => ({
 
 export default [
   bundle({ path: 'index.ts', name: 'index', isMain: true }),
-  bundle({ path: 'components/External/ReactRouterLink.tsx', name: 'reactRouterLink' })
+  bundle({ path: 'components/External/react-router-dom/index.ts', name: 'react-router-dom' })
 ];
