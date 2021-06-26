@@ -29,14 +29,6 @@ export { default as OrderedList, OrderedListProps } from './Atoms/OrderedList/Or
 
 export { default as ListItem, ListItemProps } from './Atoms/ListItem/ListItem';
 
-export { default as ChartTitle, ChartTitleProps } from './Organisms/Charts/ChartTitle/ChartTitle';
-
-export { default as Chart, ChartProps } from './Organisms/Charts/Chart/Chart';
-
-export { default as ChartLine, ChartLineProps } from './Organisms/Charts/ChartLine/ChartLine';
-
-export { default as ChartAxis, ChartAxisProps } from './Organisms/Charts/ChartAxis/ChartAxis';
-
-export { default as ChartAxes, ChartAxesProps } from './Organisms/Charts/ChartAxes/ChartAxes';
+export { default as Chart, ChartProps } from './Organisms/Charts/Chart';
 
 export { default as Modal, ModalProps } from './Organisms/Modals/Modal';

@@ -1,4 +1,4 @@
-import { QuaantumProps } from '../../../../css/types';
+import { QuaantumProps } from '../../../../../css/types';
 
 const normal: QuaantumProps = {};
 
@@ -7,13 +7,13 @@ const variants = {
 };
 
 const base: QuaantumProps = {
-  stroke: 'gray',
-  strokeWidth: '.5px',
+  fill: 'rebeccapurple',
+  width: '10px',
 };
 
 const defaultVariant = 'normal';
 
-export const ChartAxes = {
+export const ChartBars = {
   variants,
   base,
   defaultVariant,

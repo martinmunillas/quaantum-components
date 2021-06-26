@@ -13,10 +13,12 @@ import { Link } from '../components/Atoms/Link/Link.defaultStyles';
 import { ListItem } from '../components/Atoms/ListItem/ListItem.defaultStyles';
 import { UnorderedList } from '../components/Atoms/UnorderedList/UnorderedList.defaultStyles';
 import { OrderedList } from '../components/Atoms/OrderedList/OrderedList.defaultStyles';
-import { Chart } from '../components/Organisms/Charts/Chart/Chart.defaultStyles';
-import { ChartAxis } from '../components/Organisms/Charts/ChartAxis/ChartAxis.defaultStyles';
-import { ChartAxes } from '../components/Organisms/Charts/ChartAxes/ChartAxes.defaultStyles';
-import { ChartLine } from '../components/Organisms/Charts/ChartLine/ChartLine.defaultStyles';
+import { Chart } from '../components/Organisms/Charts/Chart.defaultStyles';
+import { ChartAxes } from '../components/Organisms/Charts/childs/Axes/ChartAxes.defaultStyles';
+import { ChartAxis } from '../components/Organisms/Charts/childs/Axis/ChartAxis.defaultStyles';
+import { ChartLine } from '../components/Organisms/Charts/childs/Line/ChartLine.defaultStyles';
+import { ChartBars } from '../components/Organisms/Charts/childs/Bars/ChartBars.defaultStyles';
+import { ChartTitle } from '../components/Organisms/Charts/childs/Title/ChartTitle.defaultStyles';
 
 export type ColorsCtx = {
   [key in string | number]: string | ColorsCtx;
@@ -94,8 +96,10 @@ export const theme: Theme = {
     UnorderedList,
     OrderedList,
     Chart,
-    ChartAxis,
-    ChartAxes,
-    ChartLine,
+    'Chart.Axis': ChartAxis,
+    'Chart.Axes': ChartAxes,
+    'Chart.Line': ChartLine,
+    'Chart.Bars': ChartBars,
+    'Chart.Title': ChartTitle,
   },
 };

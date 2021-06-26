@@ -1,11 +1,12 @@
 import React, { forwardRef, SVGProps } from 'react';
-import { QuaantumProps } from '../../../../css/types';
-import { QuaantumBase } from '../../../Base/QuaantumBase';
+import { QuaantumProps } from '../../../../../css/types';
+import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 const ShouldExcludeSVG = ['d', 'r'] as const;
 
 const SVGShouldExclude = [
   'color',
+  'fill',
   'stroke',
   'strokeWidth',
   'strokeDasharray',
@@ -39,7 +40,7 @@ const ChartAxis = forwardRef<HTMLElement, ChartAxisProps>(({ x1, x2, y1, y2, ...
   return (
     <QuaantumBase
       as='line'
-      styleAs='ChartAxis'
+      styleAs='Chart.Axis'
       x1={x1}
       x2={x2}
       y1={y1}
