@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { QuaantumProps } from '../../../../css/types';
-import { Coordinate } from '../../../../utils/funcs/extendTheme/charts/bezierCurve';
-import { curveGraph } from '../../../../utils/funcs/extendTheme/charts/curveGraph';
-import { QuaantumBase } from '../../../Base/QuaantumBase';
+import { QuaantumProps } from '../../../../../css/types';
+import { Coordinate } from '../../../../../utils/funcs/extendTheme/charts/bezierCurve';
+import { curveGraph } from '../../../../../utils/funcs/extendTheme/charts/curveGraph';
+import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 export interface ChartLineProps extends QuaantumProps {
   items: {
@@ -39,7 +39,7 @@ const ChartLine: React.FC<ChartLineProps> = ({ items, curved, ...props }) => {
   return (
     <QuaantumBase
       as='polyline'
-      styleAs='ChartLine'
+      styleAs='Chart.Line'
       fill='none'
       points={rasturizedPoints}
       {...props}

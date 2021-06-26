@@ -1,11 +1,11 @@
 import React, { createContext, useState } from 'react';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 import FocusTrap from 'focus-trap-react';
-import Overlay from './Childs/Overlay';
-import Header from './Childs/Header';
-import CloseButton from './Childs/CloseButton';
-import Body from './Childs/Body';
-import Footer from './Childs/Footer';
+import Overlay from './childs/Overlay';
+import Header from './childs/Header';
+import CloseButton from './childs/CloseButton';
+import Body from './childs/Body';
+import Footer from './childs/Footer';
 import { QuaantumProps } from '../../../css/types';
 
 export const modalCTX = createContext<any>({});

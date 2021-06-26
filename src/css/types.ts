@@ -307,6 +307,7 @@ export interface FlexGridProperties {
 }
 
 export interface SVGProperties {
+  fill: LiteralUnion<AllCss>;
   stroke: LiteralUnion<AllCss>;
   strokeWidth: LiteralUnion<AllCss>;
   strokeLinecap: LiteralUnion<'butt' | 'round' | 'square' | AllCss>;

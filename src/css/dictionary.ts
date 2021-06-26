@@ -202,6 +202,7 @@ const animationProps: KeysToResolvers<AnimationProperties> = {
 
 const svgProperties: KeysToResolvers<SVGProperties> = {
   stroke: Resolver.color('stroke'),
+  fill: Resolver.color('fill'),
   strokeWidth: Resolver.measurement('stroke-width', 'measurement'),
   strokeDasharray: Resolver.general('stroke-dasharray'),
   strokeLinecap: Resolver.general('stroke-linecap'),
