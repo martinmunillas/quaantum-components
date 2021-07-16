@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, forwardRef } from 'react';
+import React, { AnchorHTMLAttributes, forwardRef, PropsWithChildren } from 'react';
 import { QuaantumProps } from '../../../css/types';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 
@@ -11,8 +11,10 @@ export interface LinkProps
 /**
  * if you provide an "external" prop it will behave as an anchor, else as a react-router-dom's Link
  */
-const Link: React.FC<LinkProps> = forwardRef<HTMLAnchorElement, LinkProps>((props: LinkProps) => {
-  return <QuaantumBase as='a' styleAs='Link' {...props} />;
-});
+const Link: React.FC<LinkProps> = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
+  (props: LinkProps) => {
+    return <QuaantumBase as='a' styleAs='Link' {...props} />;
+  }
+);
 
 export default Link;

@@ -1,4 +1,4 @@
-import React, { forwardRef, ImgHTMLAttributes } from 'react';
+import React, { forwardRef, ImgHTMLAttributes, PropsWithChildren } from 'react';
 import { QuaantumProps } from '../../../css/types';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 
@@ -9,7 +9,7 @@ export interface ImageProps
   alt: string;
 }
 
-const Image = forwardRef<HTMLImageElement, ImageProps>((props) => {
+const Image = forwardRef<HTMLImageElement, PropsWithChildren<ImageProps>>((props) => {
   return <QuaantumBase as='img' styleAs='Image' {...props} />;
 });
 
