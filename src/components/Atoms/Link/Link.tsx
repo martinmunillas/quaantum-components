@@ -11,10 +11,8 @@ export interface LinkProps
 /**
  * if you provide an "external" prop it will behave as an anchor, else as a react-router-dom's Link
  */
-const Link: React.FC<LinkProps> = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
-  (props: LinkProps) => {
-    return <QuaantumBase as='a' styleAs='Link' {...props} />;
-  }
-);
+const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>((props, ref) => {
+  return <QuaantumBase as='a' styleAs='Link' {...props} ref={ref} />;
+});
 
 export default Link;

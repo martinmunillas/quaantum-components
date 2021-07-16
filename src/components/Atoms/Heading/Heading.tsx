@@ -6,8 +6,8 @@ export interface HeadingProps
   extends QuaantumProps,
     Omit<HTMLAttributes<HTMLHeadingElement>, 'color'> {}
 
-const Heading = forwardRef<HTMLHeadingElement, PropsWithChildren<HeadingProps>>((props) => {
-  return <QuaantumBase as='h2' styleAs='Heading' {...props} />;
+const Heading = forwardRef<HTMLHeadingElement, PropsWithChildren<HeadingProps>>((props, ref) => {
+  return <QuaantumBase as='h2' styleAs='Heading' {...props} ref={ref} />;
 });
 
 export default Heading;

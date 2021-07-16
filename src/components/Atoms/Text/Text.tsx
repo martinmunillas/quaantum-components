@@ -6,8 +6,8 @@ export interface TextProps
   extends QuaantumProps,
     Omit<HTMLAttributes<HTMLParagraphElement>, 'color'> {}
 
-const Text = forwardRef<HTMLParagraphElement, PropsWithChildren<TextProps>>((props) => {
-  return <QuaantumBase as='p' styleAs='Text' {...props} />;
+const Text = forwardRef<HTMLParagraphElement, PropsWithChildren<TextProps>>((props, ref) => {
+  return <QuaantumBase as='p' styleAs='Text' {...props} ref={ref} />;
 });
 
 export default Text;

@@ -6,8 +6,8 @@ export interface TextAreaProps
   extends QuaantumProps,
     Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'color'> {}
 
-const TextArea = forwardRef<HTMLTextAreaElement, PropsWithChildren<TextAreaProps>>((props) => {
-  return <QuaantumBase as='textarea' styleAs='TextArea' {...props} />;
+const TextArea = forwardRef<HTMLTextAreaElement, PropsWithChildren<TextAreaProps>>((props, ref) => {
+  return <QuaantumBase as='textarea' styleAs='TextArea' {...props} ref={ref} />;
 });
 
 export default TextArea;
