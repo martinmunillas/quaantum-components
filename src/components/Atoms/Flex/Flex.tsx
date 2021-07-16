@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, PropsWithChildren } from 'react';
 import Box, { BoxProps } from '../Box/Box';
 
 export interface FlexProps extends BoxProps {
@@ -38,7 +38,7 @@ export interface FlexProps extends BoxProps {
  * some handy shortcuts for flexDirection, flexWrap, flexShrink and flexGrow as
  * direction, wrap, shrink and grow respectively.
  */
-const Flex = forwardRef<HTMLElement, FlexProps>(
+const Flex = forwardRef<HTMLElement, PropsWithChildren<FlexProps>>(
   (
     {
       direction = '',
