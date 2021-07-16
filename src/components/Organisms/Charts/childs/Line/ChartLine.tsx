@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { QuaantumProps } from '../../../../../css/types';
-import { Coordinate } from '../../../../../utils/funcs/extendTheme/charts/bezierCurve';
-import { curveGraph } from '../../../../../utils/funcs/extendTheme/charts/curveGraph';
+import { Coordinate } from '../../../../../utils/funcs/charts/bezierCurve';
+import { curveGraph } from '../../../../../utils/funcs/charts/curveGraph';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 export interface ChartLineProps extends QuaantumProps {
