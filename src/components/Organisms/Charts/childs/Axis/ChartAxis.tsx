@@ -1,4 +1,4 @@
-import React, { forwardRef, SVGProps } from 'react';
+import React, { forwardRef, PropsWithChildren, SVGProps } from 'react';
 import { QuaantumProps } from '../../../../../css/types';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
