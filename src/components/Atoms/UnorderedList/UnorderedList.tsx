@@ -5,8 +5,8 @@ import { QuaantumBase } from '../../Base/QuaantumBase';
 export interface UnorderedListProps extends QuaantumProps {}
 
 const UnorderedList = forwardRef<HTMLUListElement, PropsWithChildren<UnorderedListProps>>(
-  (props) => {
-    return <QuaantumBase as='ul' styleAs='UnorderedList' {...props} />;
+  (props, ref) => {
+    return <QuaantumBase as='ul' styleAs='UnorderedList' {...props} ref={ref} />;
   }
 );
 

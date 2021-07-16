@@ -23,23 +23,26 @@ export interface GridProps extends BoxProps {
  * access to the component in the theme as "Grid"
  */
 const Grid = forwardRef<HTMLElement, PropsWithChildren<GridProps>>(
-  ({
-    area = '',
-    template = '',
-    templateAreas = '',
-    templateColumns = '',
-    templateRows = '',
-    autoFlow = '',
-    autoColumns = '',
-    autoRows = '',
-    column = '',
-    columnEnd = '',
-    columnStart = '',
-    row = '',
-    rowStart = '',
-    rowEnd = '',
-    ...props
-  }) => {
+  (
+    {
+      area = '',
+      template = '',
+      templateAreas = '',
+      templateColumns = '',
+      templateRows = '',
+      autoFlow = '',
+      autoColumns = '',
+      autoRows = '',
+      column = '',
+      columnEnd = '',
+      columnStart = '',
+      row = '',
+      rowStart = '',
+      rowEnd = '',
+      ...props
+    },
+    ref
+  ) => {
     return (
       <Box
         styleAs='Grid'
@@ -59,6 +62,7 @@ const Grid = forwardRef<HTMLElement, PropsWithChildren<GridProps>>(
         gridRowStart={rowStart}
         gridRowEnd={rowEnd}
         {...props}
+        ref={ref}
       />
     );
   }

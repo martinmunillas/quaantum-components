@@ -9,7 +9,7 @@ const StyledLink = styled(ReactRouterDomLink)(...styledProps);
 
 export interface LinkProps extends QuaantumProps, Omit<ReactRouterDomLinkProps, 'color'> {}
 
-export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>((props) => {
+export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>((props, ref) => {
   const finalProps = useQuaantum({ styleAs: 'Link', ...props });
-  return <StyledLink {...finalProps} />;
+  return <StyledLink {...finalProps} ref={ref} />;
 });

@@ -9,8 +9,8 @@ export interface ImageProps
   alt: string;
 }
 
-const Image = forwardRef<HTMLImageElement, PropsWithChildren<ImageProps>>((props) => {
-  return <QuaantumBase as='img' styleAs='Image' {...props} />;
+const Image = forwardRef<HTMLImageElement, PropsWithChildren<ImageProps>>((props, ref) => {
+  return <QuaantumBase as='img' styleAs='Image' {...props} ref={ref} />;
 });
 
 export default Image;
