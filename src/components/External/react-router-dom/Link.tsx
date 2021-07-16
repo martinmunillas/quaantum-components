@@ -1,5 +1,5 @@
 import { Link as ReactRouterDomLink, LinkProps as ReactRouterDomLinkProps } from 'react-router-dom';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { QuaantumProps } from '../../../css/types';
 import { useQuaantum } from '../../../utils/hooks/useQuaantum';
@@ -9,7 +9,7 @@ const StyledLink = styled(ReactRouterDomLink)(...styledProps);
 
 export interface LinkProps extends QuaantumProps, Omit<ReactRouterDomLinkProps, 'color'> {}
 
-export const Link: React.FC<LinkProps> = (props) => {
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props) => {
   const finalProps = useQuaantum({ styleAs: 'Link', ...props });
   return <StyledLink {...finalProps} />;
-};
+});

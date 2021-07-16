@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Box, { BoxProps } from '../Box/Box';
 
 export interface FlexProps extends BoxProps {
   /**
-   * Shorthand for flexDirection in the flex component
+   * Shorthand for flexDirection
    */
   direction?: BoxProps['flexDirection'];
   /**
-   * Shorthand for flexWrap in the flex component
+   * Shorthand for flexWrap
    */
   wrap?: BoxProps['flexWrap'];
   /**
-   * Shorthand for flexShrink in the flex component
+   * Shorthand for flexShrink
    */
   shrink?: BoxProps['flexShrink'];
   /**
-   * Shorthand for flexGrow in the flex component
+   * Shorthand for flexGrow
    */
   grow?: BoxProps['flexGrow'];
   /**
-   * Shorthand for flexBasis in the flex component
+   * Shorthand for flexBasis
    */
   basis?: BoxProps['flexBasis'];
   /**
-   * Shorthand for justifyContent in the flex component
+   * Shorthand for justifyContent
    */
   justify?: BoxProps['justifyContent'];
   /**
-   * Shorthand for alignItems in the flex component
+   * Shorthand for alignItems
    */
   align?: BoxProps['alignItems'];
 }
@@ -38,30 +38,36 @@ export interface FlexProps extends BoxProps {
  * some handy shortcuts for flexDirection, flexWrap, flexShrink and flexGrow as
  * direction, wrap, shrink and grow respectively.
  */
-const Flex: React.FC<FlexProps> = ({
-  direction = '',
-  wrap = '',
-  grow = '',
-  shrink = '',
-  basis = '',
-  justify = '',
-  align = '',
-  ...props
-}) => {
-  return (
-    <Box
-      styleAs='Flex'
-      display='flex'
-      flexDirection={direction}
-      flexWrap={wrap}
-      flexGrow={grow}
-      flexShrink={shrink}
-      flexBasis={basis}
-      justifyContent={justify}
-      alignContent={align}
-      {...props}
-    />
-  );
-};
+const Flex = forwardRef<HTMLElement, FlexProps>(
+  (
+    {
+      direction = '',
+      wrap = '',
+      grow = '',
+      shrink = '',
+      basis = '',
+      justify = '',
+      align = '',
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <Box
+        styleAs='Flex'
+        display='flex'
+        flexDirection={direction}
+        flexWrap={wrap}
+        flexGrow={grow}
+        flexShrink={shrink}
+        flexBasis={basis}
+        justifyContent={justify}
+        alignContent={align}
+        {...props}
+        ref={ref}
+      />
+    );
+  }
+);
 
 export default Flex;
