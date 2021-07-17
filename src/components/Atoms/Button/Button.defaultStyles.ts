@@ -1,23 +1,34 @@
 import { QuaantumProps } from '../../../css/types';
 
-const solidVariant: QuaantumProps = {
+const solid: QuaantumProps = {
   color: 'white',
   bgColor: 'primary',
 };
-const ghostVariant: QuaantumProps = {
+const ghost: QuaantumProps = {
   bgColor: 'transparent',
   color: 'primary',
 };
 
-const outlineVariant: QuaantumProps = {
-  ...ghostVariant,
+const unstyled: QuaantumProps = {
+  bgColor: 'unset',
+  border: 'unset',
+  m: 0,
+  p: 0,
+  minW: 'unset',
+  fontWeight: 'unset',
+  fontSize: 'unset',
+};
+
+const outline: QuaantumProps = {
+  ...ghost,
   border: '1px solid currentColor',
 };
 
 const variants = {
-  solid: solidVariant,
-  ghost: ghostVariant,
-  outline: outlineVariant,
+  solid,
+  ghost,
+  outline,
+  unstyled,
 };
 
 const base: QuaantumProps = {
