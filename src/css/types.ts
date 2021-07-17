@@ -217,9 +217,10 @@ export interface FontProperties {
   fontSize: LiteralUnion<AllCss, number | string>;
   fontFamily: LiteralUnion<AllCss>;
   textDecoration: LiteralUnion<AllCss>;
-  textTransform: LiteralUnion<'uppercase' | 'capitalize' | 'lowercase'>;
+  textTransform: LiteralUnion<'uppercase' | 'capitalize' | 'lowercase' | AllCss>;
   textOrientation: LiteralUnion<AllCss>;
-  textAlign: 'center' | 'left' | 'right' | AllCss;
+  textAlign: LiteralUnion<'center' | 'left' | 'right' | AllCss>;
+  whiteSpace: LiteralUnion<AllCss | 'normal' | 'nowrap' | 'pre' | 'pre-wrap' | 'pre-line'>;
 }
 
 export interface PositionProperties {
