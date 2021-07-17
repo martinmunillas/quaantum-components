@@ -120,6 +120,7 @@ const fontProps: KeysToResolvers<FontProperties> = {
   textTransform: Resolver.general('text-transform'),
   textOrientation: Resolver.general('text-orientation'),
   textAlign: Resolver.general('text-align'),
+  whiteSpace: Resolver.general('white-space'),
 };
 
 const displayProps: KeysToResolvers<DisplayProperties> = {
