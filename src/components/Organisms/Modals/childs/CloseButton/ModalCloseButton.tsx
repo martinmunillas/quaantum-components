@@ -3,9 +3,9 @@ import { QuaantumProps } from '../../../../../css/types';
 import Button from '../../../../Atoms/Button/Button';
 import { modalCTX } from '../../Modal';
 
-interface CloseButtonProps extends QuaantumProps {}
+export interface ModalCloseButtonProps extends QuaantumProps {}
 
-const CloseButton = forwardRef<HTMLButtonElement, PropsWithChildren<CloseButtonProps>>(
+const ModalCloseButton = forwardRef<HTMLButtonElement, PropsWithChildren<ModalCloseButtonProps>>(
   ({ children = 'X', ...props }, ref) => {
     const [{ handleClose, p }] = useContext(modalCTX);
     return (
@@ -24,4 +24,4 @@ const CloseButton = forwardRef<HTMLButtonElement, PropsWithChildren<CloseButtonP
   }
 );
 
-export default CloseButton;
+export default ModalCloseButton;

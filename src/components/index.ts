@@ -30,5 +30,17 @@ export { default as OrderedList, OrderedListProps } from './Atoms/OrderedList/Or
 export { default as ListItem, ListItemProps } from './Atoms/ListItem/ListItem';
 
 export { default as Chart, ChartProps } from './Organisms/Charts/Chart';
+export { ChartAxisProps } from './Organisms/Charts/childs/Axis/ChartAxis';
+export { ChartAxesProps } from './Organisms/Charts/childs/Axes/ChartAxes';
+export { ChartLineProps } from './Organisms/Charts/childs/Line/ChartLine';
+export { ChartBarsProps } from './Organisms/Charts/childs/Bars/ChartBars';
+export { ChartTitleProps } from './Organisms/Charts/childs/Title/ChartTitle';
 
 export { default as Modal, ModalProps } from './Organisms/Modals/Modal';
+export { ModalCloseButtonProps } from './Organisms/Modals/childs/CloseButton/ModalCloseButton';
+export { ModalBodyProps } from './Organisms/Modals/childs/Body/ModalBody';
+export { ModalFooterProps } from './Organisms/Modals/childs/Footer/ModalFooter';
+export { ModalHeaderProps } from './Organisms/Modals/childs/Header/ModalHeader';
+export { ModalOverlayProps } from './Organisms/Modals/childs/Overlay/ModalOverlay';
+
+export { default as ErrorCatcher } from './Utils/ErrorCatcher';

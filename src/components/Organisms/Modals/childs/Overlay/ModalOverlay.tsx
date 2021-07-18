@@ -4,9 +4,9 @@ import { QuaantumProps } from '../../../../../css/types';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 import { modalCTX } from '../../Modal';
 
-interface OverlayProps extends QuaantumProps {}
+export interface ModalOverlayProps extends QuaantumProps {}
 
-const Overlay: React.FC<OverlayProps> = (props) => {
+const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
   const [ctx, setCtx] = useContext(modalCTX);
   useEffect(() => {
     setCtx({
@@ -29,4 +29,4 @@ const Overlay: React.FC<OverlayProps> = (props) => {
   return null;
 };
 
-export default Overlay;
+export default ModalOverlay;

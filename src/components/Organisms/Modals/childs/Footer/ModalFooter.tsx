@@ -2,10 +2,10 @@ import React from 'react';
 import { QuaantumProps } from '../../../../../css/types';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
-interface FooterProps extends QuaantumProps {}
+export interface ModalFooterProps extends QuaantumProps {}
 
-const Footer: React.FC<FooterProps> = (props) => {
+const ModalFooter: React.FC<ModalFooterProps> = (props) => {
   return <QuaantumBase as='footer' {...props} />;
 };
 
-export default Footer;
+export default ModalFooter;
