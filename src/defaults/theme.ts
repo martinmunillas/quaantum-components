@@ -20,7 +20,7 @@ import { ChartLine } from '../components/Organisms/Charts/childs/Line/ChartLine.
 import { ChartBars } from '../components/Organisms/Charts/childs/Bars/ChartBars.defaultStyles';
 import { ChartTitle } from '../components/Organisms/Charts/childs/Title/ChartTitle.defaultStyles';
 import { Modal } from '../components/Organisms/Modals/Modal.defaultStyles';
-import { CloseButton } from '../components/Organisms/Modals/childs/CloseButton/CloseButton.defaultStyles';
+import { CloseButton } from '../components/Organisms/Modals/childs/CloseButton/ModalCloseButton.defaultStyles';
 
 export type ColorsCtx = {
   [key in string | number]: string | ColorsCtx;
