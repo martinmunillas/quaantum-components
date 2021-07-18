@@ -1,8 +1,8 @@
 import React from 'react';
 import { useContext, useEffect } from 'react';
-import { QuaantumProps } from '../../../../css/types';
-import { QuaantumBase } from '../../../Base/QuaantumBase';
-import { modalCTX } from '../Modal';
+import { QuaantumProps } from '../../../../../css/types';
+import { QuaantumBase } from '../../../../Base/QuaantumBase';
+import { modalCTX } from '../../Modal';
 
 interface OverlayProps extends QuaantumProps {}
 

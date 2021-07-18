@@ -1,6 +1,6 @@
 import React from 'react';
-import { QuaantumProps } from '../../../../css/types';
-import { QuaantumBase } from '../../../Base/QuaantumBase';
+import { QuaantumProps } from '../../../../../css/types';
+import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 interface FooterProps extends QuaantumProps {}
 

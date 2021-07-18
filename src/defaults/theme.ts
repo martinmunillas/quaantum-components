@@ -19,6 +19,8 @@ import { ChartAxis } from '../components/Organisms/Charts/childs/Axis/ChartAxis.
 import { ChartLine } from '../components/Organisms/Charts/childs/Line/ChartLine.defaultStyles';
 import { ChartBars } from '../components/Organisms/Charts/childs/Bars/ChartBars.defaultStyles';
 import { ChartTitle } from '../components/Organisms/Charts/childs/Title/ChartTitle.defaultStyles';
+import { Modal } from '../components/Organisms/Modals/Modal.defaultStyles';
+import { CloseButton } from '../components/Organisms/Modals/childs/CloseButton/CloseButton.defaultStyles';
 
 export type ColorsCtx = {
   [key in string | number]: string | ColorsCtx;
@@ -101,5 +103,7 @@ export const theme: Theme = {
     'Chart.Line': ChartLine,
     'Chart.Bars': ChartBars,
     'Chart.Title': ChartTitle,
+    Modal,
+    'Modal.CloseButton': CloseButton,
   },
 };

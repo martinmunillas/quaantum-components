@@ -13,8 +13,11 @@ export default {
 
 export const Default: Story<ModalProps> = () => {
   const [open, setOpen] = useState(true);
+
   const handleClose = () => setOpen(false);
+
   const openRef = useRef<HTMLButtonElement>(null);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -33,7 +36,8 @@ export const Default: Story<ModalProps> = () => {
 
   return (
     <QuaantumProvider theme={theme}>
-      <Button bgColor='black' onClick={() => setOpen(true)} ref={openRef}>
+      {/* high so we can test scroll behavior  */}
+      <Button bgColor='black' onClick={() => setOpen(true)} ref={openRef} h='3000px'>
         Open Modal
       </Button>
       <Modal
@@ -48,7 +52,7 @@ export const Default: Story<ModalProps> = () => {
       >
         <Modal.Overlay />
         <Modal.Header>Sign Up!</Modal.Header>
-        <Modal.CloseButton styleAs='Button'>X</Modal.CloseButton>
+        <Modal.CloseButton>X</Modal.CloseButton>
         <Modal.Body>
           <Input
             placeholder='email'

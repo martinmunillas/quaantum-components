@@ -14,7 +14,6 @@ const unstyled: QuaantumProps = {
   border: 'unset',
   m: 0,
   p: 0,
-  minW: 'unset',
   fontWeight: 'unset',
   fontSize: 'unset',
 };
@@ -36,7 +35,8 @@ const base: QuaantumProps = {
   round: '50px',
   padding: '10px 20px',
   fontWeight: 600,
-  minW: '100px',
+  minW: '42px',
+  minH: '42px',
   fontSize: '18px',
   cursor: 'pointer',
   outline: 'none',
