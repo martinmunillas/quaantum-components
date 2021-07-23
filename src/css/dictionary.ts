@@ -155,7 +155,7 @@ const flexGridProps: KeysToResolvers<FlexGridProperties> = {
   gridTemplateRows: Resolver.general('grid-template-rows'),
   gridAutoFlow: Resolver.general('grid-auto-flow'),
   gridAutoColumns: Resolver.general('grid-auto-columns'),
-  gridAutoRows: Resolver.general('grid-auto-row'),
+  gridAutoRows: Resolver.general('grid-auto-rows'),
   gridColumn: Resolver.general('grid-auto-column'),
   gridColumnEnd: Resolver.general('grid-column-end'),
   gridColumnStart: Resolver.general('grid-column-start'),
