@@ -10,7 +10,7 @@ const ChartTitle: React.FC<ChartTitleProps> = ({ children, ...props }) => {
   const { dispatch } = useContext(chartCtx);
   useEffect(() => {
     dispatch({ type: 'setFields', payload: { title: children, titleProps: props } });
-  }, [children, props]);
+  }, [children]);
   return null;
 };
 

@@ -36,6 +36,7 @@ const ChartBars = ({ items, children }: ChartBarsProps) => {
           typeof children === 'function' ? children({ value: items[i].value }, i) : children;
         return (
           <QuaantumBase
+            key={i}
             as='rect'
             styleAs='Chart.Bars'
             x={coord.x}
