@@ -20,4 +20,6 @@ const ChartAxes: React.FC<ChartAxesProps> = ({ x, y }) => {
   );
 };
 
+ChartAxes.displayName = 'ChartAxes';
+
 export default ChartAxes;

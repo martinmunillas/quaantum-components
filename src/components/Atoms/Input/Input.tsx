@@ -10,4 +10,6 @@ const Input = forwardRef<HTMLInputElement, PropsWithChildren<InputProps>>((props
   return <QuaantumBase as='input' styleAs='Input' {...props} ref={ref} />;
 });
 
+Input.displayName = 'Input';
+
 export default Input;

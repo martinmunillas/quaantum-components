@@ -8,4 +8,6 @@ const ListItem = forwardRef<HTMLLIElement, PropsWithChildren<ListItemProps>>((pr
   return <QuaantumBase as='li' styleAs='ListItem' {...props} ref={ref} />;
 });
 
+ListItem.displayName = 'ListItem';
+
 export default ListItem;

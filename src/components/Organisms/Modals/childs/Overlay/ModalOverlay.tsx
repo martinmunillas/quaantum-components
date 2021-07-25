@@ -29,4 +29,6 @@ const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
   return null;
 };
 
+ModalOverlay.displayName = 'ModalOverlay';
+
 export default ModalOverlay;

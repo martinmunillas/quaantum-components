@@ -70,4 +70,6 @@ const Flex = forwardRef<HTMLElement, PropsWithChildren<FlexProps>>(
   }
 );
 
+Flex.displayName = 'Flex';
+
 export default Flex;

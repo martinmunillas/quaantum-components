@@ -10,4 +10,6 @@ const OrderedList = forwardRef<HTMLOListElement, PropsWithChildren<OrderedListPr
   }
 );
 
+OrderedList.displayName = 'OrderedList';
+
 export default OrderedList;

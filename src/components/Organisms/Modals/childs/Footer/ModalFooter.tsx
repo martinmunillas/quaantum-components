@@ -8,4 +8,6 @@ const ModalFooter: React.FC<ModalFooterProps> = (props) => {
   return <QuaantumBase as='footer' {...props} />;
 };
 
+ModalFooter.displayName = 'ModalFooter';
+
 export default ModalFooter;

@@ -10,4 +10,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, PropsWithChildren<TextAreaProps
   return <QuaantumBase as='textarea' styleAs='TextArea' {...props} ref={ref} />;
 });
 
+TextArea.displayName = 'TextArea';
+
 export default TextArea;

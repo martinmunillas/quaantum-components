@@ -10,4 +10,6 @@ const Heading = forwardRef<HTMLHeadingElement, PropsWithChildren<HeadingProps>>(
   return <QuaantumBase as='h2' styleAs='Heading' {...props} ref={ref} />;
 });
 
+Heading.displayName = 'Heading';
+
 export default Heading;

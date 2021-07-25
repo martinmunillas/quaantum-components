@@ -10,7 +10,7 @@ const base: QuaantumProps = {};
 
 const defaultVariant = 'normal';
 
-export const Image = {
+export const Img = {
   variants,
   base,
   defaultVariant,

@@ -88,4 +88,6 @@ Modal.CloseButton = CloseButton;
 Modal.Body = Body;
 Modal.Footer = Footer;
 
+Modal.displayName = 'Modal';
+
 export default Modal;

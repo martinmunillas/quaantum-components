@@ -8,7 +8,7 @@ import { Text } from '../components/Atoms/Text/Text.defaultStyles';
 import { Grid } from '../components/Atoms/Grid/Grid.defaultStyles';
 import { Box } from '../components/Atoms/Box/Box.defaultStyles';
 import { Heading } from '../components/Atoms/Heading/Heading.defaultStyles';
-import { Image } from '../components/Atoms/Image/Image.defaultStyles';
+import { Img } from '../components/Atoms/Img/Img.defaultStyles';
 import { Link } from '../components/Atoms/Link/Link.defaultStyles';
 import { ListItem } from '../components/Atoms/ListItem/ListItem.defaultStyles';
 import { UnorderedList } from '../components/Atoms/UnorderedList/UnorderedList.defaultStyles';
@@ -92,7 +92,7 @@ export const theme: Theme = {
     Grid,
     Box,
     Heading,
-    Image,
+    Img,
     Link,
     ListItem,
     UnorderedList,

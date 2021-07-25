@@ -8,4 +8,6 @@ const ModalHeader: React.FC<ModalHeaderProps> = (props) => {
   return <QuaantumBase as='header' fontSize='1.7em' {...props} />;
 };
 
+ModalHeader.displayName = 'ModalHeader';
+
 export default ModalHeader;

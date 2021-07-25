@@ -50,4 +50,6 @@ const ChartBars = ({ items, children }: ChartBarsProps) => {
   );
 };
 
+ChartBars.displayName = 'ChartBars';
+
 export default ChartBars;

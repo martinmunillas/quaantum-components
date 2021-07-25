@@ -19,7 +19,7 @@ export { default as Input, InputProps } from './Atoms/Input/Input';
 
 export { default as TextArea, TextAreaProps } from './Atoms/TextArea/TextArea';
 
-export { default as Image, ImageProps } from './Atoms/Image/Image';
+export { default as Img, ImgProps } from './Atoms/Img/Img';
 
 export { default as Link, LinkProps } from './Atoms/Link/Link';
 

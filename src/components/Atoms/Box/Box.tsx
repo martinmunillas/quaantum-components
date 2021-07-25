@@ -8,4 +8,6 @@ const Box = forwardRef<HTMLElement, PropsWithChildren<BoxProps>>(({ ...props }, 
   return <QuaantumBase as='div' styleAs='Box' {...props} ref={ref} />;
 });
 
+Box.displayName = 'Box';
+
 export default Box;

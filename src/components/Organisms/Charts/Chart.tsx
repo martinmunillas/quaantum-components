@@ -77,4 +77,6 @@ Chart.Axes = ChartAxes;
 Chart.Axis = ChartAxis;
 Chart.Bars = ChartBars;
 
+Chart.displayName = 'Chart';
+
 export default Chart;
