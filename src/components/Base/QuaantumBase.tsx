@@ -8,7 +8,7 @@ interface QuaantumBaseProps extends QuaantumProps {
   exclude?: readonly string[] | string[];
 }
 
-export const QuaantumBase = forwardRef<HTMLElement, Record<string, any> & QuaantumBaseProps>(
+const QuaantumBase = forwardRef<HTMLElement, Record<string, any> & QuaantumBaseProps>(
   ({ as: As, exclude, ...props }, ref) => {
     const finalProps = useQuaantum(props, exclude);
 
@@ -29,3 +29,7 @@ export const QuaantumBase = forwardRef<HTMLElement, Record<string, any> & Quaant
     return <Selected {...finalProps} ref={ref} />;
   }
 );
+
+QuaantumBase.displayName = 'QuaantumBase';
+
+export { QuaantumBase };

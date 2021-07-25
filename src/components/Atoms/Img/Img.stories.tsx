@@ -1,17 +1,17 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Image, { ImageProps } from './Image';
+import Img, { ImgProps } from './Img';
 import QuaantumProvider from '../../Providers/QuaantumProvider/QuaantumProvider';
 import { theme } from '../../../defaults/theme';
 
 export default {
-  title: 'Atoms/Image',
-  component: Image,
+  title: 'Atoms/Img',
+  component: Img,
 } as Meta;
 
-const Template: Story<ImageProps> = (args) => (
+const Template: Story<ImgProps> = (args) => (
   <QuaantumProvider theme={theme}>
-    <Image {...args} />
+    <Img {...args} />
   </QuaantumProvider>
 );
 

@@ -10,4 +10,6 @@ const Text = forwardRef<HTMLParagraphElement, PropsWithChildren<TextProps>>((pro
   return <QuaantumBase as='p' styleAs='Text' {...props} ref={ref} />;
 });
 
+Text.displayName = 'Text';
+
 export default Text;

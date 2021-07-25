@@ -10,4 +10,6 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>((pr
   return <QuaantumBase as='button' styleAs='Button' type='button' {...props} ref={ref} />;
 });
 
+Button.displayName = 'Button';
+
 export default Button;

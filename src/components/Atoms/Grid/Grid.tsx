@@ -68,4 +68,6 @@ const Grid = forwardRef<HTMLElement, PropsWithChildren<GridProps>>(
   }
 );
 
+Grid.displayName = 'Grid';
+
 export default Grid;

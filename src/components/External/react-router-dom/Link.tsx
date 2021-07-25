@@ -13,3 +13,5 @@ export const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>(
   const finalProps = useQuaantum({ styleAs: 'Link', ...props });
   return <StyledLink {...finalProps} ref={ref} />;
 });
+
+Link.displayName = 'Link';

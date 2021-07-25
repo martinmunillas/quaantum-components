@@ -54,4 +54,6 @@ const ChartAxis = forwardRef<HTMLElement, PropsWithChildren<ChartAxisProps>>(
   }
 );
 
+ChartAxis.displayName = 'ChartAxis';
+
 export default ChartAxis;

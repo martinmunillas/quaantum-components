@@ -10,4 +10,6 @@ const UnorderedList = forwardRef<HTMLUListElement, PropsWithChildren<UnorderedLi
   }
 );
 
+UnorderedList.displayName = 'UnorderedList';
+
 export default UnorderedList;

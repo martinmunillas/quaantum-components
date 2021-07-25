@@ -14,4 +14,6 @@ const ChartTitle: React.FC<ChartTitleProps> = ({ children, ...props }) => {
   return null;
 };
 
+ChartTitle.displayName = 'ChartTitle';
+
 export default ChartTitle;

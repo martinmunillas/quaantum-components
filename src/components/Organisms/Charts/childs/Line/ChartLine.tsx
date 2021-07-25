@@ -47,4 +47,6 @@ const ChartLine: React.FC<ChartLineProps> = ({ items, curved, ...props }) => {
   );
 };
 
+ChartLine.displayName = 'ChartLine';
+
 export default ChartLine;

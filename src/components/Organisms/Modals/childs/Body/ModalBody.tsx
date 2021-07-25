@@ -8,4 +8,6 @@ const ModalBody: React.FC<ModalBodyProps> = (props) => {
   return <QuaantumBase {...props}></QuaantumBase>;
 };
 
+ModalBody.displayName = 'ModalBody';
+
 export default ModalBody;

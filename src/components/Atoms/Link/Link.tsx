@@ -15,4 +15,6 @@ const Link = forwardRef<HTMLAnchorElement, PropsWithChildren<LinkProps>>((props,
   return <QuaantumBase as='a' styleAs='Link' {...props} ref={ref} />;
 });
 
+Link.displayName = 'Link';
+
 export default Link;
