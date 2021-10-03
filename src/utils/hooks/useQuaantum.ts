@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { internalProps } from '../../css/dictionary';
 import { QuaantumProps } from '../../css/types';
+import { filterUndefined } from '../funcs/filterUndefined';
 import { useGenCss } from './useGenCss';
 import { useTheme } from './useTheme';
 
@@ -47,13 +48,15 @@ export const useQuaantum = <
     () =>
       props.styleAs
         ? {
-            ...theme.components[props.styleAs]?.base,
-            ...theme.components[props.styleAs]?.variants?.[
-              props.variant || theme.components[props.styleAs].defaultVariant
-            ],
-            ...usableProps,
+            ...filterUndefined(theme.components[props.styleAs]?.base || {}),
+            ...filterUndefined(
+              theme.components[props.styleAs]?.variants?.[
+                props.variant || theme.components[props.styleAs].defaultVariant
+              ] || {}
+            ),
+            ...filterUndefined(usableProps || {}),
           }
-        : usableProps,
+        : filterUndefined(usableProps || {}),
     [props, theme]
   );
 
