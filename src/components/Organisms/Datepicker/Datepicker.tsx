@@ -55,6 +55,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
   onClose,
   isOpen,
   onChange,
+  ...props
 }) => {
   const [selected, setSelected] = useState<IDate | null>(null);
   const [newStartingDate, setNewStartingDate] = useState(
@@ -96,7 +97,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} minW='100px' p='30px'>
+    <Modal isOpen={isOpen} onClose={onClose} minW='100px' p='30px' {...props}>
       <datepickerCtx.Provider value={{ onSelect: handleSelect, selected, month }}>
         <Flex direction='column' alignItems='center'>
           <Flex justify='space-between' w='100%'>
