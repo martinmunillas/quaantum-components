@@ -62,7 +62,7 @@ const Flex = forwardRef<HTMLElement, PropsWithChildren<FlexProps>>(
         flexShrink={shrink}
         flexBasis={basis}
         justifyContent={justify}
-        alignContent={align}
+        alignItems={align}
         {...props}
         ref={ref}
       />
