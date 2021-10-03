@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { QuaantumProps } from '../../../../../css/types';
-import { Coordinate } from '../../../../../utils/funcs/extendTheme/charts/bezierCurve';
+import { Coordinate } from '../../../../../utils/funcs/charts/bezierCurve';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 export interface ChartBarsProps {

@@ -44,3 +44,6 @@ export { ModalHeaderProps } from './Organisms/Modals/childs/Header/ModalHeader';
 export { ModalOverlayProps } from './Organisms/Modals/childs/Overlay/ModalOverlay';
 
 export { default as ErrorCatcher } from './Utils/ErrorCatcher';
+
+export { default as Datepicker, DatepickerProps } from './Organisms/Datepicker/Datepicker';
+export { default as Day, DayProps } from './Organisms/Datepicker/childs/Day/Day';

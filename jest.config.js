@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   preset: 'ts-jest/presets/js-with-ts',
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
@@ -19,4 +20,5 @@ module.exports = {
       statements: 90,
     },
   },
+  setupFiles: ['<rootDir>/jest.setup.ts'],
 };
