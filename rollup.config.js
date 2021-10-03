@@ -5,58 +5,31 @@ import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
 import ts from 'typescript';
+import tsb from 'rollup-plugin-ts'
 
 const buildDir = 'dist'
-const esm = 'esm'
-const cjs = 'cjs'
-
-const dest = ({ name, format }) => `lib/${name}.${format}.js`
 
 const bundle = ({ name, path, isMain = false }) => ({
   input: `./src/${path}`,
   external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   output: [
     {
-      file: `./${buildDir}/${dest({ format: esm, name })}`,
-      format: esm,
+      file: `./${buildDir}/lib/${name}.js`,
+      format: 'esm',
       sourcemap: true,
     },
     {
-      file: `./${buildDir}/${dest({ format: cjs, name })}`,
-      format: cjs,
+      file: `./${buildDir}/lib/${name}.cjs.js`,
+      format: 'cjs',
       sourcemap: true,
     },
-    // {
-    //   name: 'QuaantumComponents',
-    //   file: `./${buildDir}/lib/${name}.udm.js`,
-    //   format: 'umd',
-    //   sourcemap: true,
-    // },
   ],
   plugins: [
     resolve(),
     commonjs(),
-    typescript({
+    tsb({
       typescript: ts,
       tsconfig: 'tsconfig.json',
-      tsconfigDefaults: {
-        exclude: [
-          '**/*.spec.ts',
-          '**/*.test.ts',
-          '**/*.stories.ts',
-          '**/*.spec.tsx',
-          '**/*.test.tsx',
-          '**/*.stories.tsx',
-          'node_modules',
-          'bower_components',
-          'jspm_packages',
-          buildDir,
-        ],
-        compilerOptions: {
-          sourceMap: true,
-          declaration: true,
-        },
-      },
     }),
     terser({
       output: {
@@ -98,5 +71,4 @@ const bundle = ({ name, path, isMain = false }) => ({
 
 export default [
   bundle({ path: 'index.ts', name: 'index', isMain: true }),
-  bundle({ path: 'components/External/react-router-dom/index.ts', name: 'react-router-dom' })
 ];
