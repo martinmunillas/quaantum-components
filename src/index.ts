@@ -57,3 +57,5 @@ export { ModalHeaderProps } from './components/Organisms/Modals/childs/Header/Mo
 export { ModalOverlayProps } from './components/Organisms/Modals/childs/Overlay/ModalOverlay';
 
 export { default as ErrorCatcher } from './components/Utils/ErrorCatcher';
+
+export { QuaantumProps } from './css/types';
