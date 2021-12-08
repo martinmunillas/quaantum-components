@@ -22,6 +22,8 @@ const SVGShouldExclude = [
   'transform',
   'cursor',
   'display',
+  'fontStyle',
+  'letterSpacing',
 ] as const;
 
 type ShouldExcludeSVG = typeof ShouldExcludeSVG[number];
