@@ -59,3 +59,5 @@ export { ModalOverlayProps } from './components/Organisms/Modals/childs/Overlay/
 export { default as ErrorCatcher } from './components/Utils/ErrorCatcher';
 
 export { QuaantumProps } from './css/types';
+
+export { default as Switch, SwitchProps } from './components/Molecules/Switch/Switch';

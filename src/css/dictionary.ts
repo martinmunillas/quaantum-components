@@ -121,11 +121,17 @@ const fontProps: KeysToResolvers<FontProperties> = {
   textOrientation: Resolver.general('text-orientation'),
   textAlign: Resolver.general('text-align'),
   whiteSpace: Resolver.general('white-space'),
+  lineHeight: Resolver.measurement('line-height', 'measurement'),
+  fontStyle: Resolver.general('font-style'),
+  wordBreak: Resolver.general('word-break'),
+  wordWrap: Resolver.general('word-wrap'),
+  letterSpacing: Resolver.general('letter-spacing'),
 };
 
 const displayProps: KeysToResolvers<DisplayProperties> = {
   display: Resolver.general('display'),
   d: Resolver.general('display'),
+  float: Resolver.general('float'),
 };
 
 const flexGridProps: KeysToResolvers<FlexGridProperties> = {
@@ -188,6 +194,7 @@ const pseudoElements: KeysToResolvers<PseudoElements> = {
 const animationProps: KeysToResolvers<AnimationProperties> = {
   transform: Resolver.general('transform'),
   transformOrigin: Resolver.general('transform-origin'),
+  transition: Resolver.general('transition'),
   transitionDuration: Resolver.measurement('transition-duration', 'speed'),
   transitionProperty: Resolver.general('transition-property'),
   animation: Resolver.general('animation'),

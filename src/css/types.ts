@@ -201,6 +201,7 @@ export interface DisplayProperties {
    * shortcut for display
    */
   d: Css['display'];
+  float: 'left' | 'right' | 'none' | AllCss;
 }
 
 export interface OverflowProperties {
@@ -221,6 +222,11 @@ export interface FontProperties {
   textOrientation: LiteralUnion<AllCss>;
   textAlign: LiteralUnion<'center' | 'left' | 'right' | AllCss>;
   whiteSpace: LiteralUnion<AllCss | 'normal' | 'nowrap' | 'pre' | 'pre-wrap' | 'pre-line'>;
+  lineHeight: LiteralUnion<AllCss, number | string>;
+  wordBreak: LiteralUnion<AllCss | 'normal' | 'break-all' | 'break-word'>;
+  wordWrap: LiteralUnion<AllCss | 'normal' | 'break-word'>;
+  letterSpacing: LiteralUnion<AllCss, number | string>;
+  fontStyle: LiteralUnion<AllCss | 'normal' | 'italic' | 'oblique'>;
 }
 
 export interface PositionProperties {
@@ -246,6 +252,7 @@ export interface PseudoClasses {
 
 export interface AnimationProperties {
   transform: LiteralUnion<AllCss>;
+  transition: LiteralUnion<AllCss>;
   transformOrigin: LiteralUnion<AllCss>;
   transitionDuration: LiteralUnion<AllCss, string | number>;
   transitionProperty: LiteralUnion<AllCss, string | number>;
