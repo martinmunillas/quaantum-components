@@ -1,7 +1,7 @@
 {
   "name": "@quaantum/components",
   "license": "MIT",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "UI Components for React",
   "author": "Martin Munilla",
