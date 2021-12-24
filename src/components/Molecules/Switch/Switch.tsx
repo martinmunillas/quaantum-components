@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { QuaantumProps } from '../../..';
 import Flex from '../../Atoms/Flex/Flex';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 
@@ -24,23 +23,12 @@ const Switch: React.FC<SwitchProps> = ({ label, message, value, onChange }) => {
     onChange?.(e.target.checked);
   };
 
-  const inner: QuaantumProps = {
-    float: 'left',
-    width: '50%',
-    height: '36px',
-    padding: '0',
-    lineHeight: '36px',
-    color: '#fff',
-    fontWeight: 'bold',
-    boxSizing: 'border-box',
-  };
-
   return (
     <Flex align='center'>
       {label}{' '}
       <QuaantumBase
         position='relative'
-        width='75px'
+        width='50px'
         display='inline-block'
         textAlign='left'
         top='8px'
@@ -75,40 +63,31 @@ const Switch: React.FC<SwitchProps> = ({ label, message, value, onChange }) => {
           <QuaantumBase
             as='span'
             display='block'
-            width='200%'
-            marginLeft='-100%'
-            transition='margin 0.3s ease-in 0s'
-            _after={{
-              ...inner,
-              content: message?.off || '""',
-              pr: '10px',
-              bgColor: '#bbb',
-              color: '#fff',
-              textAlign: 'right',
-            }}
-            _before={{
-              ...inner,
-              content: message?.on || '""',
-              pl: '10px',
-              bgColor: '#060',
-              color: '#fff',
-            }}
-            className='inner'
+            transition='all 0.3s ease-in 0s'
+            height='24px'
+            padding='0'
+            lineHeight='24px'
+            color='#fff'
+            fontWeight='bold'
+            boxSizing='border-box'
+            content={message?.off || '""'}
+            pr='10px'
+            bgColor={isChecked ? 'blue' : '#bbb'}
+            textAlign='right'
           />
           <QuaantumBase
             as='span'
             display='block'
-            width='24px'
-            margin='5px'
+            width='20px'
+            margin='2px'
             background='#fff'
             position='absolute'
             top='0'
             bottom='0'
-            right='40px'
+            right={isChecked ? '0' : '25px'}
             border='0 solid #bbb'
             borderRadius='20px'
             transition='all 0.3s ease-in 0s'
-            className='switch'
           />
         </QuaantumBase>
       </QuaantumBase>
