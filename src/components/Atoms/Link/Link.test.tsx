@@ -9,10 +9,4 @@ describe('Link', () => {
     expect(screen.getByText('foo'));
     cleanup();
   });
-
-  it('could use another link', () => {
-    render(<Link as={RouterLink}>foo</Link>);
-    expect(screen.getByText('foo'));
-    cleanup();
-  });
 });
