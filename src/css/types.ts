@@ -1,4 +1,4 @@
-import { ComponentType } from 'react';
+import React, { ComponentType } from 'react';
 import { DomElement } from '../utils/domElements';
 import { LiteralUnion } from '../utils/types';
 
@@ -325,7 +325,7 @@ export interface QuaantumProperties {
   variant: string;
   customCss: string;
   styleAs: string;
-  as: LiteralUnion<DomElement>;
+  as: DomElement | React.ComponentType<any>;
 }
 
 type Cursor =
