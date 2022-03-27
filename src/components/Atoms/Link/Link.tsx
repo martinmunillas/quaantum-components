@@ -1,11 +1,12 @@
-import React, { AnchorHTMLAttributes, forwardRef, PropsWithChildren } from 'react';
+import React, { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 import { QuaantumProps } from '../../../css/types';
+import { forwardRef } from '../../../utils/forwardRef';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 
 export interface LinkProps
   extends QuaantumProps,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
-  href: string;
+  href?: string;
 }
 
 /**
