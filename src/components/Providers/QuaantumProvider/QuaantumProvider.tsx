@@ -7,7 +7,7 @@ import GlobalCssProvider from '../GlobalStyleProvider/GlobalStyleProvider';
 
 export interface QuaantumProviderProps {
   theme: Theme;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const QuaantumProvider: React.FC<QuaantumProviderProps> = ({ theme = quaantumTheme, children }) => {
