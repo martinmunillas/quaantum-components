@@ -22,13 +22,11 @@ import { ChartTitle } from '../components/Organisms/Charts/childs/Title/ChartTit
 import { Modal } from '../components/Organisms/Modals/Modal.defaultStyles';
 import { CloseButton } from '../components/Organisms/Modals/childs/CloseButton/ModalCloseButton.defaultStyles';
 
-export type ColorsCtx = {
-  [key in string | number]: string | ColorsCtx;
-};
-
 export interface VariantsCtx {
   [variant: string]: QuaantumProps;
 }
+
+export type ColorsCtx = any;
 
 export interface ComponentCtx {
   base: QuaantumProps;

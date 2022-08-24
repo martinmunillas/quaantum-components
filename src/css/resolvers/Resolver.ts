@@ -12,7 +12,7 @@ export class Resolver {
     return Resolver.general(key)(getColor(prop, config.colors), config);
   };
 
-  static measurement = (key: string, type: keyof Config['units']) => (
+  static measurement = (key: string, type: keyof Config['units'] = 'measurement') => (
     prop: QuaantumProps['width'],
     config: Config
   ) => {

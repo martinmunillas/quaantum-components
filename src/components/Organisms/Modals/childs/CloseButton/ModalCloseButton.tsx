@@ -1,9 +1,11 @@
-import React, { forwardRef, PropsWithChildren, useContext } from 'react';
+import React, { forwardRef, PropsWithChildren, ReactNode, useContext } from 'react';
 import { QuaantumProps } from '../../../../../css/types';
 import Button from '../../../../Atoms/Button/Button';
 import { modalCTX } from '../../Modal';
 
-export interface ModalCloseButtonProps extends QuaantumProps {}
+export interface ModalCloseButtonProps extends QuaantumProps {
+  children: ReactNode;
+}
 
 const ModalCloseButton = forwardRef<HTMLButtonElement, PropsWithChildren<ModalCloseButtonProps>>(
   ({ children = 'X', ...props }, ref) => {
