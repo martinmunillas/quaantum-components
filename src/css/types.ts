@@ -9,10 +9,20 @@ export interface BorderProperties {
    * shorcut for borderRadius
    */
   border: LiteralUnion<AllCss, number | string>;
+  borderColor: LiteralUnion<AllCss, string>;
+  borderWidth: LiteralUnion<AllCss, string>;
   borderTop: BorderProperties['border'];
+  borderTopColor: BorderProperties['borderColor'];
+  borderTopWidth: BorderProperties['borderWidth'];
   borderRight: BorderProperties['border'];
+  borderRightColor: BorderProperties['borderColor'];
+  borderRightWidth: BorderProperties['borderWidth'];
   borderBottom: BorderProperties['border'];
+  borderBottomColor: BorderProperties['borderColor'];
+  borderBottomWidth: BorderProperties['borderWidth'];
   borderLeft: BorderProperties['border'];
+  borderLeftColor: BorderProperties['borderColor'];
+  borderLeftWidth: BorderProperties['borderWidth'];
   outline: LiteralUnion<AllCss>;
 
   round: BorderProperties['borderRadius'];
@@ -387,6 +397,7 @@ export interface Css
   boxShadow: LiteralUnion<AllCss>;
 
   cursor: LiteralUnion<Cursor | AllCss>;
+  userSelect: LiteralUnion<'none' | 'text' | 'all' | AllCss>;
 
   resize: 'none' | 'both' | 'horizontal' | 'vertical' | AllCss;
 

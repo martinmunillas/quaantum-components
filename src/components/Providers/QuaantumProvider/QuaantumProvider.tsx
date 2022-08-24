@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Theme, theme as quaantumTheme } from '../../../defaults/theme';
 import { ctx } from '../../../utils/ctx/providerContext';
 import FocusProvider from '../FocusProvider/FocusProvider';
@@ -7,6 +7,7 @@ import GlobalCssProvider from '../GlobalStyleProvider/GlobalStyleProvider';
 
 export interface QuaantumProviderProps {
   theme: Theme;
+  children: ReactNode;
 }
 
 const QuaantumProvider: React.FC<QuaantumProviderProps> = ({ theme = quaantumTheme, children }) => {

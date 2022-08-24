@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, ReactNode, useEffect, useRef, useState } from 'react';
 import { QuaantumBase } from '../../Base/QuaantumBase';
 import FocusTrap from 'focus-trap-react';
 import { QuaantumProps } from '../../../css/types';
@@ -23,6 +23,7 @@ export interface ModalProps extends QuaantumProps {
    * Allow scrolling behind the modal
    */
   allowScroll?: boolean;
+  children: ReactNode;
 }
 
 interface Modal {
