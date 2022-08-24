@@ -1,7 +1,7 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
   /* Call some function on error */
   onError?: (error: Error) => void;
   defaultErrorMessage?: string;

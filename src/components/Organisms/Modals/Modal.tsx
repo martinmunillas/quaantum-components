@@ -23,7 +23,7 @@ export interface ModalProps extends QuaantumProps {
    * Allow scrolling behind the modal
    */
   allowScroll?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 interface Modal {

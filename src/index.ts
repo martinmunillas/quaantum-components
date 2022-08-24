@@ -4,6 +4,7 @@ export { useTheme } from './utils/hooks/useTheme';
 export { useOnClickOutside } from './utils/hooks/useOnClickOutside';
 export { useQuaantum } from './utils/hooks/useQuaantum';
 export { useToggleScroll } from './utils/hooks/useToggleScroll';
+export { useColor } from './utils/hooks/useColor';
 
 export { default as Button, ButtonProps } from './components/Atoms/Button/Button';
 

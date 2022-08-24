@@ -3,7 +3,7 @@ import { QuaantumProps } from '../../../../../css/types';
 import { QuaantumBase } from '../../../../Base/QuaantumBase';
 
 export interface ModalBodyProps extends QuaantumProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const ModalBody: React.FC<ModalBodyProps> = (props) => {

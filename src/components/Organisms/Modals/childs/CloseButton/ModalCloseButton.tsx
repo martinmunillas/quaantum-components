@@ -4,7 +4,7 @@ import Button from '../../../../Atoms/Button/Button';
 import { modalCTX } from '../../Modal';
 
 export interface ModalCloseButtonProps extends QuaantumProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const ModalCloseButton = forwardRef<HTMLButtonElement, PropsWithChildren<ModalCloseButtonProps>>(
