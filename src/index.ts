@@ -62,3 +62,5 @@ export { default as ErrorCatcher } from './components/Utils/ErrorCatcher';
 export { QuaantumProps } from './css/types';
 
 export { default as Switch, SwitchProps } from './components/Molecules/Switch/Switch';
+
+export * from './components/Atoms/Toast/useToast';

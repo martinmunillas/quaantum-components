@@ -21,17 +21,26 @@ import { ChartBars } from '../components/Organisms/Charts/childs/Bars/ChartBars.
 import { ChartTitle } from '../components/Organisms/Charts/childs/Title/ChartTitle.defaultStyles';
 import { Modal } from '../components/Organisms/Modals/Modal.defaultStyles';
 import { CloseButton } from '../components/Organisms/Modals/childs/CloseButton/ModalCloseButton.defaultStyles';
+import { Toast } from '../components/Atoms/Toast/Toast.defaultStyles';
 
 export interface VariantsCtx {
   [variant: string]: QuaantumProps;
 }
 
-export type ColorsCtx = any;
+export interface ColorCtx {
+  main: string;
+  light: string;
+  dark: string;
+}
+
+export interface ColorsCtx {
+  [color: string]: ColorCtx | string;
+}
 
 export interface ComponentCtx {
   base: QuaantumProps;
   variants: VariantsCtx;
-  defaultVariant: string;
+  defaultVariant?: string;
 }
 
 export interface Components {
@@ -48,6 +57,10 @@ export interface Units {
    */
   measurement: string;
   /**
+   * for using just numbers in measurement properties, like width, margin, etc.
+   */
+  font: string;
+  /**
    * for using just numbers in speed properties like animationDuration.
    */
   speed: string;
@@ -58,29 +71,43 @@ export interface Theme {
   components: Components;
   global?: Global;
   units: Units;
-  /**
-   * This will add default focus styles to all tabbable elements
-   */
-  mainFocus: QuaantumProps;
 }
 
 export const theme: Theme = {
   global,
   colors: {
-    black: '#121212',
-    white: '#eeeeee',
-    primary: '#345674',
-    secondary: '#787123',
-    tertiary: '#555978',
+    black: {
+      main: '#121212',
+      light: '#1f1f1f',
+      dark: '#000000',
+    },
+    white: {
+      main: '#eeeeee',
+      light: '#ffffff',
+      dark: '#cccccc',
+    },
+    primary: {
+      main: '#345674',
+      light: '#567890',
+      dark: '#123456',
+    },
+    secondary: {
+      main: '#787123',
+      light: '#999340',
+      dark: '#565904',
+    },
+    tertiary: {
+      main: '#555978',
+      light: '#777b9a',
+      dark: '#33375a',
+    },
   },
   units: {
-    measurement: 'em',
+    measurement: 'px',
+    font: 'rem',
     speed: 's',
   },
   font: 'sans-serif',
-  mainFocus: {
-    boxShadow: '0px 0px 10px 1px rgb(25, 163, 227, 85%)',
-  },
   components: {
     Button,
     Flex,
@@ -96,6 +123,7 @@ export const theme: Theme = {
     UnorderedList,
     OrderedList,
     Chart,
+    Toast,
     'Chart.Axis': ChartAxis,
     'Chart.Axes': ChartAxes,
     'Chart.Line': ChartLine,

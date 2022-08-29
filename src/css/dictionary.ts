@@ -64,6 +64,7 @@ const borderProps: KeysToResolvers<BorderProperties> = {
   bt: Resolver.measurement('border-top'),
   r: Resolver.measurement('border-radius'),
   round: Resolver.measurement('border-radius'),
+  radius: Resolver.measurement('border-radius'),
 };
 
 const sizeProps: KeysToResolvers<SizeProperties> = {
@@ -124,7 +125,7 @@ const overflowProps: KeysToResolvers<OverflowProperties> = {
 
 const fontProps: KeysToResolvers<FontProperties> = {
   fontWeight: Resolver.general('font-weight'),
-  fontSize: Resolver.general('font-size'),
+  fontSize: Resolver.measurement('font-size', 'font'),
   textDecoration: Resolver.general('text-decoration'),
   fontFamily: Resolver.general('font-family'),
   textTransform: Resolver.general('text-transform'),
