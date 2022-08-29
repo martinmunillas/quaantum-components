@@ -6,7 +6,7 @@ type AllCss = 'inherit' | 'initial' | 'unset';
 export interface BorderProperties {
   borderRadius: LiteralUnion<AllCss, number | string>;
   /**
-   * shorcut for borderRadius
+   * shorthand for borderRadius
    */
   border: LiteralUnion<AllCss, number | string>;
   borderColor: LiteralUnion<AllCss, string>;
@@ -24,30 +24,36 @@ export interface BorderProperties {
   borderLeftColor: BorderProperties['borderColor'];
   borderLeftWidth: BorderProperties['borderWidth'];
   outline: LiteralUnion<AllCss>;
-
+  /**
+   * shorthand for borderRadius
+   */
+  radius: BorderProperties['borderRadius'];
+  /**
+   * shorthand for borderRadius
+   */
   round: BorderProperties['borderRadius'];
   /**
-   * shorcut for borderRadius
+   * shorthand for borderRadius
    */
   r: BorderProperties['borderRadius'];
   /**
-   * shorcut for border
+   * shorthand for border
    */
   b: BorderProperties['border'];
   /**
-   * shorcut for borderTop
+   * shorthand for borderTop
    */
   bt: BorderProperties['borderTop'];
   /**
-   * shorcut for borderRight
+   * shorthand for borderRight
    */
   br: BorderProperties['borderRight'];
   /**
-   * shorcut for borderBottom
+   * shorthand for borderBottom
    */
   bb: BorderProperties['borderBottom'];
   /**
-   * shorcut for borderLeft
+   * shorthand for borderLeft
    */
   bl: BorderProperties['borderLeft'];
 }
@@ -167,31 +173,31 @@ export interface MarginProperties {
   marginBottom: MarginProperties['margin'];
   marginLeft: MarginProperties['margin'];
   /**
-   * shorcut for margin
+   * shorthand for margin
    */
   m: MarginProperties['margin'];
   /**
-   * shorcut for marginX
+   * shorthand for marginX
    */
   mx: MarginProperties['marginX'];
   /**
-   * shorcut for marginY
+   * shorthand for marginY
    */
   my: MarginProperties['marginY'];
   /**
-   * shorcut for marginTop
+   * shorthand for marginTop
    */
   mt: MarginProperties['marginTop'];
   /**
-   * shorcut for marginRight
+   * shorthand for marginRight
    */
   mr: MarginProperties['marginRight'];
   /**
-   * shorcut for marginBottom
+   * shorthand for marginBottom
    */
   mb: MarginProperties['marginBottom'];
   /**
-   * shorcut for marginLeft
+   * shorthand for marginLeft
    */
   ml: MarginProperties['marginLeft'];
 }
@@ -240,11 +246,11 @@ export interface FontProperties {
 }
 
 export interface PositionProperties {
-  position: LiteralUnion<AllCss>;
-  top: LiteralUnion<AllCss>;
-  left: LiteralUnion<AllCss>;
-  right: LiteralUnion<AllCss>;
-  bottom: LiteralUnion<AllCss>;
+  position: LiteralUnion<AllCss | number>;
+  top: LiteralUnion<AllCss | number>;
+  left: LiteralUnion<AllCss | number>;
+  right: LiteralUnion<AllCss | number>;
+  bottom: LiteralUnion<AllCss | number>;
 }
 
 export interface PseudoElements {

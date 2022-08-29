@@ -51,7 +51,7 @@ export const useQuaantum = <
             ...filterUndefined(theme.components[props.styleAs]?.base || {}),
             ...filterUndefined(
               theme.components[props.styleAs]?.variants?.[
-                props.variant || theme.components[props.styleAs].defaultVariant
+                props.variant || theme.components[props.styleAs].defaultVariant || ''
               ] || {}
             ),
             ...filterUndefined(usableProps || {}),

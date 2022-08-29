@@ -31,13 +31,11 @@ const variants = {
 };
 
 const base: QuaantumProps = {
-  border: 'none',
-  round: '50px',
-  padding: '10px 20px',
+  b: 'none',
+  r: '12px',
+  p: '10px 20px',
   fontWeight: 600,
-  minW: '42px',
-  minH: '42px',
-  fontSize: '18px',
+  fontSize: 1.1,
   cursor: 'pointer',
   outline: 'none',
 };

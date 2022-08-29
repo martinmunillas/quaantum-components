@@ -1,20 +1,27 @@
 import { ColorsCtx } from '../../defaults/theme';
 
-export const getColor = (color: string, colors: ColorsCtx, full = color): string => {
+export const getColor = (color: string, colors: ColorsCtx): string => {
   if (typeof color !== 'string') {
     return color;
   }
-  const search = color.split('.');
-  const current = search.shift();
 
-  if (!current) return full;
+  const [first, second] = color.split('.');
 
-  if (current in colors) {
-    const found = colors[current];
-    if (typeof found === 'string') return found;
-
-    return getColor(search.join('.'), found, full);
+  if (!(first in colors)) {
+    return color;
   }
 
-  return full;
+  const ctx = colors[first];
+  if (typeof ctx === 'string') {
+    return ctx;
+  }
+  if (second === undefined) {
+    return ctx.main;
+  }
+
+  if (!(second in ctx)) {
+    return color;
+  }
+
+  return ctx[second as 'main' | 'light' | 'dark'];
 };
