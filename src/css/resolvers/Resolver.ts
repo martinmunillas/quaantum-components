@@ -5,6 +5,15 @@ import { Config, resolve } from './resolve';
 export class Resolver {
   static general = (key: string) => (prop: string, _config: Config) => `${key}:${prop};`;
 
+  static custom = (prop: Record<string, QuaantumProps> | undefined, _config: Config) => {
+    if (!prop) return '';
+    return Object.keys(prop)
+      .map((key) => {
+        return `${key}{${resolve(prop[key], _config)}}`;
+      })
+      .join('');
+  };
+
   static pseudo = (key: string) => (props: QuaantumProps, config: Config) =>
     `&${key} {${resolve(props, config)}}`;
 
