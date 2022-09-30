@@ -1,13 +1,12 @@
-import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
 import ts from 'typescript';
-import tsb from 'rollup-plugin-ts'
+import tsb from 'rollup-plugin-ts';
 
-const buildDir = 'dist'
+const buildDir = 'dist';
 
 const bundle = ({ name, path, isMain = false }) => ({
   input: `./src/${path}`,
@@ -45,30 +44,36 @@ const bundle = ({ name, path, isMain = false }) => ({
           dest: isMain ? buildDir : `${buildDir}/${name}`,
           transform: (content) => {
             if (!isMain) {
-              return JSON.stringify({
-                name: name.toLowerCase(),
-                private: true,
-                main: `../${dest({ format: cjs, name })}`,
-                module: `../${dest({ format: esm, name })}`,
-                types: `../lib/${path.split('.')[0]}.d.ts`
-              }, null, 2)
+              return JSON.stringify(
+                {
+                  name: name.toLowerCase(),
+                  private: true,
+                  main: `../${dest({ format: cjs, name })}`,
+                  module: `../${dest({ format: esm, name })}`,
+                  types: `../lib/${path.split('.')[0]}.d.ts`,
+                },
+                null,
+                2
+              );
             }
             const { scripts, devDependencies, husky, release, engines, ...keep } = JSON.parse(
               content.toString()
             );
-            return JSON.stringify({
-              ...keep,
-              module: `lib/${keep.module}`,
-              main: `lib/${keep.main}`,
-              types: `lib/${keep.types}`,
-            }, null, 2);
+            return JSON.stringify(
+              {
+                ...keep,
+                module: `lib/${keep.module}`,
+                main: `lib/${keep.main}`,
+                types: `lib/${keep.types}`,
+              },
+              null,
+              2
+            );
           },
         },
       ],
     }),
   ],
-})
+});
 
-export default [
-  bundle({ path: 'index.ts', name: 'index', isMain: true }),
-];
+export default [bundle({ path: 'index.ts', name: 'index', isMain: true })];

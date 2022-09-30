@@ -11,18 +11,25 @@ export interface BorderProperties {
   border: LiteralUnion<AllCss, number | string>;
   borderColor: LiteralUnion<AllCss, string>;
   borderWidth: LiteralUnion<AllCss, string>;
+  borderStyle: LiteralUnion<AllCss, string>;
   borderTop: BorderProperties['border'];
   borderTopColor: BorderProperties['borderColor'];
   borderTopWidth: BorderProperties['borderWidth'];
+  borderTopStyle: BorderProperties['borderStyle'];
   borderRight: BorderProperties['border'];
   borderRightColor: BorderProperties['borderColor'];
   borderRightWidth: BorderProperties['borderWidth'];
+  borderRightStyle: BorderProperties['borderStyle'];
   borderBottom: BorderProperties['border'];
   borderBottomColor: BorderProperties['borderColor'];
   borderBottomWidth: BorderProperties['borderWidth'];
+  borderBottomStyle: BorderProperties['borderStyle'];
   borderLeft: BorderProperties['border'];
   borderLeftColor: BorderProperties['borderColor'];
   borderLeftWidth: BorderProperties['borderWidth'];
+  borderLeftStyle: BorderProperties['borderStyle'];
+  borderCollapse: LiteralUnion<AllCss, 'collapse' | 'separate'>;
+
   outline: LiteralUnion<AllCss>;
   /**
    * shorthand for borderRadius
@@ -246,7 +253,7 @@ export interface FontProperties {
 }
 
 export interface PositionProperties {
-  position: LiteralUnion<AllCss | number>;
+  position: LiteralUnion<AllCss | 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'>;
   top: LiteralUnion<AllCss | number>;
   left: LiteralUnion<AllCss | number>;
   right: LiteralUnion<AllCss | number>;
@@ -339,6 +346,7 @@ export interface SVGProperties {
 }
 export interface QuaantumProperties {
   variant: string;
+  csx: Record<string, Omit<QuaantumProps, 'custom'>>;
   customCss: string;
   styleAs: string;
   as: DomElement | React.ComponentType<any>;
@@ -401,6 +409,10 @@ export interface Css
     SVGProperties,
     QuaantumProperties {
   boxShadow: LiteralUnion<AllCss>;
+  /**
+   * shortcut for `boxShadow`
+   */
+  shadow: Css['boxShadow'];
 
   cursor: LiteralUnion<Cursor | AllCss>;
   userSelect: LiteralUnion<'none' | 'text' | 'all' | AllCss>;
@@ -411,6 +423,9 @@ export interface Css
   objectPosition: LiteralUnion<AllCss>;
   zIndex: LiteralUnion<AllCss, number>;
   listStyle: LiteralUnion<AllCss>;
+
+  clipPath: LiteralUnion<AllCss>;
+  perspective: LiteralUnion<AllCss>;
 }
 
 export type QuaantumProps = { [P in keyof Css]?: Css[P] };
