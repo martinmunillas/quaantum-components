@@ -414,6 +414,8 @@ export interface Css
    */
   shadow: Css['boxShadow'];
 
+  opacity: LiteralUnion<AllCss, number>;
+
   cursor: LiteralUnion<Cursor | AllCss>;
   userSelect: LiteralUnion<'none' | 'text' | 'all' | AllCss>;
 

@@ -15,8 +15,8 @@ import Footer from './childs/Footer/ModalFooter';
 export const modalCTX = createContext<any>({});
 
 export interface ModalProps extends QuaantumProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
   onOpenFocus?: React.RefObject<HTMLElement>;
   onCloseFocus?: React.RefObject<HTMLElement>;
   /**
@@ -45,8 +45,10 @@ const Modal: Modal & React.FC<ModalProps> = ({
 }) => {
   const p = '20px';
   const handleClose = () => {
-    onClose();
-    onCloseFocus?.current?.focus();
+    if (onClose) {
+      onClose();
+      onCloseFocus?.current?.focus();
+    }
   };
   const [ctx, setCtx] = useState({ handleClose, p, Overlay: null });
 

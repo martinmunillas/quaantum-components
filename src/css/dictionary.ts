@@ -255,6 +255,7 @@ export const dictionary: KeysToResolvers<
   userSelect: Resolver.general('user-select'),
   boxShadow: Resolver.general('box-shadow'),
   shadow: Resolver.general('box-shadow'),
+  opacity: Resolver.general('opacity'),
   cursor: Resolver.general('cursor'),
   resize: Resolver.general('resize'),
   objectFit: Resolver.general('object-fit'),
